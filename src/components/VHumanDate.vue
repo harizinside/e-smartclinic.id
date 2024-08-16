@@ -1,0 +1,27 @@
+<template>
+  <div>
+    <span>{{ relativeDate ?? '-' }}</span>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { ref, onMounted } from 'vue'
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
+
+dayjs.extend(relativeTime)
+
+const relativeDate = ref<string>()
+const props = defineProps<{
+  datetime: string
+}>()
+
+onMounted(() => {
+  const parsedDate = dayjs(props.datetime)
+  relativeDate.value = parsedDate.fromNow()
+})
+</script>
+
+<style>
+
+</style>
