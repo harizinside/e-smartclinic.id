@@ -5,7 +5,21 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
 import { useHead, useSeoMeta, useServerSeoMeta } from '@unhead/vue'
+import {
+  Dialog,
+  DialogPanel,
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+  TransitionChild,
+  TransitionRoot,
+} from '@headlessui/vue'
 
 useHead({
   link: [
