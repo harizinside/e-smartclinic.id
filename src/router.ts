@@ -8,6 +8,7 @@ import Users from '@view/admin/UsersView.vue'
 import AddOnArea from '@view/addon/AreaView.vue'
 import AddOnUsers from '@view/addon/UserView.vue'
 import Home from '@view/HomeView.vue'
+import NotFound from '@view/NotFoundView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -90,6 +91,11 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/payments/process',
     component: AddOnUsers,
+    meta: {}
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    component: NotFound,
     meta: {}
   }
 ]
