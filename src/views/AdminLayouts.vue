@@ -54,7 +54,7 @@
                 <div class="flex h-16 shrink-0 items-center">
                   <img
                     class="h-8 w-auto"
-                    src="/image/icons/e-smartclinic-white.svg"
+                    src="/img/icons/e-smartclinic-white.svg"
                     alt="e-Smart Clinic">
                 </div>
                 <nav class="flex flex-1 flex-col">
@@ -66,7 +66,7 @@
                         role="list"
                         class="-mx-2 space-y-1">
                         <li
-                          v-for="item in navigation"
+                          v-for="item in LIST_MENU"
                           :key="item.name">
                           <router-link
                             v-if="!item.children?.length"
@@ -151,7 +151,7 @@
         <div class="flex h-16 shrink-0 items-center">
           <img
             class="h-10 w-auto"
-            src="/image/icons/e-smartclinic-white.svg"
+            src="/img/icons/e-smartclinic-white.svg"
             alt="e-Smart Clinic">
         </div>
         <nav class="flex flex-1 flex-col">
@@ -166,12 +166,12 @@
                   <li
                     v-for="index in 16"
                     :key="index">
-                    <v-shimmer-text />
+                    <VShimmerText />
                   </li>
                 </div>
                 <div v-else>
                   <li
-                    v-for="item in navigation"
+                    v-for="item in LIST_MENU"
                     :key="item.name">
                     <router-link
                       v-if="!item.children?.length"
@@ -303,13 +303,13 @@
               class="relative">
               <MenuButton class="-m-1.5 flex items-center p-1.5">
                 <span class="sr-only">Open user Menu</span>
-                <v-shimmer-image-profile v-if="isLoading" />
+                <VShimmerImageProfile v-if="isLoading" />
                 <img
                   v-else
                   class="h-8 w-8 rounded-full bg-gray-50 "
-                  :src="auth.user!.path!"
+                  src="https://avatar.iran.liara.run/public/girl?username=Andini+Florida"
                   alt="">
-                <v-shimmer-text
+                <VShimmerText
                   v-if="isLoading"
                   class="ml-4 w-40" />
                 <span
@@ -318,7 +318,7 @@
                   <span
                     class="ml-4 text-sm font-semibold leading-6 text-gray-600"
                     aria-hidden="true">
-                    {{ auth.user!.name! }}
+                    Muhamad Haris Setiawan
                   </span>
                   <ChevronDownIcon
                     class="ml-2 h-5 w-5 text-gray-400"
@@ -357,9 +357,7 @@
 
       <main class="py-10">
         <div class="px-4 sm:px-6 lg:px-8">
-          <!-- <div class="pt-4"> -->
           <slot />
-          <!-- </div> -->
         </div>
       </main>
     </div>
@@ -367,7 +365,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import { useHead, useSeoMeta, useServerSeoMeta } from '@unhead/vue'
 import {
   Dialog,
@@ -382,8 +380,12 @@ import {
   TransitionChild,
   TransitionRoot,
 } from '@headlessui/vue'
+import { ChevronDownIcon, MagnifyingGlassIcon, ChevronRightIcon } from '@heroicons/vue/20/solid'
+import { LIST_MENU } from '@/menu'
 import VBannerGreetings from '@component/VBannerGreetings.vue'
 import VIcons from '@/components/VIcons.vue'
+import VShimmerImageProfile from '@/components/VShimmerImageProfile.vue'
+import VShimmerText from '@/components/VShimmerText.vue'
 
 const isLoading = ref<boolean>(false)
 const sidebarOpen = ref<boolean>(false)
