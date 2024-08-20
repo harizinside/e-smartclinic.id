@@ -29,7 +29,6 @@
 
 <script lang="ts" setup>
 const props = defineProps<{
-  type: string
   message: string
   errors: {
     field: string

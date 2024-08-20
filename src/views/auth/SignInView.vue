@@ -13,12 +13,11 @@
 
       <div class="mt-3 sm:mx-auto sm:w-full sm:max-w-[480px]">
         <div class="px-6 py-12 sm:px-12">
-          <div v-if="isErrors">
-            <VAlerts
-              :type="'danger'"
-              :message="resErrors.message"
-              :errors="resErrors.errors" />
-          </div>
+          <VAlerts
+            v-if="isErrors"
+            type="danger" 
+            :message="resErrors!.message"
+            :errors="resErrors!.errors" />
 
           <form
             class="space-y-6"
@@ -167,16 +166,31 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useHead } from '@unhead/vue'
+import { useRouter } from 'vue-router'
 import { HTTP_URI, HTTP_HEADER } from '@/http.conf'
 import VIcons from '@component/VIcons.vue'
 import VAlerts from '@component/VAlerts.vue'
+import type { ResponseProps } from '@/interfaces/auth'
+import { useAuthStore } from '@/stores/auth'
 
-const username = ref<string>('');
-const password = ref<string>('');
-const remember = ref<boolean>(false);
-const isLoading = ref<boolean>(false);
-const isErrors = ref<boolean>(false);
-const resErrors = ref({});
+interface AlertProps {
+  message: string
+  errors: {
+    field: string
+    message: string
+    value: string
+  }[]
+}
+
+const username = ref<string>('')
+const password = ref<string>('')
+const remember = ref<boolean>(false)
+const isLoading = ref<boolean>(false)
+const isErrors = ref<boolean>(false)
+const resErrors = ref<AlertProps>()
+
+const router = useRouter()
+const authState = useAuthStore()
 
 useHead({
   title: 'Authorization | e-Smart Clinic',
@@ -203,19 +217,26 @@ const xsubmit = async () => {
          username: username.value, 
          password: password.value 
       }),
-    });
+    })
 
-    const json = await response.json();
+    const json : ResponseProps = await response.json();
 
     if (!response.ok) {
       isErrors.value = true
-      resErrors.value = json
-      
-      throw new Error(`Response status: ${response.status}`);
-    }
+      resErrors.value = {
+        message:  json.message,
+        errors: json.errors!
+      }
 
-  } catch (error) {
-    console.error(error.message)
+      password.value = ''
+      throw new Error(`Response status: ${response.status}`)
+    }
+    
+    await authState.signin(json.result?.id, json.result?.token)
+    router.push('/')
+
+  } catch (err) {
+    console.error(err)
 
   } finally {
     isLoading.value = false

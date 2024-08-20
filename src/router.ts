@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory, } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
+import { HTTP_URI, HTTP_HEADER } from '@/http.conf'
+import { useAuthStore } from '@/stores/auth'
 import SignIn from '@view/auth/SignInView.vue'
 import ForgotPassword from '@view/auth/ForgotPasswordView.vue'
 import Recovery from '@view/auth/RecoveryView.vue'
@@ -34,69 +36,68 @@ const routes: Array<RouteRecordRaw> = [
       },
     },
     beforeEnter: async (_to, _from, next) => {
-      next({ path: "/auth" });
+      next({ path: "/auth" })
     },
   },
   {
     path: '/',
     component: Home,
-    meta: {}
+    meta: { auth: true }
   },
   {
     path: '/admin/users',
     component: Users,
-    meta: {}
+    meta: { auth: true }
   },
   {
     path: '/admin/role-privilages',
     component: RolePrivilage,
-    meta: {}
+    meta: { auth: true }
   },
   {
     path: '/add-on/area',
     component: AddOnArea,
-    meta: {}
+    meta: { auth: true }
   },
   {
     path: '/add-on/users',
     component: AddOnUsers,
-    meta: {}
+    meta: { auth: true }
   },
-  // Sample Component
   {
     path: '/clinic-info',
     component: AddOnUsers,
-    meta: {}
+    meta: { auth: true }
   },
   {
     path: '/practice-schedule',
     component: AddOnUsers,
-    meta: {}
+    meta: { auth: true }
   },
   {
     path: '/contacts',
     component: AddOnUsers,
-    meta: {}
+    meta: { auth: true }
   },
   {
     path: '/outpatient',
     component: AddOnUsers,
-    meta: {}
+    meta: { auth: true }
   },
   {
     path: '/payments',
     component: AddOnUsers,
-    meta: {}
+    meta: { auth: true }
   },
   {
     path: '/payments/process',
     component: AddOnUsers,
-    meta: {}
+    meta: { auth: true }
   },
   {
     path: '/:pathMatch(.*)*',
     component: NotFound,
-    meta: {}
+    meta: { auth: true }
   }
 ]
 
@@ -106,16 +107,22 @@ const router = createRouter({
 })
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-router.beforeEach((to, from) => {
-  // instead of having to check every route record with
-  // to.matched.some(record => record.meta.requiresAuth)
-  if (to.meta.requiresAuth) {
-    // this route requires auth, check if logged in
-    // if not, redirect to login page.
-    return {
-      path: '/login',
-      // save the location we were at to come back later
-      query: { redirect: to.fullPath },
+router.beforeEach(async (to, from) => {
+  const authState = useAuthStore()
+
+  if (to.meta.auth && import.meta.env.VITE_ENV !== 'development') {
+    const url = HTTP_URI + '/legacy/token-valid';
+    
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        ...HTTP_HEADER,
+        Authorization: `Bearer ${authState.auth.TOKEN}`,
+      }
+    })
+
+    if (!response.ok) {
+      return { path: '/auth' }
     }
   }
 })
