@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
 import { HTTP_URI, HTTP_HEADER } from '@/http.conf'
 import { useAuthStore } from '@/stores/auth'
@@ -15,8 +15,7 @@ import NotFound from '@view/NotFoundView.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/auth',
-    component: SignIn,
-    meta: {}
+    component: SignIn
   },
   {
     path: '/auth/forgot-password',
@@ -29,15 +28,26 @@ const routes: Array<RouteRecordRaw> = [
     meta: {}
   },
   {
-    path: "/auth/sign-out",
+    path: '/auth/sign-out',
     component: {
       beforeRouteEnter(_to, _from, next) {
-        next();
-      },
+        next()
+      }
     },
-    beforeEnter: async (_to, _from, next) => {
-      next({ path: "/auth" })
-    },
+    beforeEnter: async (to, _from, next) => {
+      const authState = useAuthStore()
+
+      fetch(`${HTTP_URI}/legacy/auth/logout`, {
+          method: 'DELETE',
+          headers: {
+              ...HTTP_HEADER,
+              Authorization: `Bearer ${authState.auth.TOKEN}`
+          }
+      })
+      
+      localStorage.removeItem('__auth')
+      next({ path: '/auth' })
+    }
   },
   {
     path: '/',
@@ -80,6 +90,17 @@ const routes: Array<RouteRecordRaw> = [
     meta: { auth: true }
   },
   {
+    path: '/contacts/create',
+    component: {
+      beforeRouteLeave () {
+        const answer = window.confirm('Do you really want to leave? you have unsaved changes!')
+        if (!answer) return false
+      }
+    },
+    meta: { auth: true }
+    
+  },
+  {
     path: '/outpatient',
     component: AddOnUsers,
     meta: { auth: true }
@@ -107,24 +128,25 @@ const router = createRouter({
 })
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-router.beforeEach(async (to, from) => {
+router.beforeEach(async (to, from, next) => {
   const authState = useAuthStore()
+  const url = HTTP_URI + '/legacy/token-valid'
 
   if (to.meta.auth && import.meta.env.VITE_ENV !== 'development') {
-    const url = HTTP_URI + '/legacy/token-valid';
-    
     const response = await fetch(url, {
       method: 'GET',
       headers: {
         ...HTTP_HEADER,
-        Authorization: `Bearer ${authState.auth.TOKEN}`,
+        Authorization: `Bearer ${authState.auth.TOKEN}`
       }
     })
 
     if (!response.ok) {
-      return { path: '/auth' }
+      return { path: '/auth/sign-out' }
     }
   }
+
+  next()
 })
 
 export default router

@@ -13,9 +13,9 @@ export const LIST_MENU = <MenuProps[]>[
       update: true,
       delete: true,
       import: true,
-      export: true,
+      export: true
     },
-    children: [],
+    children: []
   },
   {
     name: 'Otoritasi',
@@ -29,7 +29,7 @@ export const LIST_MENU = <MenuProps[]>[
       update: true,
       delete: true,
       import: true,
-      export: true,
+      export: true
     },
     children: [
       {
@@ -44,8 +44,8 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
+          export: true
+        }
       },
       {
         name: 'Hak Akses',
@@ -59,10 +59,10 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
-      },
-    ],
+          export: true
+        }
+      }
+    ]
   },
   {
     name: 'System',
@@ -76,7 +76,7 @@ export const LIST_MENU = <MenuProps[]>[
       update: true,
       delete: true,
       import: true,
-      export: true,
+      export: true
     },
     children: [
       {
@@ -91,8 +91,8 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
+          export: true
+        }
       },
       {
         name: 'Pendidikan Terakhir',
@@ -106,8 +106,8 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
+          export: true
+        }
       },
       {
         name: 'Suku',
@@ -121,8 +121,8 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
+          export: true
+        }
       },
       {
         name: 'Status Pernikahan',
@@ -136,8 +136,8 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
+          export: true
+        }
       },
       {
         name: 'Marketing',
@@ -151,8 +151,8 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
+          export: true
+        }
       },
       {
         name: 'Agama',
@@ -166,8 +166,8 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
+          export: true
+        }
       },
       {
         name: 'Title',
@@ -181,8 +181,8 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
+          export: true
+        }
       },
       {
         name: 'Status Pekerjaan',
@@ -196,8 +196,8 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
+          export: true
+        }
       },
       {
         name: 'Title',
@@ -211,8 +211,8 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
+          export: true
+        }
       },
       {
         name: 'Provinsi (Area)',
@@ -226,8 +226,8 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
+          export: true
+        }
       },
       {
         name: 'Kota (Area)',
@@ -241,8 +241,8 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
+          export: true
+        }
       },
       {
         name: 'Kecamatan (Area)',
@@ -256,8 +256,8 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
+          export: true
+        }
       },
       {
         name: 'Kelurahan (Area)',
@@ -271,10 +271,10 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
-      },
-    ],
+          export: true
+        }
+      }
+    ]
   },
   {
     name: 'Tambahan',
@@ -288,7 +288,7 @@ export const LIST_MENU = <MenuProps[]>[
       update: true,
       delete: true,
       import: true,
-      export: true,
+      export: true
     },
     children: [
       {
@@ -303,8 +303,8 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
+          export: true
+        }
       },
       {
         name: 'Layanan',
@@ -318,8 +318,8 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
+          export: true
+        }
       },
       {
         name: 'Asuransi & Jaminan',
@@ -333,8 +333,8 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
+          export: true
+        }
       },
       {
         name: 'Penyakit (Subjective)',
@@ -348,8 +348,8 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
+          export: true
+        }
       },
       {
         name: 'Diagnosa (Assesment)',
@@ -363,8 +363,8 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
+          export: true
+        }
       },
       {
         name: 'Prognosa (Assesment)',
@@ -378,8 +378,8 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
+          export: true
+        }
       },
       {
         name: 'ICD-10 (Assesment)',
@@ -393,10 +393,10 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
-      },
-    ],
+          export: true
+        }
+      }
+    ]
   },
   {
     name: 'Info Klinik',
@@ -410,9 +410,9 @@ export const LIST_MENU = <MenuProps[]>[
       update: true,
       delete: true,
       import: true,
-      export: true,
+      export: true
     },
-    children: [],
+    children: []
   },
   {
     name: 'Jadwal Praktik',
@@ -426,9 +426,9 @@ export const LIST_MENU = <MenuProps[]>[
       update: true,
       delete: true,
       import: true,
-      export: true,
+      export: true
     },
-    children: [],
+    children: []
   },
   {
     name: 'Kontak (Pasien)',
@@ -442,9 +442,9 @@ export const LIST_MENU = <MenuProps[]>[
       update: true,
       delete: true,
       import: true,
-      export: true,
+      export: true
     },
-    children: [],
+    children: []
   },
   {
     name: 'Rawat Jalan',
@@ -458,7 +458,7 @@ export const LIST_MENU = <MenuProps[]>[
       update: true,
       delete: true,
       import: true,
-      export: true,
+      export: true
     },
     children: [
       {
@@ -473,8 +473,8 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
+          export: true
+        }
       },
       {
         name: 'Asuransi & Jaminan',
@@ -488,10 +488,10 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
-      },
-    ],
+          export: true
+        }
+      }
+    ]
   },
   {
     name: 'Rekam Medis',
@@ -505,9 +505,9 @@ export const LIST_MENU = <MenuProps[]>[
       update: true,
       delete: true,
       import: true,
-      export: true,
+      export: true
     },
-    children: [],
+    children: []
   },
   {
     name: 'Inventori',
@@ -521,9 +521,9 @@ export const LIST_MENU = <MenuProps[]>[
       update: true,
       delete: true,
       import: true,
-      export: true,
+      export: true
     },
-    children: [],
+    children: []
   },
   {
     name: 'Pembelian',
@@ -537,7 +537,7 @@ export const LIST_MENU = <MenuProps[]>[
       update: true,
       delete: true,
       import: true,
-      export: true,
+      export: true
     },
     children: [
       {
@@ -552,10 +552,10 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
-      },
-    ],
+          export: true
+        }
+      }
+    ]
   },
   {
     name: 'Laporan',
@@ -569,9 +569,9 @@ export const LIST_MENU = <MenuProps[]>[
       update: true,
       delete: true,
       import: true,
-      export: true,
+      export: true
     },
-    children: [],
+    children: []
   },
   {
     name: 'Statistik (CRM)',
@@ -585,7 +585,7 @@ export const LIST_MENU = <MenuProps[]>[
       update: true,
       delete: true,
       import: true,
-      export: true,
+      export: true
     },
     children: [
       {
@@ -600,9 +600,9 @@ export const LIST_MENU = <MenuProps[]>[
           update: true,
           delete: true,
           import: true,
-          export: true,
-        },
-      },
-    ],
-  },
+          export: true
+        }
+      }
+    ]
+  }
 ]

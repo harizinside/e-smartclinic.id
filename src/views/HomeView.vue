@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import { useHead } from '@unhead/vue'
-import AdminLayouts from './AdminLayouts.vue';
+import AdminLayouts from './AdminLayouts.vue'
 
 useHead({
   title: 'Home | e-Smart Clinic'

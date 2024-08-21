@@ -27,6 +27,7 @@ export const useAuthStore = defineStore('__auth', () => {
   const signout = () => {
     auth.value.ID = 0
     auth.value.TOKEN = ''
+    auth.value.USER = <IUser>{}
   }
 
   const setuser = (args: UserProps) => {

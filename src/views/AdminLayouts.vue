@@ -101,12 +101,12 @@
                                 :class="[open ? 'rotate-90 text-gray-500' : 'text-gray-400', 'ml-auto h-5 w-5 shrink-0']" />
                             </DisclosureButton>
                             <transition
-                              enter-active-class="transition duration-300 ease-out"
-                              enter-from-class="transform translate-x-[-100%] opacity-0"
-                              enter-to-class="transform translate-x-0 opacity-100"
-                              leave-active-class="transition duration-200 ease-in"
-                              leave-from-class="transform translate-x-0 opacity-100"
-                              leave-to-class="transform translate-x-[-100%] opacity-0">
+                              enter-active-class="transition ease-out duration-100"
+                              enter-from-class="transform opacity-0 scale-95"
+                              enter-to-class="transform opacity-100 scale-100"
+                              leave-active-class="transition ease-in duration-75"
+                              leave-from-class="transform opacity-100 scale-100"
+                              leave-to-class="transform opacity-0 scale-95">
                               <DisclosurePanel
                                 as="ul"
                                 class="mt-1 px-2">
@@ -204,12 +204,12 @@
                           :class="[open ? 'rotate-90 text-gray-500' : 'text-gray-400', 'ml-auto h-5 w-5 shrink-0']" />
                       </DisclosureButton>
                       <transition
-                        enter-active-class="transition duration-300 ease-out"
-                        enter-from-class="transform translate-x-[-100%] opacity-0"
-                        enter-to-class="transform translate-x-0 opacity-100"
-                        leave-active-class="transition duration-200 ease-in"
-                        leave-from-class="transform translate-x-0 opacity-100"
-                        leave-to-class="transform translate-x-[-100%] opacity-0">
+                        enter-active-class="transition ease-out duration-100"
+                        enter-from-class="transform opacity-0 scale-95"
+                        enter-to-class="transform opacity-100 scale-100"
+                        leave-active-class="transition ease-in duration-75"
+                        leave-from-class="transform opacity-100 scale-100"
+                        leave-to-class="transform opacity-0 scale-95">
                         <DisclosurePanel
                           as="ul"
                           class="mt-1 px-2">
@@ -309,11 +309,10 @@
               <MenuButton class="-m-1.5 flex items-center p-1.5">
                 <span class="sr-only">Open user Menu</span>
                 <VShimmerImageProfile v-if="isLoading" />
-                <img
-                  v-else
-                  class="h-8 w-8 rounded-full bg-gray-50 "
-                  src="https://avatar.iran.liara.run/public/girl?username=Andini+Florida"
-                  alt="">
+                <VImage
+                  v-if="showUsers.auth.USER.avatar"
+                  :uri="showUsers.auth.USER.avatar"
+                  class="h-8 w-8 rounded-full bg-gray-50" />
                 <VShimmerText
                   v-if="isLoading"
                   class="ml-4 w-40" />
@@ -323,7 +322,7 @@
                   <span
                     class="ml-4 text-sm font-semibold leading-6 text-gray-600"
                     aria-hidden="true">
-                    Muhamad Haris Setiawan
+                    {{ showUsers.auth.USER.name }}
                   </span>
                   <ChevronDownIcon
                     class="ml-2 h-5 w-5 text-gray-400"
@@ -341,7 +340,7 @@
                   class="absolute right-0 z-10 mt-2.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none">
                   <MenuItem>
                     <router-link
-                      to="#"
+                      to="/profile"
                       class="block px-3 py-1 text-sm leading-6 text-gray-900 hover:bg-slate-100">
                       Your profile
                     </router-link>
@@ -370,7 +369,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { 
   useHead, 
   useSeoMeta, 
@@ -387,7 +386,7 @@ import {
   MenuItem,
   MenuItems,
   TransitionChild,
-  TransitionRoot,
+  TransitionRoot
 } from '@headlessui/vue'
 import { 
   ChevronDownIcon, 
@@ -395,33 +394,58 @@ import {
   ChevronRightIcon 
 } from '@heroicons/vue/20/solid'
 import { LIST_MENU } from '@/menu'
+import { useAuthStore } from '@/stores/auth'
+import { HTTP_URI, HTTP_HEADER } from '@/http.conf'
+import type { AuthProps, UserProps } from '@/interfaces/auth'
 import VBannerGreetings from '@/components/VBannerGreetings.vue'
 import VIcons from '@/components/VIcons.vue'
 import VShimmerImageProfile from '@/components/VShimmerImageProfile.vue'
 import VShimmerText from '@/components/VShimmerText.vue'
+import VImage from '@/components/VImage.vue'
 
-const isLoading = ref<boolean>(false)
+const showUsers = useAuthStore()
+
+const isLoading = ref<boolean>(true)
 const sidebarOpen = ref<boolean>(false)
 const showBanner = ref<boolean>(true)
+
+onMounted(async() => {
+  const user = showUsers.auth
+  if (!Object.keys(user.USER).length) {
+    const url = HTTP_URI + '/legacy/personal/detail'
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        ...HTTP_HEADER,
+        Authorization: `Bearer ${user.TOKEN}`
+      }
+    })
+
+    const ress: AuthProps<UserProps> = await response.json()
+    await showUsers.setuser(ress.result!)
+  }
+
+  isLoading.value = false
+})
 
 useHead({
   link: [
     {
       rel: 'icon',
       type: 'image/png',
-      href: '/img/icons/e-smartclinic.png',
+      href: '/img/icons/e-smartclinic.png'
     }, {
       rel: 'apple-touch-icon',
-      href: 'https://e-smartclinic.id/img/icons/icon.png',
-    },
+      href: 'https://e-smartclinic.id/img/icons/icon.png'
+    }
   ],
   bodyAttrs: {
-    class: 'h-full',
+    class: 'h-full'
   },
   htmlAttrs: {
     lang: 'id_ID',
-    class: 'h-full bg-white',
-  },
+    class: 'h-full bg-white'
+  }
 })
 
 useSeoMeta({
@@ -440,10 +464,10 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterTitle: 'e-Smart Clinic Backend',
   twitterDescription: 'The Backend Dashboard with Medical Record support to all our beloved clinet of e-Smart Clinic for all Branchs & Market around the Indonesia.',
-  twitterImage: 'https://e-smartclinic.id/img/icons/meta-properti.webp',
+  twitterImage: 'https://e-smartclinic.id/img/icons/meta-properti.webp'
 })
 
 useServerSeoMeta({
-  robots: 'noindex, nofollow',
+  robots: 'noindex, nofollow'
 })
 </script>

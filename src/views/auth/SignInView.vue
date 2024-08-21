@@ -199,8 +199,8 @@ useHead({
   },
   htmlAttrs: { 
     lang: 'id_ID', 
-    class: 'h-full bg-gray-50', 
-  },
+    class: 'h-full bg-gray-50' 
+  }
 })
 
 const xsubmit = async () => {
@@ -214,7 +214,7 @@ const xsubmit = async () => {
       body: JSON.stringify({ 
         username: username.value, 
         password: password.value 
-      }),
+      })
     })
 
     const json : AuthProps<ResponseProps> = await response.json()
