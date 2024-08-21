@@ -1,23 +1,36 @@
-export interface ResponseProps {
+import type { ErrorsProps } from './errors'
+
+export interface AuthProps<T> {
   status: boolean
   message: string
-  errors?: {
-    field: string
-    message: string
-    value: string
-  }[]
-  result?: {
-    company: string | null
-    id: number
-    roleId: number
-    role: string
-    sessions: SessionsProps[]
-    token: string
-    validPassword: boolean
-  }
+  result?: T
+  errors?: ErrorsProps[]
 }
 
-interface SessionsProps {
+export interface ResponseProps {
+  company: string | null
+  id: number
+  roleId: number
+  role: string
+  sessions: SessionsProps[]
+  token: string
+  validPassword: boolean
+}
+
+export interface UserProps {
+  avatar: string
+  citizenCard: string | null
+  darkMode: number
+  fullname: string
+  id: number
+  lang: string
+  roleId: number
+  role: string
+  sip: string | null
+  spkk: string | null
+}
+
+export interface SessionsProps {
   id: string;
   site: string | null;
   ip: string;
@@ -45,19 +58,3 @@ interface SessionsProps {
   };
 }
 
-export interface UserProps {
-  status: boolean
-  message: string
-  result: {
-    avatar: string
-    citizenCard: string | null
-    darkMode: number
-    fullname: string
-    id: number
-    lang: string
-    roleId: number
-    role: string
-    sip: string | null
-    spkk: string | null
-  }
-}

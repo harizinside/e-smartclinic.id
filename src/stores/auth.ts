@@ -1,10 +1,22 @@
-import { defineStore } from 'pinia';
-import { useStorage } from '@vueuse/core';
+import { defineStore } from 'pinia'
+import { useStorage } from '@vueuse/core'
+import type { UserProps } from '@/interfaces/auth'
+
+interface IUser {
+  id: number
+  avatar: string
+  name: string
+  role: {
+    id: number
+    value: string
+  }
+}
 
 export const useAuthStore = defineStore('__auth', () => {
   const auth = useStorage('__auth', {
-    ID: 0,
-    TOKEN: '',
+    ID: <number>0,
+    TOKEN: <string>'',
+    USER: <IUser>{}
   }, localStorage, { mergeDefaults: true })
 
   const signin = (id : number | undefined, token : string | undefined) => {
@@ -17,9 +29,17 @@ export const useAuthStore = defineStore('__auth', () => {
     auth.value.TOKEN = ''
   }
 
-  const online = () => {
-    
+  const setuser = (args: UserProps) => {
+    auth.value.USER = {
+      id: args.id,
+      avatar: args.avatar,
+      name: args.fullname,
+      role: {
+        id: args.roleId,
+        value: args.role
+      }
+    }
   }
 
-  return { auth, signin, signout, online }
+  return { auth, signin, signout, setuser }
 })

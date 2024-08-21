@@ -1,0 +1,32 @@
+{
+  "root": true,
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:vue/vue3-recommended"
+  ],
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "rules": {
+    "vue/html-closing-bracket-newline": "off",
+    "semi": ["error", "never"],
+    "quotes": ["error", "single"],
+    "quote-props": ["error", "as-needed"],
+    "no-empty-function": ["error", { "allow": ["arrowFunctions"] }],
+    "no-unused-vars": ["warn", {
+      "vars": "all",
+      "args": "after-used",
+      "caughtErrors": "all",
+      "caughtErrorsIgnorePattern": "^ignore",
+      "ignoreRestSiblings": false
+    }],
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "object-curly-spacing": ["error", "always"],
+    "object-curly-newline": ["warn", { "consistent": true }]
+  }
+}

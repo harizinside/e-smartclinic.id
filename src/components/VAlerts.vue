@@ -33,7 +33,7 @@ const props = defineProps<{
   errors: {
     field: string
     message: string
-    value: string
+    value?: string
   }[]
 }>()
 </script>

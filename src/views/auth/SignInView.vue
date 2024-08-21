@@ -170,7 +170,7 @@ import { useRouter } from 'vue-router'
 import { HTTP_URI, HTTP_HEADER } from '@/http.conf'
 import VIcons from '@component/VIcons.vue'
 import VAlerts from '@component/VAlerts.vue'
-import type { ResponseProps } from '@/interfaces/auth'
+import type { AuthProps, ResponseProps } from '@/interfaces/auth'
 import { useAuthStore } from '@/stores/auth'
 
 interface AlertProps {
@@ -178,7 +178,7 @@ interface AlertProps {
   errors: {
     field: string
     message: string
-    value: string
+    value?: string
   }[]
 }
 
@@ -194,36 +194,34 @@ const authState = useAuthStore()
 
 useHead({
   title: 'Authorization | e-Smart Clinic',
-  bodyAttrs: {
-    class: 'h-full',
+  bodyAttrs: { 
+    class: 'h-full'
   },
-  htmlAttrs: {
-    lang: 'id_ID',
-    class: 'h-full bg-gray-50',
+  htmlAttrs: { 
+    lang: 'id_ID', 
+    class: 'h-full bg-gray-50', 
   },
 })
 
 const xsubmit = async () => {
-  const url = HTTP_URI + '/legacy/auth/login';
+  const url = HTTP_URI + '/legacy/auth/login'
   isLoading.value = true
 
   try {
     const response = await fetch(url, {
       method: 'POST',
-      headers: {
-        ...HTTP_HEADER
-      },
-      body: JSON.stringify({
-         username: username.value, 
-         password: password.value 
+      headers: { ...HTTP_HEADER },
+      body: JSON.stringify({ 
+        username: username.value, 
+        password: password.value 
       }),
     })
 
-    const json : ResponseProps = await response.json();
+    const json : AuthProps<ResponseProps> = await response.json()
 
     if (!response.ok) {
       isErrors.value = true
-      resErrors.value = {
+      resErrors.value = { 
         message:  json.message,
         errors: json.errors!
       }

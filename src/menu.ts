@@ -1,24 +1,4 @@
-interface LabelProps {
-  name: string
-  href: string
-  icon: string
-  status: boolean
-  order: number
-  privilage: PrivilagesProps
-}
-
-interface MenuProps extends LabelProps {
-  children?: LabelProps[]
-}
-
-interface PrivilagesProps {
-  create: boolean
-  read: boolean
-  update: boolean
-  delete: boolean
-  import: boolean
-  export: boolean
-}
+import type { MenuProps } from './interfaces/menu'
 
 export const LIST_MENU = <MenuProps[]>[
   {
