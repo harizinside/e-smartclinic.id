@@ -95,6 +95,4 @@ import { LockClosedIcon } from '@heroicons/vue/24/outline'
 defineEmits(['close'])
 </script>
 
-<style>
-
-</style>
+<style></style>

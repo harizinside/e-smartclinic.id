@@ -81,6 +81,11 @@ const people = [
   { id: 2, name: 'Casheer' },
 ]
 
+const emit = defineEmits<{
+  change: [id: number] // named tuple syntax
+  update: [value: string]
+}>()
+
 const selected = ref(people[0])
 const query = ref('')
 
@@ -92,10 +97,8 @@ const filteredPeople = computed(() =>
         .toLowerCase()
         .replace(/\s+/g, '')
         .includes(query.value.toLowerCase().replace(/\s+/g, '')),
-    ),
+      ),
 )
 </script>
 
-<style>
-
-</style>
+<style></style>

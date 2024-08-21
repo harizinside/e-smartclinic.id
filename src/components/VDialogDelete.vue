@@ -79,6 +79,4 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/v
 import { ExclamationTriangleIcon } from '@heroicons/vue/24/outline'
 </script>
 
-<style>
-
-</style>
+<style></style>

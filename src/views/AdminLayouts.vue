@@ -1,6 +1,12 @@
 <template>
   <div>
-    <VBannerGreetings />
+    <!-- Banner -->
+    <TransitionRoot 
+      as="template"
+      :show="showBanner">
+      <VBannerGreetings @close="showBanner=false" />
+    </TransitionRoot>
+    <!-- Static sidebar for mobile -->
     <TransitionRoot
       as="template"
       :show="sidebarOpen">
@@ -143,7 +149,6 @@
         </div>
       </Dialog>
     </TransitionRoot>
-
     <!-- Static sidebar for desktop -->
     <div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
       <!-- Sidebar component, swap this element with another sidebar if you like -->
@@ -243,7 +248,7 @@
         </nav>
       </div>
     </div>
-
+    <!-- Static top for desktop or mobile -->
     <div class="lg:pl-72">
       <div
         class="sticky top-0 z-10 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
@@ -366,7 +371,11 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useHead, useSeoMeta, useServerSeoMeta } from '@unhead/vue'
+import { 
+  useHead, 
+  useSeoMeta, 
+  useServerSeoMeta 
+} from '@unhead/vue'
 import {
   Dialog,
   DialogPanel,
@@ -380,15 +389,20 @@ import {
   TransitionChild,
   TransitionRoot,
 } from '@headlessui/vue'
-import { ChevronDownIcon, MagnifyingGlassIcon, ChevronRightIcon } from '@heroicons/vue/20/solid'
+import { 
+  ChevronDownIcon, 
+  MagnifyingGlassIcon, 
+  ChevronRightIcon 
+} from '@heroicons/vue/20/solid'
 import { LIST_MENU } from '@/menu'
-import VBannerGreetings from '@component/VBannerGreetings.vue'
+import VBannerGreetings from '@/components/VBannerGreetings.vue'
 import VIcons from '@/components/VIcons.vue'
 import VShimmerImageProfile from '@/components/VShimmerImageProfile.vue'
 import VShimmerText from '@/components/VShimmerText.vue'
 
 const isLoading = ref<boolean>(false)
 const sidebarOpen = ref<boolean>(false)
+const showBanner = ref<boolean>(true)
 
 useHead({
   link: [

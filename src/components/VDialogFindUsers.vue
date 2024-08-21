@@ -213,6 +213,4 @@ const people = ref([
 ])
 </script>
 
-<style>
-
-</style>
+<style></style>

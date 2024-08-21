@@ -29,14 +29,18 @@
         </svg>
         Selamat datang NMW Clinic
 
-        <a
-          href="#"
-          class="whitespace-nowrap font-semibold">Lihat panduan&nbsp;<span aria-hidden="true">&rarr;</span></a>
+        <router-link
+          to="#"
+          target="_blank"
+          class="whitespace-nowrap font-semibold">
+          Lihat panduan&nbsp;<span aria-hidden="true">&rarr;</span>
+        </router-link>
       </p>
       <div class="flex flex-1 justify-end">
         <button
           type="button"
-          class="-m-3 p-3 focus-visible:outline-offset-[-4px]">
+          class="-m-3 p-3 focus-visible:outline-offset-[-4px]"
+          @click="$emit('close')">
           <span class="sr-only">Dismiss</span>
           <XMarkIcon
             class="h-5 w-5 text-gray-900"
@@ -49,6 +53,7 @@
 
 <script lang="ts" setup>
 import { XMarkIcon } from '@heroicons/vue/20/solid'
+defineEmits(['close'])
 </script>
 
 <style></style>
