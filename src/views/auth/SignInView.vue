@@ -211,9 +211,9 @@ const xsubmit = async () => {
     const response = await fetch(url, {
       method: 'POST',
       headers: { ...HTTP_HEADER },
-      body: JSON.stringify({ 
-        username: username.value, 
-        password: password.value 
+      body: JSON.stringify({
+        username: username.value,
+        password: password.value
       })
     })
 

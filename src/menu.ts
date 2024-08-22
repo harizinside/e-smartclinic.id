@@ -3,7 +3,7 @@ import type { MenuProps } from './interfaces/menu'
 export const LIST_MENU = <MenuProps[]>[
   {
     name: 'Beranda',
-    href: '/admin',
+    href: '/',
     icon: 'home',
     status: true,
     order: 1,
@@ -19,7 +19,7 @@ export const LIST_MENU = <MenuProps[]>[
   },
   {
     name: 'Otoritasi',
-    href: '/admin/auth',
+    href: '/auth',
     icon: 'shield-check',
     status: true,
     order: 2,
@@ -34,7 +34,7 @@ export const LIST_MENU = <MenuProps[]>[
     children: [
       {
         name: 'Pengguna',
-        href: '/admin/auth/users',
+        href: '/auth/users',
         icon: 'chevron-right',
         status: true,
         order: 1,
@@ -49,7 +49,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Hak Akses',
-        href: '/admin/auth/role-privilages',
+        href: '/auth/role-privilages',
         icon: 'chevron-right',
         status: true,
         order: 2,
@@ -400,7 +400,7 @@ export const LIST_MENU = <MenuProps[]>[
   },
   {
     name: 'Info Klinik',
-    href: '/admin/clinic-info',
+    href: '/clinic-info',
     icon: 'presentation-chart-bar',
     status: true,
     order: 5,

@@ -14,8 +14,10 @@ import NotFound from '@view/NotFoundView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
+    // TODO need to check if session still availbe then go to home
     path: '/auth',
-    component: SignIn
+    component: SignIn,
+    meta: {}
   },
   {
     path: '/auth/forgot-password',
@@ -34,9 +36,10 @@ const routes: Array<RouteRecordRaw> = [
         next()
       }
     },
-    beforeEnter: async (to, _from, next) => {
+    beforeEnter: async (_to, _from, next) => {
       const authState = useAuthStore()
 
+      //! Delete session to server
       fetch(`${HTTP_URI}/legacy/auth/logout`, {
           method: 'DELETE',
           headers: {
@@ -47,7 +50,8 @@ const routes: Array<RouteRecordRaw> = [
       
       localStorage.removeItem('__auth')
       next({ path: '/auth' })
-    }
+    },
+    meta: {}
   },
   {
     path: '/',
@@ -127,11 +131,11 @@ const router = createRouter({
   routes
 })
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-router.beforeEach(async (to, from, next) => {
+router.beforeEach(async (to, _from, next) => {
   const authState = useAuthStore()
   const url = HTTP_URI + '/legacy/token-valid'
 
+  //* Check if need to be logged in then validate token
   if (to.meta.auth && import.meta.env.VITE_ENV !== 'development') {
     const response = await fetch(url, {
       method: 'GET',
