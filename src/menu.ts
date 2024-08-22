@@ -19,7 +19,7 @@ export const LIST_MENU = <MenuProps[]>[
   },
   {
     name: 'Otoritasi',
-    href: '/auth',
+    href: '/admin',
     icon: 'shield-check',
     status: true,
     order: 2,
@@ -34,7 +34,7 @@ export const LIST_MENU = <MenuProps[]>[
     children: [
       {
         name: 'Pengguna',
-        href: '/auth/users',
+        href: '/admin/users',
         icon: 'chevron-right',
         status: true,
         order: 1,
@@ -49,7 +49,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Hak Akses',
-        href: '/auth/role-privilages',
+        href: '/admin/role-privilages',
         icon: 'chevron-right',
         status: true,
         order: 2,

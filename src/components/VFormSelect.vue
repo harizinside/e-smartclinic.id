@@ -72,13 +72,13 @@ import {
   ComboboxButton,
   ComboboxOptions,
   ComboboxOption,
-  TransitionRoot,
+  TransitionRoot
 } from '@headlessui/vue'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/vue/20/solid'
 
 const people = [
   { id: 1, name: 'Frontline (CS)' },
-  { id: 2, name: 'Casheer' },
+  { id: 2, name: 'Casheer' }
 ]
 
 const emit = defineEmits<{
@@ -96,8 +96,8 @@ const filteredPeople = computed(() =>
       person.name
         .toLowerCase()
         .replace(/\s+/g, '')
-        .includes(query.value.toLowerCase().replace(/\s+/g, '')),
-      ),
+        .includes(query.value.toLowerCase().replace(/\s+/g, ''))
+      )
 )
 </script>
 

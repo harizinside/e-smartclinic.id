@@ -152,7 +152,7 @@ const transferUser = () => {
 
 const tabs = ref([
   { name: 'Full pasien', href: '#', current: true },
-  { name: 'Antrian', href: '#', current: false },
+  { name: 'Antrian', href: '#', current: false }
 ])
 
 const people = ref([
@@ -163,7 +163,7 @@ const people = ref([
     imageUrl:
       'https://avatar.iran.liara.run/public/girl?usearname=Feronika+Agnesia',
     href: '#',
-    lastSeen: 'Umum',
+    lastSeen: 'Umum'
   },
   {
     name: 'Zesisca Unathary',
@@ -172,7 +172,7 @@ const people = ref([
     imageUrl:
       'https://avatar.iran.liara.run/public/girl?usearname=Zesisca+Unathary',
     href: '#',
-    lastSeen: 'BPJS Kesehatan',
+    lastSeen: 'BPJS Kesehatan'
   },
   {
     name: 'Robiatul Putri Caharani',
@@ -181,7 +181,7 @@ const people = ref([
     imageUrl:
       'https://avatar.iran.liara.run/public/girl?usearname=Robiatul+Putri+Caharani',
     href: '#',
-    lastSeen: 'BPJS Kesehatan',
+    lastSeen: 'BPJS Kesehatan'
   },
   {
     name: 'Annisa Halimah Imron',
@@ -190,7 +190,7 @@ const people = ref([
     imageUrl:
       'https://avatar.iran.liara.run/public/girl?usearname=Annisa+Halimah+Imron',
     href: '#',
-    lastSeen: 'BPJS Kesehatan',
+    lastSeen: 'BPJS Kesehatan'
   },
   {
     name: 'Dewi Feronika',
@@ -199,7 +199,7 @@ const people = ref([
     imageUrl:
       'https://avatar.iran.liara.run/public/girl?usearname=Dewi+Feronika',
     href: '#',
-    lastSeen: 'Umum',
+    lastSeen: 'Umum'
   },
   {
     name: 'Inggrita Wisnuwardani',
@@ -208,8 +208,8 @@ const people = ref([
     imageUrl:
       'https://avatar.iran.liara.run/public/girl?usearname=Inggrita+Wisnuwardani',
     href: '#',
-    lastSeen: 'AXA Mandiri',
-  },
+    lastSeen: 'AXA Mandiri'
+  }
 ])
 </script>
 

@@ -42,7 +42,24 @@
                         Data kemungkinan akan hanya di sembunyikan, karena ditakutkan ada beberapa data terkait data yang akan dihapus.
                       </p>
                       <div class="mt-4">
+                        <div v-if="props.panel === 'image'">
+                          <div class="flex items-center py-4 pl-2 text-gray-900 whitespace-nowrap dark:text-white border rounded-xl">
+                            <img
+                              class="w-10 h-10 rounded-full"
+                              src="https://avatar.iran.liara.run/public/girl?username=dr.+Margaret+Mauren"
+                              alt="Jese image">
+                            <div class="ps-3">
+                              <div class="text-sm font-semibold">
+                                dr. Margaret Mauren Hanang, dipl.CIBTAC
+                              </div>
+                              <div class="text-xs text-gray-500">
+                                margaretmauren@***.id
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                         <input
+                          v-else
                           id="email"
                           type="email"
                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
@@ -56,13 +73,15 @@
               <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                 <button
                   type="button"
-                  class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto">
+                  class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
+                  @click="$emit('process')">
                   Hapus
                 </button>
                 <button
                   ref="cancelButtonRef"
                   type="button"
-                  class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">
+                  class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                  @click="$emit('close')">
                   Batalkan
                 </button>
               </div>
@@ -77,6 +96,11 @@
 <script lang="ts" setup>
 import { Dialog, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/vue'
 import { ExclamationTriangleIcon } from '@heroicons/vue/24/outline'
+
+const props = defineProps<{
+  panel: string
+}>()
+defineEmits(['close', 'process'])
 </script>
 
 <style></style>

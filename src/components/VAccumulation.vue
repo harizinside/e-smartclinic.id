@@ -42,7 +42,7 @@ const stats = [
   { id: 1, name: 'Pasien Baru', stat: '149', icon: UsersIcon, change: '122', changeType: 'increase' },
   { id: 2, name: 'Konsultasi', stat: '112', icon: ChatBubbleLeftRightIcon, change: '5.4%', changeType: 'increase' },
   { id: 3, name: 'Penebusan Obat', stat: '64', icon: PaperClipIcon, change: '3.2%', changeType: 'decrease' },
-  { id: 4, name: 'Total Pendapatan', stat: '245 K', icon: CreditCardIcon, change: '3.2%', changeType: 'decrease' },
+  { id: 4, name: 'Total Pendapatan', stat: '245 K', icon: CreditCardIcon, change: '3.2%', changeType: 'decrease' }
 ]
 </script>
 
