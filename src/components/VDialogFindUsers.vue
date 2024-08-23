@@ -1,7 +1,9 @@
 <template>
   <div>
     <Dialog
-      class="relative z-10">
+      :initial-focus="completeButtonRef"
+      class="relative z-10"
+      @close="$emit('close')">
       <TransitionChild
         as="template"
         enter="ease-out duration-300"
@@ -144,7 +146,8 @@ import { ref } from 'vue'
 import { Dialog, DialogPanel, TransitionChild } from '@headlessui/vue'
 import { ChevronRightIcon } from '@heroicons/vue/20/solid'
 
-const emit = defineEmits(['close', 'isset'])
+const completeButtonRef = ref(null)
+const emit = defineEmits([ 'close', 'isset' ])
 
 const transferUser = () => {
   emit('isset', 'goes')

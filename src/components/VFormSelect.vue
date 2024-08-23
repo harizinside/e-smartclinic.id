@@ -6,7 +6,7 @@
           class="relative w-full border cursor-default overflow-hidden rounded-lg bg-white text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm border-gray-300">
           <ComboboxInput
             class="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0"
-            :display-value="(person) => person.name"
+            :display-value="(person: any) => person.name"
             @change="query = $event.target.value"
           />
           <ComboboxButton
@@ -76,12 +76,20 @@ import {
 } from '@headlessui/vue'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/vue/20/solid'
 
-const people = [
+interface IData {
+  id: number
+  name: string
+}
+
+const people : IData[] = [
   { id: 1, name: 'Frontline (CS)' },
-  { id: 2, name: 'Casheer' }
+  { id: 2, name: 'Casheer' },
+  { id: 2, name: 'Doctor' },
+  { id: 2, name: 'Apoteker' },
+  { id: 2, name: 'Supervisor' }
 ]
 
-const emit = defineEmits<{
+defineEmits<{
   change: [id: number] // named tuple syntax
   update: [value: string]
 }>()

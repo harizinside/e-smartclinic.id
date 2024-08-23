@@ -1,7 +1,9 @@
 <template>
   <div>
     <Dialog
-      class="relative z-10">
+      :initial-focus="cancelButtonRef"
+      class="relative z-10"
+      @close="$emit('close')">
       <TransitionChild
         as="template"
         enter="ease-out duration-300"
@@ -94,13 +96,16 @@
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { Dialog, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/vue'
 import { ExclamationTriangleIcon } from '@heroicons/vue/24/outline'
+
+const cancelButtonRef = ref(null)
 
 const props = defineProps<{
   panel: string
 }>()
-defineEmits(['close', 'process'])
+defineEmits([ 'close', 'process' ])
 </script>
 
 <style></style>

@@ -53,7 +53,7 @@
 
 <script lang="ts" setup>
 import { XMarkIcon } from '@heroicons/vue/20/solid'
-defineEmits(['close'])
+defineEmits([ 'close' ])
 </script>
 
 <style></style>

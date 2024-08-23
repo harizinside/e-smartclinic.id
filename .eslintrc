@@ -28,6 +28,11 @@
     "no-console": ["error", { "allow": ["warn", "error"] }],
     "object-curly-spacing": ["error", "always"],
     "object-curly-newline": ["warn", { "consistent": true }],
-    "comma-dangle": ["error", "never"]
+    "array-bracket-spacing": ["error", "always"],
+    "array-bracket-newline": ["error", "consistent"],
+    "space-unary-ops": "error",
+    "space-before-blocks": "error",
+    "comma-dangle": ["error", "never"],
+    "keyword-spacing": ["error", { "after": true }]
   }
 }

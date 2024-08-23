@@ -1,7 +1,9 @@
 <template>
   <div>
     <Dialog
-      class="relative z-10">
+      class="relative z-10"
+      :initial-focus="cancelButtonRef"
+      @close="$emit('close')">
       <TransitionChild
         as="template"
         enter="ease-out duration-300"
@@ -41,26 +43,24 @@
                       <p class="text-sm text-gray-500">
                         Pasien yang di transfer sebagai pengguna, akan mampu masuk ke sistem administrator dengan hak akses yang diberikan.
                       </p>
-                      <div class="flex min-w-0 gap-x-4 py-4">
+                      <div class="flex items-center py-4 pl-2 my-4 text-gray-900 whitespace-nowrap dark:text-white border rounded-xl">
                         <img
-                          class="h-12 w-12 flex-none rounded-full bg-gray-50"
-                          src="https://avatar.iran.liara.run/public/girl?usearname=Annisa+Halimah+Imron"
-                          alt="">
-                        <div class="min-w-0 flex-auto">
-                          <p class="text-sm font-semibold leading-6 text-gray-900">
-                            <span class="absolute inset-x-0 -top-px bottom-0" />
-                            Annisa Halimah Imron
-                          </p>
-                          <p class="mt-1 flex text-xs leading-5 text-gray-500">
-                            <span
-                              class="relative truncate hover:underline">NMW-PP04499 -</span>
-                          </p>
+                          class="w-10 h-10 rounded-full"
+                          src="https://avatar.iran.liara.run/public/girl?username=dr.+Margaret+Mauren"
+                          alt="Jese image">
+                        <div class="ps-3">
+                          <div class="text-sm font-semibold">
+                            dr. Margaret Mauren Hanang, dipl.CIBTAC
+                          </div>
+                          <div class="text-xs text-gray-500">
+                            margaretmauren@***.id
+                          </div>
                         </div>
                       </div>
                       <div class="mb-5 grow">
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                           Hak akses <span class="text-red-600">**</span></label>
-                        <v-form-select />
+                        <VFormSelect />
                       </div>
                     </div>
                   </div>
@@ -68,13 +68,12 @@
               </div>
               <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                 <button
-                  type="button"
-                  class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto">
+                  class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
+                  @click="anoan">
                   Simpan
                 </button>
                 <button
                   ref="cancelButtonRef"
-                  type="button"
                   class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
                   @click="$emit('close')">
                   Batalkan
@@ -89,10 +88,17 @@
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { Dialog, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/vue'
 import { LockClosedIcon } from '@heroicons/vue/24/outline'
+import VFormSelect from './VFormSelect.vue'
 
-defineEmits(['close'])
+const cancelButtonRef = ref(null)
+const emit = defineEmits([ 'close', 'submit' ])
+
+const anoan = () => {
+  emit('submit', 'Berhasil menambahkan user')
+}
 </script>
 
 <style></style>
