@@ -5,11 +5,15 @@
         <VTableCompLimit
           v-if="limit"
           @set-limit="setLimit" />
-        <VTableCompAdd v-if="additional" />
+        <VTableCompAdd
+          v-if="additional"
+          @set-additional="$emit('setAdditional', true)" />
       </div>
 
       <div class="flex gap-2">
-        <VTableCompFilter v-if="filter" />
+        <VTableCompFilter
+          v-if="filter"
+          @set-filter="$emit('setFilter', true)" />
         <VTableCompSearch v-if="search" />
       </div>
     </div>
