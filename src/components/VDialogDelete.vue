@@ -105,6 +105,7 @@ const cancelButtonRef = ref(null)
 const props = defineProps<{
   panel: string
 }>()
+
 defineEmits([ 'close', 'process' ])
 </script>
 

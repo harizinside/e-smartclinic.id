@@ -14,10 +14,10 @@
       <div class="mt-3 sm:mx-auto sm:w-full sm:max-w-[480px]">
         <div class="px-6 py-12 sm:px-12">
           <VAlerts
-            v-if="isErrors"
+            v-if="resErrors"
             type="danger" 
             :message="resErrors!.message"
-            :errors="resErrors!.errors" />
+            :errors="resErrors?.errors" />
 
           <form
             class="space-y-6"
@@ -172,22 +172,13 @@ import VIcons from '@component/VIcons.vue'
 import VAlerts from '@component/VAlerts.vue'
 import type { AuthProps, ResponseProps } from '@/interfaces/auth'
 import { useAuthStore } from '@/stores/auth'
-
-interface AlertProps {
-  message: string
-  errors: {
-    field: string
-    message: string
-    value?: string
-  }[]
-}
+import type { IAlert } from '@/interfaces/alerts'
 
 const username = ref<string>('')
 const password = ref<string>('')
 const remember = ref<boolean>(false)
 const isLoading = ref<boolean>(false)
-const isErrors = ref<boolean>(false)
-const resErrors = ref<AlertProps>()
+const resErrors = ref<IAlert>()
 
 const router = useRouter()
 const authState = useAuthStore()
@@ -220,10 +211,10 @@ const xsubmit = async () => {
     const json : AuthProps<ResponseProps> = await response.json()
 
     if (!response.ok) {
-      isErrors.value = true
       resErrors.value = { 
         message:  json.message,
-        errors: json.errors!
+        type: 'warning',
+        errors: json.errors
       }
 
       password.value = ''
