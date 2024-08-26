@@ -10,14 +10,19 @@
           @close="alert=undefined" />
       </div>
       <VTable
-        :limit="true"
-        :additional="true"
-        :filter="true"
-        :search="true"
-        :pagination="true"
-        :column="columnHeader"
-        @sort="sortTable"
-        @set-checked="getCheckedAll">
+        :show-limit="true"
+        :show-additional="true"
+        :show-filter="true"
+        :show-search="true"
+        :show-pagination="true"
+        :set-column-header="columnHeader"
+        :set-table-info="tableInfo"
+        @set-limit="setLimit"
+        @on-additional="transferUser"
+        @on-filter="setFilters"
+        @on-search="onSearch"
+        @on-sort="sortTable"
+        @on-check="setCheckedAll">
         <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
           <td class="w-4 p-4">
             <div class="flex items-center">
@@ -112,13 +117,11 @@
 import { ref } from 'vue'
 import { useHead } from '@unhead/vue'
 import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
   TransitionRoot
 } from '@headlessui/vue'
 import type { IAlert } from '@/interfaces/alerts'
 import type { IColumnHeader } from '@/interfaces/tables'
+import type { IPagination } from '@/interfaces/pagination'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
 import VDialogFindUsers from '@/components/VDialogFindUsers.vue'
 import VDialogSetRole from '@/components/VDialogSetRole.vue'
@@ -146,6 +149,20 @@ const columnHeader = <IColumnHeader[]>[
   { name: 'Hak akses', type: 'label' },
   { name: 'Aksi', type: 'label' }
 ]
+
+const tableInfo = <IPagination>{
+  from: 21,
+  to: 30,
+  total: 200,
+  per_page: 10,
+  current_page: 6,
+  last_page: 20,
+  first_page_url: 'page=1&limit=10',
+  last_page_url: 'page=20&limit=10',
+  next_page_url: 'page=3&limit=10',
+  prev_page_url: 'page=2&limit=10',
+  path: 'http://192.168.3.221:8001/rheinmedika/medical-check/accounts'
+}
 
 const processDelete = () => {
   dialogDelete.value = false
@@ -176,8 +193,20 @@ const sortTable = (args: IColumnHeader) => {
   console.error('asas', args)
 }
 
-const getCheckedAll = () => {
+const setCheckedAll = () => {
   console.error('checked all nih boss')
+}
+
+const setLimit = (args: number) => {
+  console.error(args)
+}
+
+const setFilters = () => {
+  console.error('Filter nih bos')
+}
+
+const onSearch = (args: string) => {
+  console.error(args)
 }
 
 useHead({

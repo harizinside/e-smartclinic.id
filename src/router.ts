@@ -144,10 +144,11 @@ router.beforeEach(async (to, _from, next) => {
         Authorization: `Bearer ${authState.auth.TOKEN}`
       }
     })
-
+        
     if (!response.ok) {
       return { path: '/auth/sign-out' }
     }
+
   }
 
   next()

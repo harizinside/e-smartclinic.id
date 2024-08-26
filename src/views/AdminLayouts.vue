@@ -375,6 +375,7 @@ import {
   useSeoMeta, 
   useServerSeoMeta 
 } from '@unhead/vue'
+import { useRouter } from 'vue-router'
 import {
   Dialog,
   DialogPanel,
@@ -408,6 +409,7 @@ const showUsers = useAuthStore()
 const isLoading = ref<boolean>(true)
 const sidebarOpen = ref<boolean>(false)
 const showBanner = ref<boolean>(true)
+const router = useRouter()
 
 onMounted(async() => {
   const user = showUsers.auth
@@ -421,10 +423,15 @@ onMounted(async() => {
       }
     })
 
+    if (!response.ok) {
+      await router.push('/auth/sign-out')
+      throw new Error(`Response status: ${response}`)
+    }
+
     const ress: AuthProps<UserProps> = await response.json()
     await showUsers.setuser(ress.result!)
   }
-
+  
   isLoading.value = false
 })
 

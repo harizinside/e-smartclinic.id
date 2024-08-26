@@ -17,10 +17,10 @@
             v-if="resErrors"
             type="danger" 
             :message="resErrors!.message"
-            :errors="resErrors?.errors" />
-
+            :errors="resErrors.errors"
+            @close="resErrors = undefined" />
           <form
-            class="space-y-6"
+            class="space-y-6 pt-3"
             method="POST"
             @submit.prevent="xsubmit">
             <div>
@@ -222,11 +222,18 @@ const xsubmit = async () => {
     }
     
     await authState.signin(json.result?.id, json.result?.token)
-    router.push('/')
+    await router.push('/')
 
-  } catch (err) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (err: any) {
+    if (err.message.includes('Failed to fetch')) {
+      resErrors.value = { 
+        message:  'Server API is down, please ask Admin Support',
+        type: 'danger'
+      }
+    } 
+
     console.error(err)
-
   } finally {
     isLoading.value = false
   }

@@ -24,9 +24,8 @@
             <div class="text-sm">
               <a
                 href="#"
-                class="font-medium text-orange-600 hover:text-orange-500">Lihat Semua<span class="sr-only">
-                  {{
-                    item.name }} stats</span></a>
+                class="font-medium text-orange-600 hover:text-orange-500">
+                Lihat Semua<span class="sr-only"> {{ item.name }} stats</span></a>
             </div>
           </div>
         </dd>
