@@ -23,7 +23,7 @@
         @on-search="onSearch"
         @on-sort="sortTable"
         @on-check="setCheckedAll">
-        <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+        <VTableColumn>
           <td class="w-4 p-4">
             <div class="flex items-center">
               <input
@@ -85,7 +85,7 @@
               </button>
             </div>
           </td>
-        </tr>
+        </VTableColumn>
       </VTable>
       <TransitionRoot
         as="template"
@@ -129,28 +129,31 @@ import VDialogDelete from '@/components/VDialogDelete.vue'
 import VAlerts from '@/components/VAlerts.vue'
 import AdminLayouts from '@view/AdminLayouts.vue'
 import VTable from '@/components/VTable.vue'
+import VTableColumn from '@/components/VTableColumn.vue'
+
+interface IData {
+  img: string
+  name: string
+  email: string
+  position: string
+  privilage: string
+}
 
 const dialogTransfer = ref<boolean>(false)
 const dialogSetRole = ref<boolean>(false)
 const dialogDelete = ref<boolean>(false)
 const alert = ref<IAlert>()
 
-const navs = [
-  { name: 'Dashboard', link: '/', active: false },
-  { name: 'Otoritasi', link: '/admin', active: false },
-  { name: 'Pengguna', link: '/admin/users', active: true }
-]
-
-const columnHeader = <IColumnHeader[]>[
+const columnHeader = ref<IColumnHeader[]>([
   { type: 'checkbox' },
-  { name: undefined },
+  { name: undefined, type: 'label' },
   { name: 'Nama', type: 'label', order: 'normal'  },
   { name: 'Posisi', type: 'label', order: 'normal' },
   { name: 'Hak akses', type: 'label' },
   { name: 'Aksi', type: 'label' }
-]
+])
 
-const tableInfo = <IPagination>{
+const tableInfo = ref<IPagination>({
   from: 21,
   to: 30,
   total: 200,
@@ -162,7 +165,13 @@ const tableInfo = <IPagination>{
   next_page_url: 'page=3&limit=10',
   prev_page_url: 'page=2&limit=10',
   path: 'http://192.168.3.221:8001/rheinmedika/medical-check/accounts'
-}
+})
+
+const navs = [
+  { name: 'Dashboard', link: '/', active: false },
+  { name: 'Otoritasi', link: '/admin', active: false },
+  { name: 'Pengguna', link: '/admin/users', active: true }
+]
 
 const processDelete = () => {
   dialogDelete.value = false

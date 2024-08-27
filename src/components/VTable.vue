@@ -9,7 +9,6 @@
           v-if="showAdditional"
           @clicked="$emit('onAdditional', true)" />
       </div>
-
       <div class="flex gap-2">
         <VTableCompFilter
           v-if="showFilter"

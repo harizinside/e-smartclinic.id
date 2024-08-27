@@ -1,5 +1,5 @@
 export interface IColumnHeader {
   name?: string
-  type: 'checkbox' | 'label'
+  type?: 'checkbox' | 'label'
   order?: 'normal' | 'asc' | 'desc'
 }
