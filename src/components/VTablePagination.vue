@@ -25,60 +25,10 @@
           </button>
           <button
             v-else
-            :class="[props.info.current_page === page.text , '']">
+            :class="[props.info.current_page === parseInt(page.text) ? 'text-orange-600 bg-orange-50 hover:bg-orange-100 hover:text-orange-700 dark:bg-gray-700 dark:text-white': 'leading-tight text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white', 'flex items-center justify-center px-3 h-8 order border border-gray-300']">
             {{ page.text }}
           </button>
         </li>
-        <!-- Anomali -->
-        <!-- <li>
-          <button
-            class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-            Previous
-          </button>
-        </li>
-        <li>
-          <button
-            aria-current="page"
-            class="flex items-center justify-center px-3 h-8 text-orange-600 border border-gray-300 bg-orange-50 hover:bg-orange-100 hover:text-orange-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">
-            1
-          </button>
-        </li>
-        <li>
-          <button
-            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-            2
-          </button>
-        </li>
-        <li>
-          <button
-            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-            3
-          </button>
-        </li>
-        <li>
-          <button
-            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-            4
-          </button>
-        </li>
-        <li>
-          <button
-            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-            5
-          </button>
-        </li>
-        <li>
-          <button
-            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-            6
-          </button>
-        </li>
-        <li>
-          <button
-            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-            Next
-          </button>
-        </li> -->
       </ul>
     </nav>
   </div>

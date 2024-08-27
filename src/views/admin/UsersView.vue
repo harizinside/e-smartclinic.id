@@ -155,7 +155,7 @@ const tableInfo = <IPagination>{
   to: 30,
   total: 200,
   per_page: 10,
-  current_page: 6,
+  current_page: 1,
   last_page: 20,
   first_page_url: 'page=1&limit=10',
   last_page_url: 'page=20&limit=10',
