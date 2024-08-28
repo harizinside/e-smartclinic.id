@@ -20,12 +20,13 @@ import MedicalRecord from '@view/MedicalRecordView.vue'
 import NotFound from '@view/NotFoundView.vue'
 
 const routes: Array<RouteRecordRaw> = [
+  // TODO need to check if session still availbe then go to home
   {
-    // TODO need to check if session still availbe then go to home
     path: '/auth',
     component: SignIn,
     meta: {}
   },
+  //* Authorization
   {
     path: '/auth/forgot-password',
     component: ForgotPassword,
@@ -65,6 +66,7 @@ const routes: Array<RouteRecordRaw> = [
     component: Home,
     meta: { auth: true }
   },
+  //* Administrator Router
   {
     path: '/admin/users',
     component: Users,
@@ -80,6 +82,7 @@ const routes: Array<RouteRecordRaw> = [
     component: RolePrivilageCreate,
     meta: { auth: true }
   },
+  //* Add On Router
   {
     path: '/add-on/area',
     component: AddOnArea,
@@ -90,6 +93,7 @@ const routes: Array<RouteRecordRaw> = [
     component: AddOnUsers,
     meta: { auth: true }
   },
+  //* Clinic Info
   {
     path: '/clinic-info',
     component: ClinicInfo,
@@ -100,6 +104,7 @@ const routes: Array<RouteRecordRaw> = [
     component: Schedule,
     meta: { auth: true }
   },
+  //* Pasien Route
   {
     path: '/contacts',
     component: Patients,
