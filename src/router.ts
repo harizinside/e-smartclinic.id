@@ -5,11 +5,18 @@ import { useAuthStore } from '@/stores/auth'
 import SignIn from '@view/auth/SignInView.vue'
 import ForgotPassword from '@view/auth/ForgotPasswordView.vue'
 import Recovery from '@view/auth/RecoveryView.vue'
-import RolePrivilage from '@view/admin/RolePrivilages.vue'
+import RolePrivilage from '@view/admin/role-privilage/IndexView.vue'
+import RolePrivilageCreate from '@view/admin/role-privilage/AdditionalView.vue'
 import Users from '@view/admin/UsersView.vue'
 import AddOnArea from '@view/addon/AreaView.vue'
 import AddOnUsers from '@view/addon/UserView.vue'
 import Home from '@view/HomeView.vue'
+import ClinicInfo from '@view/clinic-info/IndexView.vue'
+import Patients from '@view/outpatient/IndexView.vue'
+import Schedule from '@view/PracticeScheduleView.vue'
+import OutPatients from '@view/outpatient/IndexView.vue'
+import Payments from '@view/payment/IndexView.vue'
+import MedicalRecord from '@view/MedicalRecordView.vue'
 import NotFound from '@view/NotFoundView.vue'
 
 const routes: Array<RouteRecordRaw> = [
@@ -68,6 +75,11 @@ const routes: Array<RouteRecordRaw> = [
     component: RolePrivilage,
     meta: { auth: true }
   },
+   {
+    path: '/admin/role-privilages/create',
+    component: RolePrivilageCreate,
+    meta: { auth: true }
+  },
   {
     path: '/add-on/area',
     component: AddOnArea,
@@ -80,17 +92,17 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/clinic-info',
-    component: AddOnUsers,
+    component: ClinicInfo,
     meta: { auth: true }
   },
   {
     path: '/practice-schedule',
-    component: AddOnUsers,
+    component: Schedule,
     meta: { auth: true }
   },
   {
     path: '/contacts',
-    component: AddOnUsers,
+    component: Patients,
     meta: { auth: true }
   },
   {
@@ -106,17 +118,22 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/outpatient',
-    component: AddOnUsers,
+    component: OutPatients,
     meta: { auth: true }
   },
   {
     path: '/payments',
-    component: AddOnUsers,
+    component: Payments,
     meta: { auth: true }
   },
   {
     path: '/payments/process',
     component: AddOnUsers,
+    meta: { auth: true }
+  },
+  {
+    path: '/mdical-record',
+    component: MedicalRecord,
     meta: { auth: true }
   },
   {

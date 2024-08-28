@@ -1,18 +1,16 @@
 <template>
   <div>
     <AdminLayouts>
-      Info Klinik
+      <h1>Medical Record</h1>
     </AdminLayouts>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useHead } from '@unhead/vue'
-import AdminLayouts from '@view/AdminLayouts.vue'
+import AdminLayouts from './AdminLayouts.vue'
 
 useHead({
-  title: 'Contacts Info | e-Smart Clinic'
+  title: 'Medical Record | e-Smart Clinic'
 })
 </script>
-
-<style></style>

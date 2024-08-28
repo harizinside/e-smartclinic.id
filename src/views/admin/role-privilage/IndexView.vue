@@ -18,7 +18,7 @@
         :set-column-header="columnHeader"
         :set-table-info="tableInfo"
         @set-limit="setLimit"
-        @on-additional="onAdditional"
+        @on-additional="$router.push('/admin/role-privilages/create')"
         @on-filter="onFilters"
         @on-search="onSearch"
         @on-sort="sortTable"
@@ -183,10 +183,6 @@ const setLimit = (args: number) => {
   console.error(args)
 }
 
-const onAdditional = () => {
-  console.error('Additional')
-}
-
 const onFilters = () => {
   console.error('Filter')
 }
@@ -204,7 +200,7 @@ const setCheckedAll = () => {
 }
 
 const processDelete = () => {
-console.error('Delete')
+  console.error('Delete')
 }
 
 useHead({

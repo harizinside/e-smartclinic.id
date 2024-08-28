@@ -23,11 +23,13 @@
         @on-search="onSearch"
         @on-sort="sortTable"
         @on-check="setCheckedAll">
-        <VTableColumn>
+        <VTableColumn 
+          v-for="(row, index) in tableInfo.data"
+          :key="index">
           <td class="w-4 p-4">
             <div class="flex items-center">
               <input
-                id="checkbox-table-search-1"
+                :id="`checkbox-${index}`"
                 type="checkbox"
                 class="w-4 h-4 text-orange-600 bg-gray-100 border-gray-300 rounded focus:ring-orange-500 dark:focus:ring-orange-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
               <label
@@ -56,28 +58,29 @@
             class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
             <img
               class="w-10 h-10 rounded-full"
-              src="https://avatar.iran.liara.run/public/boy?usearname=Muhammad+Haaris+Setiawan"
-              alt="Muhammad Haaris Setiawan">
+              :src="row.img"
+              :alt="row.name">
             <div class="ps-3">
               <div class="text-base font-semibold">
-                Muhammad Haaris Setiawan
+                {{ row.name }}
               </div>
               <div class="font-normal text-gray-500">
-                muhammadhaaris@***.dev
+                {{ row.email }}
               </div>
             </div>
           </td>
           <td class="px-6 py-4">
-            Developer
+            {{ row.position }}
           </td>
           <td class="px-6 py-4">
-            Administrator
+            {{ row.privilage }}
           </td>
           <td class="px-6 py-4">
             <div class="flex items-center">
-              <a
-                href="#"
-                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+              <button
+                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                Edit
+              </button>
               <button
                 class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3"
                 @click="dialogDelete=true">
@@ -116,9 +119,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useHead } from '@unhead/vue'
-import {
-  TransitionRoot
-} from '@headlessui/vue'
+import { TransitionRoot } from '@headlessui/vue'
 import type { IAlert } from '@/interfaces/alerts'
 import type { IColumnHeader } from '@/interfaces/tables'
 import type { IPagination } from '@/interfaces/pagination'
@@ -132,6 +133,7 @@ import VTable from '@/components/VTable.vue'
 import VTableColumn from '@/components/VTableColumn.vue'
 
 interface IData {
+  id: number
   img: string
   name: string
   email: string
@@ -153,10 +155,10 @@ const columnHeader = ref<IColumnHeader[]>([
   { name: 'Aksi', type: 'label' }
 ])
 
-const tableInfo = ref<IPagination>({
-  from: 21,
-  to: 30,
-  total: 200,
+const tableInfo = ref<IPagination<IData[]>>({
+  from: 1,
+  to: 10,
+  total: 20,
   per_page: 10,
   current_page: 1,
   last_page: 20,
@@ -164,7 +166,80 @@ const tableInfo = ref<IPagination>({
   last_page_url: 'page=20&limit=10',
   next_page_url: 'page=3&limit=10',
   prev_page_url: 'page=2&limit=10',
-  path: 'http://192.168.3.221:8001/rheinmedika/medical-check/accounts'
+  path: 'http://192.168.3.221:8001/rheinmedika/medical-check/accounts',
+  data: [
+    {
+      id: 1,
+      img: 'https://avatar.iran.liara.run/public/boy?usearname=Muhammad+Haaris+Setiawan',
+      name: 'Muhammad Haaris Setiawan',
+      email: 'muhamma***@***.dev',
+      position: 'Developer',
+      privilage: 'Administrator'
+    },{
+      id: 2,
+      img: 'https://avatar.iran.liara.run/public/girl?usearname=dr.Niken+Anggraeni',
+      name: 'dr. Niken Anggraeni',
+      email: 'nikeng***@***.com',
+      position: 'Doctor',
+      privilage: 'Doctor'
+    },{
+      id: 3,
+      img: 'https://avatar.iran.liara.run/public/girl?usearname=dr.Sista+Sandhi+Prawista',
+      name: 'dr. Sista Sandhi Prawista',
+      email: 'sist***@***.com',
+      position: 'Doctor',
+      privilage: 'Doctor'
+    },{
+      id: 4,
+      img: 'https://avatar.iran.liara.run/public/boy?usearname=dr.Damar+Sajiwo',
+      name: 'dr. Damar Sajiwo',
+      email: 'dama***@***.com',
+      position: 'Doctor',
+      privilage: 'Doctor'
+    },{
+      id: 5,
+      img: 'https://avatar.iran.liara.run/public/boy?usearname=Dede+Maulana',
+      name: 'Dede Maulana',
+      email: 'ddeeem***@***.com',
+      position: 'Supervisor',
+      privilage: 'Supervisor'
+    },{
+      id: 6,
+      img: 'https://avatar.iran.liara.run/public/boy?usearname=Doni+Damara',
+      name: 'Doni Damara',
+      email: 'donida***@***.com',
+      position: 'Supervisor',
+      privilage: 'Supervisor'
+    },{
+      id: 7,
+      img: 'https://avatar.iran.liara.run/public/girl?usearname=Siti+Habibah',
+      name: 'Siti Habibah',
+      email: 'sitihabi***@***.com',
+      position: 'Casheer',
+      privilage: 'Casheer'
+    },{
+      id: 8,
+      img: 'https://avatar.iran.liara.run/public/boy?usearname=dr.+Shakti+Indraprasta%2C+SpKK',
+      name: 'dr. Shakti Indraprasta, SpKK',
+      email: 'shakti.ind***@***.com',
+      position: 'Doctor SpKK',
+      privilage: 'Doctor'
+    },{
+      id: 9,
+      img: 'https://avatar.iran.liara.run/public/girl?usearname=Dea+Thiana+Rhamadhanti',
+      name: 'Dea Thiana Rhamadhanti',
+      email: 'gggg***@***.com',
+      position: 'Nurse',
+      privilage: 'Nurse'
+    },{
+      id: 10,
+      img: 'https://avatar.iran.liara.run/public/girl?usearname=dr.+Magdalena+Niken+Hapsari+P.',
+      name: 'dr. Magdalena Niken Hapsari P.',
+      email: 'nikenpatti***@***.com',
+      position: 'Doctor',
+      privilage: 'Doctor'
+    }
+  ]
 })
 
 const navs = [

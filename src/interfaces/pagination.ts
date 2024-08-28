@@ -1,4 +1,4 @@
-export interface IPagination {
+export interface IPagination<T> {
   from: number
   to: number
   total: number
@@ -11,6 +11,7 @@ export interface IPagination {
   prev_page_url: string | null
   links?: ILink[]
   path: string
+  data?: T
 }
 
 export interface ILink {
