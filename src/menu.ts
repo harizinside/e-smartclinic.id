@@ -81,7 +81,7 @@ export const LIST_MENU = <MenuProps[]>[
     children: [
       {
         name: 'Golongan Darah',
-        href: '#',
+        href: '/system/blood-type',
         icon: 'chevron-right',
         status: true,
         order: 1,
@@ -96,7 +96,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Pendidikan Terakhir',
-        href: '#',
+        href: '/system/last-education',
         icon: 'chevron-right',
         status: true,
         order: 2,
@@ -111,7 +111,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Suku',
-        href: '#',
+        href: '/system/ethnic-group',
         icon: 'chevron-right',
         status: true,
         order: 3,
@@ -126,7 +126,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Status Pernikahan',
-        href: '#',
+        href: '/system/marital-status',
         icon: 'chevron-right',
         status: true,
         order: 4,
@@ -141,7 +141,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Marketing',
-        href: '#',
+        href: '/system/marketing',
         icon: 'chevron-right',
         status: true,
         order: 5,
@@ -156,7 +156,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Agama',
-        href: '#',
+        href: '/system/religion',
         icon: 'chevron-right',
         status: true,
         order: 6,
@@ -171,7 +171,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Title',
-        href: '#',
+        href: '/system/title',
         icon: 'chevron-right',
         status: true,
         order: 7,
@@ -186,7 +186,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Status Pekerjaan',
-        href: '#',
+        href: '/system/working-status',
         icon: 'chevron-right',
         status: true,
         order: 8,
@@ -201,7 +201,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Title',
-        href: '#',
+        href: '/system/title',
         icon: 'chevron-right',
         status: true,
         order: 9,
@@ -216,7 +216,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Provinsi (Area)',
-        href: '#',
+        href: '/system/region/provinces',
         icon: 'chevron-right',
         status: true,
         order: 10,
@@ -231,7 +231,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Kota (Area)',
-        href: '#',
+        href: '/system/region/citys',
         icon: 'chevron-right',
         status: true,
         order: 11,
@@ -246,7 +246,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Kecamatan (Area)',
-        href: '#',
+        href: '/system/region/subdistricts',
         icon: 'chevron-right',
         status: true,
         order: 12,
@@ -261,7 +261,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Kelurahan (Area)',
-        href: '#',
+        href: '/system/region/villages',
         icon: 'chevron-right',
         status: true,
         order: 13,
@@ -293,7 +293,7 @@ export const LIST_MENU = <MenuProps[]>[
     children: [
       {
         name: 'Obat-Obatan',
-        href: '#',
+        href: '/addon/drugs',
         icon: 'chevron-right',
         status: true,
         order: 1,
@@ -308,7 +308,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Layanan',
-        href: '#',
+        href: '/addon/services',
         icon: 'chevron-right',
         status: true,
         order: 2,
@@ -323,7 +323,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Asuransi & Jaminan',
-        href: '#',
+        href: '/addon/insurance-guarantee',
         icon: 'chevron-right',
         status: true,
         order: 3,
@@ -338,7 +338,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Penyakit (Subjective)',
-        href: '#',
+        href: '/addon/disease',
         icon: 'chevron-right',
         status: true,
         order: 4,
@@ -353,7 +353,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Diagnosa (Assesment)',
-        href: '#',
+        href: '/addon/diagnosis',
         icon: 'chevron-right',
         status: true,
         order: 5,
@@ -368,7 +368,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Prognosa (Assesment)',
-        href: '#',
+        href: '/addon/prognosis',
         icon: 'chevron-right',
         status: true,
         order: 6,
@@ -383,7 +383,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'ICD-10 (Assesment)',
-        href: '#',
+        href: '/addon/icd-10',
         icon: 'chevron-right',
         status: true,
         order: 7,
@@ -416,7 +416,7 @@ export const LIST_MENU = <MenuProps[]>[
   },
   {
     name: 'Jadwal Praktik',
-    href: '#',
+    href: '/practice-schedule',
     icon: 'calendar-days',
     status: true,
     order: 6,
@@ -432,7 +432,7 @@ export const LIST_MENU = <MenuProps[]>[
   },
   {
     name: 'Kontak (Pasien)',
-    href: '#',
+    href: '/patients',
     icon: 'users',
     status: true,
     order: 7,
@@ -495,7 +495,7 @@ export const LIST_MENU = <MenuProps[]>[
   },
   {
     name: 'Rekam Medis',
-    href: '#',
+    href: '/medical-record',
     icon: 'book-open',
     status: true,
     order: 9,
@@ -541,7 +541,22 @@ export const LIST_MENU = <MenuProps[]>[
     },
     children: [
       {
-        name: 'lah gitu',
+        name: 'Outpatients',
+        href: '#',
+        icon: 'chevron-right',
+        status: true,
+        order: 1,
+        privilage: {
+          create: true,
+          read: true,
+          update: true,
+          delete: true,
+          import: true,
+          export: true
+        }
+      },
+      {
+        name: 'Online',
         href: '#',
         icon: 'chevron-right',
         status: true,
@@ -571,7 +586,53 @@ export const LIST_MENU = <MenuProps[]>[
       import: true,
       export: true
     },
-    children: []
+    children: [
+      {
+        name: 'Pasien',
+        href: '/reports/patients',
+        icon: 'chevron-right',
+        status: true,
+        order: 1,
+        privilage: {
+          create: true,
+          read: true,
+          update: true,
+          delete: true,
+          import: true,
+          export: true
+        }
+      },
+      {
+        name: 'Pembelian',
+        href: '/reports/payment',
+        icon: 'chevron-right',
+        status: true,
+        order: 1,
+        privilage: {
+          create: true,
+          read: true,
+          update: true,
+          delete: true,
+          import: true,
+          export: true
+        }
+      },
+      {
+        name: 'Obat-obatan',
+        href: '/reports/drugs',
+        icon: 'chevron-right',
+        status: true,
+        order: 1,
+        privilage: {
+          create: true,
+          read: true,
+          update: true,
+          delete: true,
+          import: true,
+          export: true
+        }
+      }
+    ]
   },
   {
     name: 'Statistik (CRM)',
@@ -589,8 +650,23 @@ export const LIST_MENU = <MenuProps[]>[
     },
     children: [
       {
-        name: 'lah gitu',
-        href: '#',
+        name: 'Patients',
+        href: '/crm/patients',
+        icon: 'chevron-right',
+        status: true,
+        order: 1,
+        privilage: {
+          create: true,
+          read: true,
+          update: true,
+          delete: true,
+          import: true,
+          export: true
+        }
+      },
+      {
+        name: 'Payment',
+        href: '/crm/payment',
         icon: 'chevron-right',
         status: true,
         order: 1,
