@@ -12,7 +12,7 @@ import AddOnArea from '@view/addon/AreaView.vue'
 import AddOnUsers from '@view/addon/UserView.vue'
 import Home from '@view/HomeView.vue'
 import ClinicInfo from '@view/clinic-info/IndexView.vue'
-import Patients from '@view/outpatient/IndexView.vue'
+import Patients from '@view/contact/IndexView.vue'
 import Schedule from '@view/PracticeScheduleView.vue'
 import OutPatients from '@view/outpatient/IndexView.vue'
 import Payments from '@view/payment/IndexView.vue'
@@ -20,13 +20,11 @@ import MedicalRecord from '@view/MedicalRecordView.vue'
 import NotFound from '@view/NotFoundView.vue'
 
 const routes: Array<RouteRecordRaw> = [
-  // TODO need to check if session still availbe then go to home
   {
     path: '/auth',
     component: SignIn,
     meta: {}
   },
-  //* Authorization
   {
     path: '/auth/forgot-password',
     component: ForgotPassword,
@@ -66,7 +64,6 @@ const routes: Array<RouteRecordRaw> = [
     component: Home,
     meta: { auth: true }
   },
-  //* Administrator Router
   {
     path: '/admin/users',
     component: Users,
@@ -77,23 +74,111 @@ const routes: Array<RouteRecordRaw> = [
     component: RolePrivilage,
     meta: { auth: true }
   },
-   {
+  {
     path: '/admin/role-privilages/create',
     component: RolePrivilageCreate,
     meta: { auth: true }
   },
-  //* Add On Router
   {
-    path: '/add-on/area',
+    path: '/system/blood-type',
+    component: RolePrivilageCreate,
+    meta: { auth: true }
+  },
+  {
+    path: '/system/last-education',
+    component: RolePrivilageCreate,
+    meta: { auth: true }
+  },
+  {
+    path: '/system/ethnic-group',
+    component: RolePrivilageCreate,
+    meta: { auth: true }
+  },
+  {
+    path: '/system/marital-status',
+    component: RolePrivilageCreate,
+    meta: { auth: true }
+  },
+  {
+    path: '/system/marketing',
+    component: RolePrivilageCreate,
+    meta: { auth: true }
+  },
+  {
+    path: '/system/religion',
+    component: RolePrivilageCreate,
+    meta: { auth: true }
+  },
+  {
+    path: '/system/title',
+    component: RolePrivilageCreate,
+    meta: { auth: true }
+  },
+  {
+    path: '/system/working-status',
+    component: RolePrivilageCreate,
+    meta: { auth: true }
+  },
+  {
+    path: '/system/title',
+    component: RolePrivilageCreate,
+    meta: { auth: true }
+  },
+  {
+    path: '/system/region/provinces',
+    component: RolePrivilageCreate,
+    meta: { auth: true }
+  },
+  {
+    path: '/system/region/citys',
+    component: RolePrivilageCreate,
+    meta: { auth: true }
+  },
+  {
+    path: '/system/region/subdistricts',
+    component: RolePrivilageCreate,
+    meta: { auth: true }
+  },
+  {
+    path: '/system/region/villages',
+    component: RolePrivilageCreate,
+    meta: { auth: true }
+  },
+  {
+    path: '/add-on/drugs',
     component: AddOnArea,
     meta: { auth: true }
   },
   {
-    path: '/add-on/users',
+    path: '/add-on/services',
     component: AddOnUsers,
     meta: { auth: true }
   },
-  //* Clinic Info
+  {
+    path: '/add-on/insurance-guarantee',
+    component: AddOnUsers,
+    meta: { auth: true }
+  },
+  {
+    path: '/add-on/disease',
+    component: AddOnUsers,
+    meta: { auth: true }
+  },
+  {
+    path: '/add-on/diagnosis',
+    component: AddOnUsers,
+    meta: { auth: true }
+  },
+  {
+    path: '/add-on/prognosis',
+    component: AddOnUsers,
+    meta: { auth: true }
+  },
+  {
+    path: '/add-on/icd-10',
+    component: AddOnUsers,
+    meta: { auth: true }
+  },
   {
     path: '/clinic-info',
     component: ClinicInfo,
@@ -104,7 +189,6 @@ const routes: Array<RouteRecordRaw> = [
     component: Schedule,
     meta: { auth: true }
   },
-  //* Pasien Route
   {
     path: '/contacts',
     component: Patients,
@@ -113,16 +197,31 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/contacts/create',
     component: {
+      template: Patients,
       beforeRouteLeave () {
         const answer = window.confirm('Do you really want to leave? you have unsaved changes!')
         if (!answer) return false
       }
     },
     meta: { auth: true }
-    
   },
   {
     path: '/outpatient',
+    component: OutPatients,
+    meta: { auth: true }
+  },
+  {
+    path: '/outpatient/insurance-guarantee',
+    component: OutPatients,
+    meta: { auth: true }
+  },
+  {
+    path: '/medical-record',
+    component: MedicalRecord,
+    meta: { auth: true }
+  },
+    {
+    path: '/inventory',
     component: OutPatients,
     meta: { auth: true }
   },
@@ -132,12 +231,37 @@ const routes: Array<RouteRecordRaw> = [
     meta: { auth: true }
   },
   {
-    path: '/payments/process',
+    path: '/payments/online',
     component: AddOnUsers,
     meta: { auth: true }
   },
   {
-    path: '/mdical-record',
+    path: '/report/patients',
+    component: MedicalRecord,
+    meta: { auth: true }
+  },
+  {
+    path: '/report/payment',
+    component: MedicalRecord,
+    meta: { auth: true }
+  },
+  {
+    path: '/report/drugs',
+    component: MedicalRecord,
+    meta: { auth: true }
+  },
+  {
+    path: '/crm/patients',
+    component: MedicalRecord,
+    meta: { auth: true }
+  },
+  {
+    path: '/crm/payment',
+    component: MedicalRecord,
+    meta: { auth: true }
+  },
+  {
+    path: '/crm/drugs',
     component: MedicalRecord,
     meta: { auth: true }
   },

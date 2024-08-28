@@ -432,7 +432,7 @@ export const LIST_MENU = <MenuProps[]>[
   },
   {
     name: 'Kontak (Pasien)',
-    href: '/patients',
+    href: '/contacts',
     icon: 'users',
     status: true,
     order: 7,
@@ -463,7 +463,7 @@ export const LIST_MENU = <MenuProps[]>[
     children: [
       {
         name: 'Penilaian (Assesment)',
-        href: '#',
+        href: '/outpatient',
         icon: 'chevron-right',
         status: true,
         order: 1,
@@ -478,7 +478,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Asuransi & Jaminan',
-        href: '#',
+        href: '/outpatient/insurance-guarantee',
         icon: 'chevron-right',
         status: true,
         order: 2,
@@ -511,7 +511,7 @@ export const LIST_MENU = <MenuProps[]>[
   },
   {
     name: 'Inventori',
-    href: '#',
+    href: '/inventory',
     icon: 'squares-2x2',
     status: true,
     order: 10,
@@ -542,7 +542,7 @@ export const LIST_MENU = <MenuProps[]>[
     children: [
       {
         name: 'Outpatients',
-        href: '#',
+        href: '/payments',
         icon: 'chevron-right',
         status: true,
         order: 1,
@@ -557,7 +557,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Online',
-        href: '#',
+        href: '/payments/online',
         icon: 'chevron-right',
         status: true,
         order: 1,
