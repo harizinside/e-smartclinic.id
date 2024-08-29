@@ -12,10 +12,10 @@ export interface MenuProps extends LabelProps {
 }
 
 interface PrivilagesProps {
-  create: boolean
-  read: boolean
-  update: boolean
-  delete: boolean
-  import: boolean
-  export: boolean
+  create?: boolean
+  read?: boolean
+  update?: boolean
+  delete?: boolean
+  import?: boolean
+  export?: boolean
 }

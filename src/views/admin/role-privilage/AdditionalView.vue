@@ -6,15 +6,13 @@
         <label
           for="tabs"
           class="sr-only">Select a tab</label>
-        <!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->
         <select
           id="tabs"
           name="tabs"
           class="block w-full rounded-md border-gray-300 focus:border-orange-500 focus:ring-orange-500">
           <option
             v-for="tab in tabs"
-            :key="tab.name"
-            :selected="tab.current">
+            :key="tab.name">
             {{ tab.name }}
           </option>
         </select>
@@ -23,14 +21,14 @@
         <nav
           class="flex space-x-4"
           aria-label="Tabs">
-          <router-link
+          <button
             v-for="tab in tabs"
             :key="tab.name"
-            :to="tab.href"
-            :class="[tab.current ? 'bg-orange-100 text-orange-700' : 'text-gray-500 hover:text-gray-700', 'rounded-md px-3 py-2 text-sm font-medium']"
-            :aria-current="tab.current ? 'page' : undefined">
+            :class="[tab.name === active ? 'bg-orange-100 text-orange-700' : 'text-gray-500 hover:text-gray-700', 'rounded-md px-3 py-2 text-sm font-medium']"
+            :aria-current="tab.name === active ? 'page' : undefined"
+            @click="switchTab(tab.name)">
             {{ tab.name }}
-          </router-link>
+          </button>
         </nav>
       </div>
       <div class="pt-6">
@@ -45,7 +43,7 @@
             placeholder=""
             required>
         </div>
-        <BasicView v-if="!advanced" />
+        <BasicView v-if="active === 'General'" />
         <AdvancedView v-else />
       </div>
       <div class="mt-6 flex items-center justify-end gap-x-6">
@@ -72,7 +70,7 @@ import BasicView from './additional/BasicView.vue'
 import AdvancedView from './additional/AdvancedView.vue'
 import AdminLayouts from '@view/AdminLayouts.vue'
 
-const advanced = ref<boolean>(false)
+const active = ref<string>('General')
 
 const navs = ref([
   { name: 'Dashboard', link: '/', active: false },
@@ -82,9 +80,13 @@ const navs = ref([
 ])
 
 const tabs = ref([
-  { name: 'General', href: '/admin/role-privilages/create', current: true },
-  { name: 'Advanced', href: '/admin/role-privilages/create?category=advanced', current: false }
+  { name: 'General', advanced: false },
+  { name: 'Advanced', advanced: true }
 ])
+
+const switchTab = (args: string) => {
+  active.value = args
+}
 
 useHead({
   title: 'Role & Privilages (Create) | e-Smart Clinic'
