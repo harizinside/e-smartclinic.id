@@ -13,6 +13,7 @@ import AddOnUsers from '@view/addon/UserView.vue'
 import Home from '@view/HomeView.vue'
 import ClinicInfo from '@view/clinic-info/IndexView.vue'
 import Patients from '@view/contact/IndexView.vue'
+import PatientsModif from '@view/contact/ModifyView.vue'
 import Schedule from '@view/PracticeScheduleView.vue'
 import OutPatients from '@view/outpatient/IndexView.vue'
 import Payments from '@view/payment/IndexView.vue'
@@ -196,13 +197,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/contacts/create',
-    component: {
-      template: Patients,
-      beforeRouteLeave () {
-        const answer = window.confirm('Do you really want to leave? you have unsaved changes!')
-        if (!answer) return false
-      }
-    },
+    component: PatientsModif,
     meta: { auth: true }
   },
   {

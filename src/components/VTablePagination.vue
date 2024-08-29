@@ -7,7 +7,7 @@
         Showing 
         <span class="font-semibold text-gray-900 dark:text-white">{{ info.from }}-{{ info.to }}</span> 
         of 
-        <span class="font-semibold text-gray-900 dark:text-white">{{ info.total }}</span>
+        <span class="font-semibold text-gray-900 dark:text-white">{{ new Intl.NumberFormat('id-ID', { maximumSignificantDigits: 3 }).format(info.total) }}</span>
       </span>
       <ul class="inline-flex -space-x-px rtl:space-x-reverse text-sm h-8">
         <li
@@ -39,7 +39,7 @@ import { computed, onMounted } from 'vue'
 import type { IPagination } from '@/interfaces/pagination'
 
 const props = defineProps<{
-  info: IPagination
+  info: IPagination<null>
 }>()
 
 onMounted(() => {

@@ -1,23 +1,23 @@
 <template>
-  <div class="relative overflow-x-auto sm:rounded-lg p-1">
-    <div class="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white dark:bg-gray-900">
-      <div class="flex gap-2">
-        <VTableCompLimit
-          v-if="showLimit"
-          @set-limit="setLimitTable" />
-        <VTableCompAdd
-          v-if="showAdditional"
-          @clicked="$emit('onAdditional', true)" />
-      </div>
-      <div class="flex gap-2">
-        <VTableCompFilter
-          v-if="showFilter"
-          @clicked="$emit('onFilter', true)" />
-        <VTableCompSearch 
-          v-if="showSearch" 
-          @on-searching="searchTable" />
-      </div>
+  <div class="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white dark:bg-gray-900">
+    <div class="flex gap-2">
+      <VTableCompLimit
+        v-if="showLimit"
+        @set-limit="setLimitTable" />
+      <VTableCompAdd
+        v-if="showAdditional"
+        @clicked="$emit('onAdditional', true)" />
     </div>
+    <div class="flex gap-2">
+      <VTableCompFilter
+        v-if="showFilter"
+        @clicked="$emit('onFilter', true)" />
+      <VTableCompSearch 
+        v-if="showSearch" 
+        @on-searching="searchTable" />
+    </div>
+  </div>
+  <div class="relative overflow-x-scroll sm:rounded-lg p-1 w-full">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
       <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
         <VTableHeader
@@ -29,10 +29,10 @@
         <slot />
       </tbody>
     </table>
-    <VTablePagination
-      v-if="showPagination"
-      :info="setTableInfo" />
   </div>
+  <VTablePagination
+    v-if="showPagination"
+    :info="setTableInfo" />
 </template>
 
 <script setup lang="ts">
@@ -62,7 +62,7 @@ const props = defineProps<{
   showSearch?: boolean
   showPagination?: boolean
   setColumnHeader: IColumnHeader[]
-  setTableInfo: IPagination
+  setTableInfo: IPagination<null>
 }>()
 
 const setLimitTable = (args: number) => {
