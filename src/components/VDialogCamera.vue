@@ -29,11 +29,11 @@
               as="h3"
               class="text-lg font-medium leading-6 p-4 bg-orange-700 text-orange-200">
               <div class="flex items-center justify-between">
-                {{ $t('form.button.camera') }}
+                Camera or Gallery
                 <button
                   type="button"
                   class="relative rounded-md bg-orange-700 text-orange-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
-                  @click="close">
+                  @click="$emit('close')">
                   <span class="absolute -inset-2.5" />
                   <span class="sr-only">Close panel</span>
                   <XMarkIcon
@@ -48,7 +48,7 @@
                 <div class="sm:hidden">
                   <label
                     for="tabs"
-                    class="sr-only">{{ $t('dialog.text.select_tab') }}</label>
+                    class="sr-only">Select a tab</label>
                   <!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->
                   <select
                     id="tabs"
@@ -57,8 +57,7 @@
                     @change="changeTab">
                     <option
                       v-for="tab in tabs"
-                      :key="tab.name"
-                      :selected="tab.name">
+                      :key="tab.name">
                       {{ tab.name }}
                     </option>
                   </select>
@@ -110,8 +109,8 @@
                         stroke-width="2"
                         d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                     </svg>
-                    <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">{{ $t('dialog.text.gallery_title') }}</p>
-                    <p class="text-xs text-gray-500 dark:text-gray-400">{{ $t('dialog.text.gallery_desc') }}</p>
+                    <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">Click to upload or drag and drop</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">PNG, JPG atau GIF (max. 10MB)</p>
                   </div>
                   <input
                     id="dropzone-file"
@@ -121,12 +120,20 @@
                     @change="handleFileChange">
                 </label>
               </div>
-
+            </div>
+            <div
+              v-else
+              class="mt-2 px-4">
+              <WebCamUI
+                :fullscreen-state="false"
+                @photo-taken="photoTaken" />
+            </div>
+            <div>
               <div
-                v-if="uploadedImages.length > 0"
-                class="mt-5 grid grid-cols-2 gap-x-4 gap-y-2 sm:gap-x-6 md:grid-cols-4 md:gap-y-2 lg:gap-x-8">
+                v-if="listOfImages.length > 0"
+                class="mt-5 grid grid-cols-2 gap-x-4 gap-y-2 sm:gap-x-6 md:grid-cols-4 md:gap-y-2 lg:gap-x-8 px-4">
                 <div
-                  v-for="(image, index) in uploadedImages"
+                  v-for="(image, index) in listOfImages"
                   :key="index"
                   class="group relative">
                   <div class="overflow-hidden rounded-xl bg-white h-40 w-full">
@@ -150,52 +157,21 @@
               </div>
             </div>
 
-            <div
-              v-else
-              class="mt-2 px-4">
-              <WebCamUI
-                :fullscreen-state="false"
-                @photo-taken="photoTaken" />
-              <div
-                v-if="capturedImages.length > 0"
-                class="mt-5 grid grid-cols-2 gap-x-4 gap-y-2 sm:gap-x-6 md:grid-cols-4 md:gap-y-2 lg:gap-x-8">
-                <div
-                  v-for="(image, index) in capturedImages"
-                  :key="index"
-                  class="group relative">
-                  <div class="overflow-hidden rounded-xl bg-white h-40 w-full">
-                    <img
-                      :src="image.url"
-                      :alt="'image_capture_' + index"
-                      class="w-full h-full object-contain object-center rounded-xl">
-                  </div>
-                  <div class="pb-3">
-                    <button
-                      class="relative flex items-center justify-center rounded-md border border-transparent bg-red-600 px-8 py-2 text-xs w-full font-medium text-red-100 hover:bg-red-200"
-                      @click="deleteImage(index)">
-                      HAPUS
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             <div class="mt-2">
-              <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+              <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6 gap-2">
                 <button
                   type="button"
-                  :class="[submitted ? 'btn-submit-action' : 'btn-submit', 'btn-submit-default']"
+                  class="rounded-md bg-orange-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600"
                   @click="save">
                   <ArrowPathIcon
                     v-if="submitted"
-                    class="animate-spin h-5 w-5 mr-3"
-                    viewBox="0 0 24 24" />
+                    class="animate-spin h-5 w-5 mr-3" />
                   Simpan
                 </button>
                 <button
                   type="button"
                   class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-                  @click="close">
+                  @click="$emit('close')">
                   Tutup
                 </button>
               </div>
@@ -208,4 +184,118 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+import { WebCamUI } from 'vue-camera-lib'
+import {
+  TransitionChild,
+  Dialog,
+  DialogPanel,
+  DialogTitle
+} from '@headlessui/vue'
+import { CameraIcon, PhotoIcon, ArrowPathIcon } from '@heroicons/vue/20/solid'
+import { XMarkIcon } from '@heroicons/vue/24/outline'
+
+interface UploadedFile {
+  file: File;
+  url: string;
+}
+
+interface BlobFile {
+  blob: Blob;
+  image_data_url: string;
+}
+
+const tabActive = ref<'Camera' | 'Galery'>('Galery')
+const listOfImages = ref<UploadedFile[]>([])
+const submitted = ref(false)
+
+const props = defineProps<{
+  multipleImage: boolean
+}>()
+
+const emit = defineEmits([ 'close', 'images' ])
+
+const tabs = [
+  { name: 'Galery', href: '#', icon: PhotoIcon },
+  { name: 'Camera', href: '#', icon: CameraIcon }
+]
+
+const changeTab = () => {
+  if (tabActive.value === 'Galery') {
+    tabActive.value = 'Camera'
+  } else {
+    tabActive.value = 'Galery'
+  }
+}
+
+const handleDragOver = () => {
+}
+
+const handleDrop = (event: DragEvent) => {
+  const files = event.dataTransfer?.files
+  if (files && files.length > 0) {
+    handleFiles(files)
+  }
+}
+
+const handleFileChange = (event: Event) => {
+  const target = event.target as HTMLInputElement
+  const files = target.files
+  if (files && files.length > 0) {
+    handleFiles(files)
+  }
+}
+
+const handleFiles = (files: FileList) => {
+  if (props.multipleImage) {
+    for (const file of files) {
+      const url = URL.createObjectURL(file)
+      listOfImages.value.push({ file, url })
+    }
+  } else {
+    listOfImages.value = []
+    const url = URL.createObjectURL(files[0])
+    listOfImages.value.push({ file: files[0], url })
+  }
+}
+
+const deleteImage = (index: number) => {
+  if (tabActive.value === 'Galery') {
+    listOfImages.value.splice(index, 1)
+  } else {
+    listOfImages.value.splice(index, 1)
+  }
+}
+
+const photoTaken = (data: BlobFile) => {
+  if (props.multipleImage) {
+    listOfImages.value.push({
+      file: new File([ data.blob ], window.crypto.randomUUID() + '.jpg', {
+        type: data.blob.type
+      }),
+      url: data.image_data_url
+    })
+  } else {
+    listOfImages.value = []
+    listOfImages.value.push({
+      file: new File([ data.blob ], window.crypto.randomUUID() + '.jpg', {
+        type: data.blob.type
+      }),
+      url: data.image_data_url
+    })
+  }
+}
+
+const handleText = (text: string) => {
+  if (text.length <= 15) {
+    return text
+  } else {
+    return text.substring(0, 15) + '...'
+  }
+}
+
+const save = () => {
+  submitted.value = true
+  emit('images', listOfImages.value)
+}
 </script>

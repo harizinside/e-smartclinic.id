@@ -23,7 +23,7 @@
         @on-search="onSearch"
         @on-sort="sortTable"
         @on-check="setCheckedAll">
-        <VTableColumn 
+        <VTableColumn
           v-for="(row, index) in tableInfo.data"
           :key="index">
           <td class="w-4 p-4">
@@ -128,9 +128,10 @@ import VDialogFindUsers from '@/components/VDialogFindUsers.vue'
 import VDialogSetRole from '@/components/VDialogSetRole.vue'
 import VDialogDelete from '@/components/VDialogDelete.vue'
 import VAlerts from '@/components/VAlerts.vue'
-import AdminLayouts from '@view/AdminLayouts.vue'
+import AdminLayouts from '@/views/AdminLayouts.vue'
 import VTable from '@/components/VTable.vue'
 import VTableColumn from '@/components/VTableColumn.vue'
+import jsonData from '@/utils/users.json'
 
 interface IData {
   id: number
@@ -155,92 +156,7 @@ const columnHeader = ref<IColumnHeader[]>([
   { name: 'Aksi', type: 'label' }
 ])
 
-const tableInfo = ref<IPagination<IData[]>>({
-  from: 1,
-  to: 10,
-  total: 20,
-  per_page: 10,
-  current_page: 1,
-  last_page: 20,
-  first_page_url: 'page=1&limit=10',
-  last_page_url: 'page=20&limit=10',
-  next_page_url: 'page=3&limit=10',
-  prev_page_url: 'page=2&limit=10',
-  path: 'http://192.168.3.221:8001/rheinmedika/medical-check/accounts',
-  data: [
-    {
-      id: 1,
-      img: 'https://avatar.iran.liara.run/public/boy?usearname=Muhammad+Haaris+Setiawan',
-      name: 'Muhammad Haaris Setiawan',
-      email: 'muhamma***@***.dev',
-      position: 'Developer',
-      privilage: 'Administrator'
-    },{
-      id: 2,
-      img: 'https://avatar.iran.liara.run/public/girl?usearname=dr.Niken+Anggraeni',
-      name: 'dr. Niken Anggraeni',
-      email: 'nikeng***@***.com',
-      position: 'Doctor',
-      privilage: 'Doctor'
-    },{
-      id: 3,
-      img: 'https://avatar.iran.liara.run/public/girl?usearname=dr.Sista+Sandhi+Prawista',
-      name: 'dr. Sista Sandhi Prawista',
-      email: 'sist***@***.com',
-      position: 'Doctor',
-      privilage: 'Doctor'
-    },{
-      id: 4,
-      img: 'https://avatar.iran.liara.run/public/boy?usearname=dr.Damar+Sajiwo',
-      name: 'dr. Damar Sajiwo',
-      email: 'dama***@***.com',
-      position: 'Doctor',
-      privilage: 'Doctor'
-    },{
-      id: 5,
-      img: 'https://avatar.iran.liara.run/public/boy?usearname=Dede+Maulana',
-      name: 'Dede Maulana',
-      email: 'ddeeem***@***.com',
-      position: 'Supervisor',
-      privilage: 'Supervisor'
-    },{
-      id: 6,
-      img: 'https://avatar.iran.liara.run/public/boy?usearname=Doni+Damara',
-      name: 'Doni Damara',
-      email: 'donida***@***.com',
-      position: 'Supervisor',
-      privilage: 'Supervisor'
-    },{
-      id: 7,
-      img: 'https://avatar.iran.liara.run/public/girl?usearname=Siti+Habibah',
-      name: 'Siti Habibah',
-      email: 'sitihabi***@***.com',
-      position: 'Casheer',
-      privilage: 'Casheer'
-    },{
-      id: 8,
-      img: 'https://avatar.iran.liara.run/public/boy?usearname=dr.+Shakti+Indraprasta%2C+SpKK',
-      name: 'dr. Shakti Indraprasta, SpKK',
-      email: 'shakti.ind***@***.com',
-      position: 'Doctor SpKK',
-      privilage: 'Doctor'
-    },{
-      id: 9,
-      img: 'https://avatar.iran.liara.run/public/girl?usearname=Dea+Thiana+Rhamadhanti',
-      name: 'Dea Thiana Rhamadhanti',
-      email: 'gggg***@***.com',
-      position: 'Nurse',
-      privilage: 'Nurse'
-    },{
-      id: 10,
-      img: 'https://avatar.iran.liara.run/public/girl?usearname=dr.+Magdalena+Niken+Hapsari+P.',
-      name: 'dr. Magdalena Niken Hapsari P.',
-      email: 'nikenpatti***@***.com',
-      position: 'Doctor',
-      privilage: 'Doctor'
-    }
-  ]
-})
+const tableInfo = ref<IPagination<IData[]>>(jsonData)
 
 const navs = [
   { name: 'Dashboard', link: '/', active: false },

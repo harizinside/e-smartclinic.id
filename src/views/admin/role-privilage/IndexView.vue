@@ -23,7 +23,7 @@
         @on-search="onSearch"
         @on-sort="sortTable"
         @on-check="setCheckedAll">
-        <VTableColumn 
+        <VTableColumn
           v-for="(row, index) in tableInfo.data"
           :key="index">
           <td class="w-4 p-4">
@@ -83,16 +83,17 @@ import type { IPagination } from '@/interfaces/pagination'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
 import VDialogDelete from '@/components/VDialogDelete.vue'
 import VAlerts from '@/components/VAlerts.vue'
-import AdminLayouts from '@view/AdminLayouts.vue'
+import AdminLayouts from '@/views/AdminLayouts.vue'
 import VTable from '@/components/VTable.vue'
 import VTableColumn from '@/components/VTableColumn.vue'
 import VHumanDate from '@/components/VHumanDate.vue'
+import jsonData from '@/utils/role-privilages.json'
 
 interface IData {
   id: number
   name: string
-  createAt: Date
-  updateAt: Date
+  createAt: string
+  updateAt: string
 }
 
 const dialogDelete = ref<boolean>(false)
@@ -112,72 +113,7 @@ const columnHeader = ref<IColumnHeader[]>([
   { name: 'Aksi', type: 'label' }
 ])
 
-const tableInfo = ref<IPagination<IData[]>>({
-  from: 1,
-  to: 10,
-  total: 17,
-  per_page: 10,
-  current_page: 1,
-  last_page: 2,
-  first_page_url: 'page=1&limit=10',
-  last_page_url: 'page=20&limit=10',
-  next_page_url: 'page=3&limit=10',
-  prev_page_url: 'page=2&limit=10',
-  path: 'http://192.168.3.221:8001/rheinmedika/medical-check/accounts',
-  data: [
-    {
-      id: 1,
-      name: 'Administrator',
-      createAt: new Date,
-      updateAt: new Date
-    },{
-      id: 2,
-      name: 'Frontline',
-      createAt: new Date,
-      updateAt: new Date
-    },{
-      id: 3,
-      name: 'Nurse',
-      createAt: new Date,
-      updateAt: new Date
-    },{
-      id: 4,
-      name: 'Apoteker',
-      createAt: new Date,
-      updateAt: new Date
-    },{
-      id: 5,
-      name: 'Doctor',
-      createAt: new Date,
-      updateAt: new Date
-    },{
-      id: 6,
-      name: 'Casheer',
-      createAt: new Date,
-      updateAt: new Date
-    },{
-      id: 7,
-      name: 'Report',
-      createAt: new Date,
-      updateAt: new Date
-    },{
-      id: 8,
-      name: 'Accounting',
-      createAt: new Date,
-      updateAt: new Date
-    },{
-      id: 9,
-      name: 'Marketing',
-      createAt: new Date,
-      updateAt: new Date
-    },{
-      id: 10,
-      name: 'Warehouse',
-      createAt: new Date,
-      updateAt: new Date
-    }
-  ]
-})
+const tableInfo = ref<IPagination<IData[]>>(jsonData)
 
 const setLimit = (args: number) => {
   console.error(args)

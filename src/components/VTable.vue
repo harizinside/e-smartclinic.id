@@ -62,7 +62,8 @@ const props = defineProps<{
   showSearch?: boolean
   showPagination?: boolean
   setColumnHeader: IColumnHeader[]
-  setTableInfo: IPagination<null>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  setTableInfo: IPagination<any>
 }>()
 
 const setLimitTable = (args: number) => {

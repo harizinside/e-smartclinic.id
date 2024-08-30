@@ -60,7 +60,15 @@
                       <div class="mb-5 grow">
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                           Hak akses <span class="text-red-600">**</span></label>
-                        <VFormSelect />
+                        <select
+                          id="country"
+                          name="country"
+                          autocomplete="country-name"
+                          class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                          <option>Frontline (Customer Service)</option>
+                          <option>Nurse</option>
+                          <option>Apoteker</option>
+                        </select>
                       </div>
                     </div>
                   </div>
@@ -91,7 +99,6 @@
 import { ref } from 'vue'
 import { Dialog, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/vue'
 import { LockClosedIcon } from '@heroicons/vue/24/outline'
-import VFormSelect from './VFormSelect.vue'
 
 const cancelButtonRef = ref(null)
 const emit = defineEmits([ 'close', 'submit' ])

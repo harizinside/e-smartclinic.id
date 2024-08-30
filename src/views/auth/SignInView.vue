@@ -15,7 +15,7 @@
         <div class="px-6 py-12 sm:px-12">
           <VAlerts
             v-if="resErrors"
-            type="danger" 
+            type="danger"
             :message="resErrors!.message"
             :errors="resErrors.errors"
             @close="resErrors = undefined" />
@@ -168,8 +168,8 @@ import { ref } from 'vue'
 import { useHead } from '@unhead/vue'
 import { useRouter } from 'vue-router'
 import { HTTP_URI, HTTP_HEADER } from '@/http.conf'
-import VIcons from '@component/VIcons.vue'
-import VAlerts from '@component/VAlerts.vue'
+import VIcons from '@/components/VIcons.vue'
+import VAlerts from '@/components/VAlerts.vue'
 import type { AuthProps, ResponseProps } from '@/interfaces/auth'
 import { useAuthStore } from '@/stores/auth'
 import type { IAlert } from '@/interfaces/alerts'
@@ -185,12 +185,12 @@ const authState = useAuthStore()
 
 useHead({
   title: 'Authorization | e-Smart Clinic',
-  bodyAttrs: { 
+  bodyAttrs: {
     class: 'h-full'
   },
-  htmlAttrs: { 
-    lang: 'id_ID', 
-    class: 'h-full bg-gray-50' 
+  htmlAttrs: {
+    lang: 'id_ID',
+    class: 'h-full bg-gray-50'
   }
 })
 
@@ -211,7 +211,7 @@ const xsubmit = async () => {
     const json : AuthProps<ResponseProps> = await response.json()
 
     if (!response.ok) {
-      resErrors.value = { 
+      resErrors.value = {
         message:  json.message,
         type: 'warning',
         errors: json.errors
@@ -220,18 +220,18 @@ const xsubmit = async () => {
       password.value = ''
       throw new Error(`Response status: ${response.status}`)
     }
-    
-    await authState.signin(json.result?.id, json.result?.token)
+
+    authState.signin(json.result?.id, json.result?.token)
     await router.push('/')
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (err: any) {
     if (err.message.includes('Failed to fetch')) {
-      resErrors.value = { 
+      resErrors.value = {
         message:  'Server API is down, please ask Admin Support',
         type: 'danger'
       }
-    } 
+    }
 
     console.error(err)
   } finally {

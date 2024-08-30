@@ -2,23 +2,23 @@ import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
 import { HTTP_URI, HTTP_HEADER } from '@/http.conf'
 import { useAuthStore } from '@/stores/auth'
-import SignIn from '@view/auth/SignInView.vue'
-import ForgotPassword from '@view/auth/ForgotPasswordView.vue'
-import Recovery from '@view/auth/RecoveryView.vue'
-import RolePrivilage from '@view/admin/role-privilage/IndexView.vue'
-import RolePrivilageCreate from '@view/admin/role-privilage/AdditionalView.vue'
-import Users from '@view/admin/UsersView.vue'
-import AddOnArea from '@view/addon/AreaView.vue'
-import AddOnUsers from '@view/addon/UserView.vue'
-import Home from '@view/HomeView.vue'
-import ClinicInfo from '@view/clinic-info/IndexView.vue'
-import Patients from '@view/contact/IndexView.vue'
-import PatientsModif from '@view/contact/ModifyView.vue'
-import Schedule from '@view/PracticeScheduleView.vue'
-import OutPatients from '@view/outpatient/IndexView.vue'
-import Payments from '@view/payment/IndexView.vue'
-import MedicalRecord from '@view/MedicalRecordView.vue'
-import NotFound from '@view/NotFoundView.vue'
+import SignIn from '@/views/auth/SignInView.vue'
+import ForgotPassword from '@/views/auth/ForgotPasswordView.vue'
+import Recovery from '@/views/auth/RecoveryView.vue'
+import RolePrivilage from '@/views/admin/role-privilage/IndexView.vue'
+import RolePrivilageCreate from '@/views/admin/role-privilage/AdditionalView.vue'
+import Users from '@/views/admin/UsersView.vue'
+import AddOnArea from '@/views/addon/AreaView.vue'
+import AddOnUsers from '@/views/addon/UserView.vue'
+import Home from '@/views/HomeView.vue'
+import ClinicInfo from '@/views/clinic-info/IndexView.vue'
+import Patients from '@/views/contact/IndexView.vue'
+import PatientsModif from '@/views/contact/ModifyView.vue'
+import Schedule from '@/views/PracticeScheduleView.vue'
+import OutPatients from '@/views/outpatient/IndexView.vue'
+import Payments from '@/views/payment/IndexView.vue'
+import MedicalRecord from '@/views/MedicalRecordView.vue'
+import NotFound from '@/views/NotFoundView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -54,7 +54,7 @@ const routes: Array<RouteRecordRaw> = [
               Authorization: `Bearer ${authState.auth.TOKEN}`
           }
       })
-      
+
       localStorage.removeItem('__auth')
       next({ path: '/auth' })
     },
@@ -285,7 +285,7 @@ router.beforeEach(async (to, _from, next) => {
         Authorization: `Bearer ${authState.auth.TOKEN}`
       }
     })
-        
+
     if (!response.ok) {
       return { path: '/auth/sign-out' }
     }

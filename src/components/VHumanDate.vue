@@ -13,7 +13,7 @@ dayjs.extend(relativeTime)
 
 const relativeDate = ref<string>()
 const props = defineProps<{
-  datetime: Date
+  datetime: string
 }>()
 
 onMounted(() => {

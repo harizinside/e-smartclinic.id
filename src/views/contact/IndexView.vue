@@ -23,7 +23,7 @@
         @on-search="onSearch"
         @on-sort="sortTable"
         @on-check="setCheckedAll">
-        <VTableColumn 
+        <VTableColumn
           v-for="(row, index) in tableInfo.data"
           :key="index">
           <td class="px-6 py-4">
@@ -94,7 +94,7 @@ import { TransitionRoot } from '@headlessui/vue'
 import type { IAlert } from '@/interfaces/alerts'
 import type { IColumnHeader } from '@/interfaces/tables'
 import type { IPagination } from '@/interfaces/pagination'
-import AdminLayouts from '@view/AdminLayouts.vue'
+import AdminLayouts from '@/views/AdminLayouts.vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
 import VAlerts from '@/components/VAlerts.vue'
 import VTable from '@/components/VTable.vue'

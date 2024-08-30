@@ -68,7 +68,7 @@ import { useHead } from '@unhead/vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
 import BasicView from './additional/BasicView.vue'
 import AdvancedView from './additional/AdvancedView.vue'
-import AdminLayouts from '@view/AdminLayouts.vue'
+import AdminLayouts from '@/views/AdminLayouts.vue'
 
 const active = ref<string>('General')
 
