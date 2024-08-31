@@ -22,10 +22,10 @@
           </p>
           <div class="absolute inset-x-0 bottom-0 bg-gray-50 px-4 py-4 sm:px-6">
             <div class="text-sm">
-              <a
-                href="#"
+              <button
                 class="font-medium text-orange-600 hover:text-orange-500">
-                Lihat Semua<span class="sr-only"> {{ item.name }} stats</span></a>
+                Lihat Semua<span class="sr-only"> {{ item.name }} stats</span>
+              </button>
             </div>
           </div>
         </dd>

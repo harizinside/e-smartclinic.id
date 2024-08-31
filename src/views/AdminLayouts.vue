@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Banner -->
-    <TransitionRoot 
+    <TransitionRoot
       as="template"
       :show="showBanner">
       <VBannerGreetings @close="showBanner=false" />
@@ -370,10 +370,10 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { 
-  useHead, 
-  useSeoMeta, 
-  useServerSeoMeta 
+import {
+  useHead,
+  useSeoMeta,
+  useServerSeoMeta
 } from '@unhead/vue'
 import { useRouter } from 'vue-router'
 import {
@@ -389,10 +389,10 @@ import {
   TransitionChild,
   TransitionRoot
 } from '@headlessui/vue'
-import { 
-  ChevronDownIcon, 
-  MagnifyingGlassIcon, 
-  ChevronRightIcon 
+import {
+  ChevronDownIcon,
+  MagnifyingGlassIcon,
+  ChevronRightIcon
 } from '@heroicons/vue/20/solid'
 import { LIST_MENU } from '@/menu'
 import { useAuthStore } from '@/stores/auth'
@@ -431,7 +431,7 @@ onMounted(async() => {
     const ress: AuthProps<UserProps> = await response.json()
     await showUsers.setuser(ress.result!)
   }
-  
+
   isLoading.value = false
 })
 

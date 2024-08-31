@@ -66,7 +66,7 @@ export const LIST_MENU = <MenuProps[]>[
   },
   {
     name: 'System',
-    href: '#',
+    href: '/system',
     icon: 'command-line',
     status: true,
     order: 3,
@@ -278,7 +278,7 @@ export const LIST_MENU = <MenuProps[]>[
   },
   {
     name: 'Tambahan',
-    href: '#',
+    href: '/addon',
     icon: 'puzzle-piece',
     status: true,
     order: 4,
@@ -448,7 +448,7 @@ export const LIST_MENU = <MenuProps[]>[
   },
   {
     name: 'Rawat Jalan',
-    href: '#',
+    href: '/outpatient',
     icon: 'beaker',
     status: true,
     order: 8,
@@ -527,7 +527,7 @@ export const LIST_MENU = <MenuProps[]>[
   },
   {
     name: 'Pembelian',
-    href: '#',
+    href: '/payments',
     icon: 'calculator',
     status: true,
     order: 11,
@@ -574,7 +574,7 @@ export const LIST_MENU = <MenuProps[]>[
   },
   {
     name: 'Laporan',
-    href: '#',
+    href: '/reports',
     icon: 'chart-bar',
     status: true,
     order: 12,
@@ -636,7 +636,7 @@ export const LIST_MENU = <MenuProps[]>[
   },
   {
     name: 'Statistik (CRM)',
-    href: '#',
+    href: '/crm',
     icon: 'variable',
     status: true,
     order: 13,

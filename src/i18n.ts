@@ -18,7 +18,7 @@ function detectUserLocale() {
   }
 
   const browserLocale = navigator.language
-  const supportedLocales = [ 'en', 'id' ] 
+  const supportedLocales = [ 'en', 'id' ]
   if (supportedLocales.includes(browserLocale)) {
     return browserLocale
   }

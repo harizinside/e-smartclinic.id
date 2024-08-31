@@ -1,0 +1,71 @@
+{
+  "from": 1,
+  "to": 10,
+  "total": 7,
+  "per_page": 10,
+  "current_page": 1,
+  "last_page": 1,
+  "first_page_url": "page=1&limit=10",
+  "last_page_url": "page=1&limit=10",
+  "next_page_url": "page=1&limit=10",
+  "prev_page_url": "page=1&limit=10",
+  "path": "http://192.168.3.221:8001/rheinmedik a/medical-check/accounts",
+  "data": [
+    {
+      "id": 1,
+      "name": "Poli Umum",
+      "category": "Rawat Jalan",
+      "status": true,
+      "createAt": "2023-08-23T12:34:56",
+      "updateAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 2,
+      "name": "Poli Gigi & Mulut",
+      "category": "Rawat Jalan",
+      "status": true,
+      "createAt": "2023-08-23T12:34:56",
+      "updateAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 3,
+      "name": "Poli KIA",
+      "category": "Rawat Jalan",
+      "status": true,
+      "createAt": "2023-08-23T12:34:56",
+      "updateAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 4,
+      "name": "Poli KB",
+      "category": "Rawat Jalan",
+      "status": true,
+      "createAt": "2023-08-23T12:34:56",
+      "updateAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 5,
+      "name": "Poli Lansia",
+      "category": "Rawat Jalan",
+      "status": true,
+      "createAt": "2023-08-23T12:34:56",
+      "updateAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 6,
+      "name": "Laboratorium",
+      "category": "Rawat Jalan",
+      "status": true,
+      "createAt": "2023-08-23T12:34:56",
+      "updateAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 7,
+      "name": "Kunjungan Online",
+      "category": "Rawat Jalan",
+      "status": true,
+      "createAt": "2023-08-23T12:34:56",
+      "updateAt": "2023-08-23T12:34:56"
+    }
+  ]
+}

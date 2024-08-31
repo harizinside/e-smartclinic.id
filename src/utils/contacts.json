@@ -1,10 +1,10 @@
 {
   "from": 1,
   "to": 10,
-  "total": 20,
+  "total": 200000,
   "per_page": 10,
   "current_page": 1,
-  "last_page": 20,
+  "last_page": 200,
   "first_page_url": "page=1&limit=10",
   "last_page_url": "page=20&limit=10",
   "next_page_url": "page=3&limit=10",
@@ -13,83 +13,108 @@
   "data": [
     {
       "id": 1,
-      "img": "https://avatar.iran.liara.run/public/boy?usearname=Muhammad+Haaris+Setiawan",
+      "img": "https://avatar.iran.liara.run/public/boy?usearname=PG13003000",
+      "regCode": "NMW-PG13003000",
       "name": "Muhammad Haaris Setiawan",
-      "email": "muhamma***@***.dev",
-      "position": "Developer",
-      "privilage": "Administrator"
+      "nik": "3276112712930001",
+      "type": "Mandiri",
+      "createAt": "2023-08-23T12:34:56",
+      "updateAt": "2023-08-23T12:34:56"
     },
     {
       "id": 2,
-      "img": "https://avatar.iran.liara.run/public/girl?usearname=dr.Niken+Anggraeni",
-      "name": "dr. Niken Anggraeni",
-      "email": "nikeng***@***.com",
-      "position": "Doctor",
-      "privilage": "Doctor"
+      "img": "https://avatar.iran.liara.run/public/girl?usearname=CG01205400",
+      "regCode": "NMW-CG01205400",
+      "name": "Hie Meilijanti",
+      "nik": "3173065405730004",
+      "type": "BPJS",
+      "BPJS": "0001234567899",
+      "createAt": "2023-08-23T12:34:56",
+      "updateAt": "2023-08-23T12:34:56"
     },
     {
       "id": 3,
-      "img": "https://avatar.iran.liara.run/public/girl?usearname=dr.Sista+Sandhi+Prawista",
-      "name": "dr. Sista Sandhi Prawista",
-      "email": "sist***@***.com",
-      "position": "Doctor",
-      "privilage": "Doctor"
+      "img": "https://avatar.iran.liara.run/public/girl?usearname=CN01105500",
+      "regCode": "NMW-CN01105500",
+      "name": "Rina Chairunnisa",
+      "nik": "3174044912740010",
+      "type": "BPJS",
+      "BPJS": "0001234567888",
+      "createAt": "2023-08-23T12:34:56",
+      "updateAt": "2023-08-23T12:34:56"
     },
     {
       "id": 4,
-      "img": "https://avatar.iran.liara.run/public/boy?usearname=dr.Damar+Sajiwo",
-      "name": "dr. Damar Sajiwo",
-      "email": "dama***@***.com",
-      "position": "Doctor",
-      "privilage": "Doctor"
+      "img": "https://avatar.iran.liara.run/public/boy?usearname=CG11105000",
+      "regCode": "NMW-CG11105000",
+      "name": "Hartono Surianto",
+      "nik": "3172013005760007",
+      "type": "AXA Insurance",
+      "createAt": "2023-08-23T12:34:56",
+      "updateAt": "2023-08-23T12:34:56"
     },
     {
       "id": 5,
-      "img": "https://avatar.iran.liara.run/public/boy?usearname=Dede+Maulana",
-      "name": "Dede Maulana",
-      "email": "ddeeem***@***.com",
-      "position": "Supervisor",
-      "privilage": "Supervisor"
+      "img": "https://avatar.iran.liara.run/public/girl?usearname=CM00605300",
+      "regCode": "NMW-CM00605300",
+      "name": "Anisha Ulfah Annas",
+      "nik": "3172013005760007",
+      "type": "BPJS",
+      "BPJS": "0001234561234",
+      "createAt": "2023-08-23T12:34:56",
+      "updateAt": "2023-08-23T12:34:56"
     },
     {
       "id": 6,
-      "img": "https://avatar.iran.liara.run/public/boy?usearname=Doni+Damara",
-      "name": "Doni Damara",
-      "email": "donida***@***.com",
-      "position": "Supervisor",
-      "privilage": "Supervisor"
+      "img": "https://avatar.iran.liara.run/public/girl?usearname=BR00605240",
+      "regCode": "NMW-BR00605240",
+      "name": "Laela Fijarwati",
+      "nik": "317405690650001",
+      "type": "Mandiri",
+      "createAt": "2023-08-23T12:34:56",
+      "updateAt": "2023-08-23T12:34:56"
     },
     {
       "id": 7,
-      "img": "https://avatar.iran.liara.run/public/girl?usearname=Siti+Habibah",
-      "name": "Siti Habibah",
-      "email": "sitihabi***@***.com",
-      "position": "Casheer",
-      "privilage": "Casheer"
+      "img": "https://avatar.iran.liara.run/public/girl?usearname=CN00605500",
+      "regCode": "NMW-CN00605500",
+      "name": "Retno Susilowati",
+      "nik": "3216034604010002",
+      "type": "Mandiri",
+      "createAt": "2023-08-23T12:34:56",
+      "updateAt": "2023-08-23T12:34:56"
     },
     {
       "id": 8,
-      "img": "https://avatar.iran.liara.run/public/boy?usearname=dr.+Shakti+Indraprasta%2C+SpKK",
-      "name": "dr. Shakti Indraprasta, SpKK",
-      "email": "shakti.ind***@***.com",
-      "position": "Doctor SpKK",
-      "privilage": "Doctor"
+      "img": "https://avatar.iran.liara.run/public/girl?usearname=CG00905100",
+      "regCode": "NMW-CG00905100",
+      "name": "Maria Ulpah Amin Darsono",
+      "nik": "3278036508920003",
+      "type": "Mandiri",
+      "createAt": "2023-08-23T12:34:56",
+      "updateAt": "2023-08-23T12:34:56"
     },
     {
       "id": 9,
-      "img": "https://avatar.iran.liara.run/public/girl?usearname=Dea+Thiana+Rhamadhanti",
-      "name": "Dea Thiana Rhamadhanti",
-      "email": "gggg***@***.com",
-      "position": "Nurse",
-      "privilage": "Nurse"
+      "img": "https://avatar.iran.liara.run/public/girl?usearname=CG00905000",
+      "regCode": "NMW-CG00905000",
+      "name": "Salbilah Bilahuna",
+      "nik": "3173016509041005",
+      "type": "BPJS",
+      "BPJS": "0001234512223",
+      "createAt": "2023-08-23T12:34:56",
+      "updateAt": "2023-08-23T12:34:56"
     },
     {
       "id": 10,
-      "img": "https://avatar.iran.liara.run/public/girl?usearname=dr.+Magdalena+Niken+Hapsari+P.",
-      "name": "dr. Magdalena Niken Hapsari P.",
-      "email": "nikenpatti***@***.com",
-      "position": "Doctor",
-      "privilage": "Doctor"
+      "img": "https://avatar.iran.liara.run/public/girl?usearname=CG01005500",
+      "regCode": "NMW-CG01005500",
+      "name": "Elvina Dewi Falihah",
+      "nik": "3201056403930003",
+      "type": "BPJS",
+      "BPJS": "00012345600873",
+      "createAt": "2023-08-23T12:34:56",
+      "updateAt": "2023-08-23T12:34:56"
     }
   ]
 }

@@ -101,6 +101,7 @@ import VTable from '@/components/VTable.vue'
 import VTableColumn from '@/components/VTableColumn.vue'
 import VHumanDate from '@/components/VHumanDate.vue'
 import VDialogDelete from '@/components/VDialogDelete.vue'
+import JsonData from '@/utils/contacts.json'
 
 interface IData {
   id: number
@@ -110,7 +111,7 @@ interface IData {
   nik: string
   type: string
   BPJS?: string
-  createAt: Date
+  createAt: string
 }
 
 const navs = [
@@ -131,107 +132,7 @@ const columnHeader = ref<IColumnHeader[]>([
   { name: 'Aksi', type: 'label' }
 ])
 
-const tableInfo = ref<IPagination<IData[]>>({
-  from: 1,
-  to: 10,
-  total: 200000,
-  per_page: 10,
-  current_page: 1,
-  last_page: 200,
-  first_page_url: 'page=1&limit=10',
-  last_page_url: 'page=20&limit=10',
-  next_page_url: 'page=3&limit=10',
-  prev_page_url: 'page=2&limit=10',
-  path: 'http://192.168.3.221:8001/rheinmedika/medical-check/accounts',
-  data: [
-    {
-      id: 1,
-      img: 'https://avatar.iran.liara.run/public/boy?usearname=PG13003000',
-      regCode: 'NMW-PG13003000',
-      name: 'Muhammad Haaris Setiawan',
-      nik: '3276112712930001',
-      type: 'Mandiri',
-      createAt: new Date()
-    }, {
-      id: 2,
-      img: 'https://avatar.iran.liara.run/public/girl?usearname=CG01205400',
-      regCode: 'NMW-CG01205400',
-      name: 'Hie Meilijanti',
-      nik: '3173065405730004',
-      type: 'BPJS',
-      BPJS: '0001234567899',
-      createAt: new Date()
-    }, {
-      id: 3,
-      img: 'https://avatar.iran.liara.run/public/girl?usearname=CN01105500',
-      regCode: 'NMW-CN01105500',
-      name: 'Rina Chairunnisa',
-      nik: '3174044912740010',
-      type: 'BPJS',
-      BPJS: '0001234567888',
-      createAt: new Date()
-    }, {
-      id: 4,
-      img: 'https://avatar.iran.liara.run/public/boy?usearname=CG11105000',
-      regCode: 'NMW-CG11105000',
-      name: 'Hartono Surianto',
-      nik: '3172013005760007',
-      type: 'AXA Insurance',
-      createAt: new Date()
-    }, {
-      id: 5,
-      img: 'https://avatar.iran.liara.run/public/girl?usearname=CM00605300',
-      regCode: 'NMW-CM00605300',
-      name: 'Anisha Ulfah Annas',
-      nik: '3172013005760007',
-      type: 'BPJS',
-      BPJS: '0001234561234',
-      createAt: new Date()
-    }, {
-      id: 6,
-      img: 'https://avatar.iran.liara.run/public/girl?usearname=BR00605240',
-      regCode: 'NMW-BR00605240',
-      name: 'Laela Fijarwati',
-      nik: '317405690650001',
-      type: 'Mandiri',
-      createAt: new Date()
-    }, {
-      id: 7,
-      img: 'https://avatar.iran.liara.run/public/girl?usearname=CN00605500',
-      regCode: 'NMW-CN00605500',
-      name: 'Retno Susilowati',
-      nik: '3216034604010002',
-      type: 'Mandiri',
-      createAt: new Date()
-    }, {
-      id: 8,
-      img: 'https://avatar.iran.liara.run/public/girl?usearname=CG00905100',
-      regCode: 'NMW-CG00905100',
-      name: 'Maria Ulpah Amin Darsono',
-      nik: '3278036508920003',
-      type: 'Mandiri',
-      createAt: new Date()
-    }, {
-      id: 9,
-      img: 'https://avatar.iran.liara.run/public/girl?usearname=CG00905000',
-      regCode: 'NMW-CG00905000',
-      name: 'Salbilah Bilahuna',
-      nik: '3173016509041005',
-      type: 'BPJS',
-      BPJS: '0001234512223',
-      createAt: new Date()
-    }, {
-      id: 10,
-      img: 'https://avatar.iran.liara.run/public/girl?usearname=CG01005500',
-      regCode: 'NMW-CG01005500',
-      name: 'Elvina Dewi Falihah',
-      nik: '3201056403930003',
-      type: 'BPJS',
-      BPJS: '00012345600873',
-      createAt: new Date()
-    }
-  ]
-})
+const tableInfo = ref<IPagination<IData[]>>(JsonData)
 
 const setLimit = (args: number) => {
   console.error(args)

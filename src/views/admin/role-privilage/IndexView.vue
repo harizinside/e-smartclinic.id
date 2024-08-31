@@ -87,7 +87,7 @@ import AdminLayouts from '@/views/AdminLayouts.vue'
 import VTable from '@/components/VTable.vue'
 import VTableColumn from '@/components/VTableColumn.vue'
 import VHumanDate from '@/components/VHumanDate.vue'
-import jsonData from '@/utils/role-privilages.json'
+import JsonData from '@/utils/role-privilages.json'
 
 interface IData {
   id: number
@@ -113,7 +113,7 @@ const columnHeader = ref<IColumnHeader[]>([
   { name: 'Aksi', type: 'label' }
 ])
 
-const tableInfo = ref<IPagination<IData[]>>(jsonData)
+const tableInfo = ref<IPagination<IData[]>>(JsonData)
 
 const setLimit = (args: number) => {
   console.error(args)
