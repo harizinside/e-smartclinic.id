@@ -2,7 +2,7 @@
   <div>
     <AdminLayouts>
       <VBreadcrumbNavigation :navs="navs" />
-      Create Payment
+      Create out Patients
     </AdminLayouts>
   </div>
 </template>
@@ -15,12 +15,12 @@ import AdminLayouts from '@/views/AdminLayouts.vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
 
 const navs = ref<INavigation[]>([
-  { name: 'Payments', link: '/payments', active: true },
-  { name: 'Create', link: '/payments/create', active: true }
+  { name: 'Outpatients', link: '/clinic-info', active: true },
+  { name: 'Create', link: '/clinic-info/create', active: true }
 ])
 
 useHead({
-  title: 'Create payment | e-Smart Clinic'
+  title: 'Create out Patients | e-Smart Clinic'
 })
 </script>
 
