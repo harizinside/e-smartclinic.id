@@ -2,7 +2,7 @@
   <div>
     <AdminLayouts>
       <VBreadcrumbNavigation :navs="navs" />
-      <h1>Medical Record</h1>
+      Title
     </AdminLayouts>
   </div>
 </template>
@@ -11,15 +11,16 @@
 import { ref } from 'vue'
 import { useHead } from '@unhead/vue'
 import type { INavigation } from '@/interfaces/navs'
-import AdminLayouts from './AdminLayouts.vue'
+import AdminLayouts from '@/views/AdminLayouts.vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
 
 const navs = ref<INavigation[]>([
-  { name: 'Medical Record', link: '/clinic-info', active: true }
+  { name: 'System', link: '/system', active: false },
+  { name: 'Title', link: '/system/title', active: true }
 ])
 
 useHead({
-  title: 'Medical Record | e-Smart Clinic'
+  title: 'Title | e-Smart Clinic'
 })
 </script>
 

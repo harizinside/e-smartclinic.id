@@ -2,6 +2,7 @@
   <div>
     <AdminLayouts>
       <VBreadcrumbNavigation :navs="navs" />
+      Clinic Info
     </AdminLayouts>
   </div>
 </template>

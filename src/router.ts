@@ -5,11 +5,20 @@ import { useAuthStore } from '@/stores/auth'
 import SignIn from '@/views/auth/SignInView.vue'
 import ForgotPassword from '@/views/auth/ForgotPasswordView.vue'
 import Recovery from '@/views/auth/RecoveryView.vue'
+import Users from '@/views/admin/UsersView.vue'
 import RolePrivilage from '@/views/admin/role-privilage/IndexView.vue'
 import RolePrivilageCreate from '@/views/admin/role-privilage/AdditionalView.vue'
 import Home from '@/views/HomeView.vue'
 import Profile from '@/views/ProfileView.vue'
-import Users from '@/views/admin/UsersView.vue'
+import SystemBloodType from '@/views/system/BloodTypeView.vue'
+import SystemLastEducation from '@/views/system/LastEducationView.vue'
+import SystemEthnicGroup from '@/views/system/EthnicGroupView.vue'
+import SystemMaritalStatus from '@/views/system/MaritalStatusView.vue'
+import SystemMarketing from '@/views/system/MarketingView.vue'
+import SystemReligion from '@/views/system/ReligionView.vue'
+import SystemTitle from '@/views/system/TitleView.vue'
+import SystemWorkingStatus from '@/views/system/WorkingStatusView.vue'
+import SystemArea from '@/views/system/AreaView.vue'
 import AddOnDiagnosis from '@/views/addon/DiagnosisView.vue'
 import AddOnDisease from '@/views/addon/DiseaseView.vue'
 import AddOnDrugs from '@/views/addon/DrugsViews.vue'
@@ -93,67 +102,47 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/system/blood-type',
-    component: RolePrivilageCreate,
+    component: SystemBloodType,
     meta: { auth: true }
   },
   {
     path: '/system/last-education',
-    component: RolePrivilageCreate,
+    component: SystemLastEducation,
     meta: { auth: true }
   },
   {
     path: '/system/ethnic-group',
-    component: RolePrivilageCreate,
+    component: SystemEthnicGroup,
     meta: { auth: true }
   },
   {
     path: '/system/marital-status',
-    component: RolePrivilageCreate,
+    component: SystemMaritalStatus,
     meta: { auth: true }
   },
   {
     path: '/system/marketing',
-    component: RolePrivilageCreate,
+    component: SystemMarketing,
     meta: { auth: true }
   },
   {
     path: '/system/religion',
-    component: RolePrivilageCreate,
+    component: SystemReligion,
     meta: { auth: true }
   },
   {
     path: '/system/title',
-    component: RolePrivilageCreate,
+    component: SystemTitle,
     meta: { auth: true }
   },
   {
     path: '/system/working-status',
-    component: RolePrivilageCreate,
+    component: SystemWorkingStatus,
     meta: { auth: true }
   },
   {
-    path: '/system/title',
-    component: RolePrivilageCreate,
-    meta: { auth: true }
-  },
-  {
-    path: '/system/region/provinces',
-    component: RolePrivilageCreate,
-    meta: { auth: true }
-  },
-  {
-    path: '/system/region/citys',
-    component: RolePrivilageCreate,
-    meta: { auth: true }
-  },
-  {
-    path: '/system/region/subdistricts',
-    component: RolePrivilageCreate,
-    meta: { auth: true }
-  },
-  {
-    path: '/system/region/villages',
-    component: RolePrivilageCreate,
+    path: '/system/region/area',
+    component: SystemArea,
     meta: { auth: true }
   },
   {

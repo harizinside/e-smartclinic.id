@@ -200,71 +200,11 @@ export const LIST_MENU = <MenuProps[]>[
         }
       },
       {
-        name: 'Title',
-        href: '/system/title',
-        icon: 'chevron-right',
-        status: true,
-        order: 9,
-        privilage: {
-          create: true,
-          read: true,
-          update: true,
-          delete: true,
-          import: true,
-          export: true
-        }
-      },
-      {
-        name: 'Provinsi (Area)',
-        href: '/system/region/provinces',
+        name: 'Area',
+        href: '/system/region/area',
         icon: 'chevron-right',
         status: true,
         order: 10,
-        privilage: {
-          create: true,
-          read: true,
-          update: true,
-          delete: true,
-          import: true,
-          export: true
-        }
-      },
-      {
-        name: 'Kota (Area)',
-        href: '/system/region/citys',
-        icon: 'chevron-right',
-        status: true,
-        order: 11,
-        privilage: {
-          create: true,
-          read: true,
-          update: true,
-          delete: true,
-          import: true,
-          export: true
-        }
-      },
-      {
-        name: 'Kecamatan (Area)',
-        href: '/system/region/subdistricts',
-        icon: 'chevron-right',
-        status: true,
-        order: 12,
-        privilage: {
-          create: true,
-          read: true,
-          update: true,
-          delete: true,
-          import: true,
-          export: true
-        }
-      },
-      {
-        name: 'Kelurahan (Area)',
-        href: '/system/region/villages',
-        icon: 'chevron-right',
-        status: true,
-        order: 13,
         privilage: {
           create: true,
           read: true,
