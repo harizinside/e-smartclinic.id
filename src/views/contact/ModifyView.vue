@@ -2,9 +2,10 @@
   <div>
     <AdminLayouts>
       <VBreadcrumbNavigation :navs="navs" />
-      <div class="pt-4">
+      <div
+        v-if="alert"
+        class="pt-4">
         <VAlerts
-          v-if="alert"
           :message="alert!.message"
           :type="alert?.type"
           @close="alert=undefined" />

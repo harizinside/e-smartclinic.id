@@ -21,7 +21,7 @@ import SystemWorkingStatus from '@/views/system/WorkingStatusView.vue'
 import SystemArea from '@/views/system/AreaView.vue'
 import AddOnDiagnosis from '@/views/addon/DiagnosisView.vue'
 import AddOnDisease from '@/views/addon/DiseaseView.vue'
-import AddOnDrugs from '@/views/addon/DrugsViews.vue'
+import AddOnDrugs from '@/views/addon/DrugsView.vue'
 import AddOnIcd10 from '@/views/addon/Icd10View.vue'
 import AddOnInsuranceGuarantee from '@/views/addon/InsuranceGuaranteeView.vue'
 import AddOnPrognosis from '@/views/addon/PrognosisView.vue'
@@ -64,11 +64,11 @@ const routes: Array<RouteRecordRaw> = [
 
       //! Delete session to server
       fetch(`${HTTP_URI}/legacy/auth/logout`, {
-          method: 'DELETE',
-          headers: {
-              ...HTTP_HEADER,
-              Authorization: `Bearer ${authState.auth.TOKEN}`
-          }
+        method: 'DELETE',
+        headers: {
+          ...HTTP_HEADER,
+          Authorization: `Bearer ${authState.auth.TOKEN}`
+        }
       })
 
       localStorage.removeItem('__auth')
@@ -216,7 +216,7 @@ const routes: Array<RouteRecordRaw> = [
     component: MedicalRecord,
     meta: { auth: true }
   },
-    {
+  {
     path: '/inventory',
     component: OutPatients,
     meta: { auth: true }
@@ -295,7 +295,6 @@ router.beforeEach(async (to, _from, next) => {
     if (!response.ok) {
       return { path: '/auth/sign-out' }
     }
-
   }
 
   next()

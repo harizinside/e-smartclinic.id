@@ -2,7 +2,7 @@
   <div>
     <AdminLayouts>
       <VBreadcrumbNavigation :navs="navs" />
-      Insurance Guarantee
+      Disease
     </AdminLayouts>
   </div>
 </template>

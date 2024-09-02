@@ -2,7 +2,7 @@
   <div>
     <AdminLayouts>
       <VBreadcrumbNavigation :navs="navs" />
-      Area View
+      Drugs
     </AdminLayouts>
   </div>
 </template>

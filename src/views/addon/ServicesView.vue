@@ -2,7 +2,7 @@
   <div>
     <AdminLayouts>
       <VBreadcrumbNavigation :navs="navs" />
-      User View
+      Services
     </AdminLayouts>
   </div>
 </template>
