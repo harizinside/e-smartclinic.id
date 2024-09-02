@@ -1,0 +1,75 @@
+{
+  "from": 1,
+  "to": 10,
+  "total": 8,
+  "per_page": 14,
+  "current_page": 1,
+  "last_page": 1,
+  "first_page_url": "page=1&limit=10",
+  "last_page_url": "page=1&limit=10",
+  "next_page_url": "page=1&limit=10",
+  "prev_page_url": "page=1&limit=10",
+  "path": "http://192.168.3.221:8001/rheinmedika/medical-check/accounts",
+  "data": [
+    {
+      "id": 1,
+      "name": "TK",
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 2,
+      "name": "SD",
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 3,
+      "name": "SLTP",
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 4,
+      "name": "SLTA",
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 5,
+      "name": "Diploma I",
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 6,
+      "name": "Diploma II",
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 7,
+      "name": "Diploma III",
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 8,
+      "name": "Diploma IV",
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 9,
+      "name": "S1",
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 10,
+      "name": "S2",
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    }
+  ]
+}

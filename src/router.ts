@@ -10,15 +10,8 @@ import RolePrivilage from '@/views/admin/role-privilage/IndexView.vue'
 import RolePrivilageCreate from '@/views/admin/role-privilage/AdditionalView.vue'
 import Home from '@/views/HomeView.vue'
 import Profile from '@/views/ProfileView.vue'
-import SystemBloodType from '@/views/system/BloodTypeView.vue'
-import SystemLastEducation from '@/views/system/LastEducationView.vue'
-import SystemEthnicGroup from '@/views/system/EthnicGroupView.vue'
-import SystemMaritalStatus from '@/views/system/MaritalStatusView.vue'
-import SystemMarketing from '@/views/system/MarketingView.vue'
-import SystemReligion from '@/views/system/ReligionView.vue'
-import SystemTitle from '@/views/system/TitleView.vue'
-import SystemWorkingStatus from '@/views/system/WorkingStatusView.vue'
-import SystemArea from '@/views/system/AreaView.vue'
+import SystemAreas from '@/views/system/areas/IndexView.vue'
+import SystemUser from '@/views/system/users/IndexView.vue'
 import AddOnDiagnosis from '@/views/addon/DiagnosisView.vue'
 import AddOnDisease from '@/views/addon/DiseaseView.vue'
 import AddOnDrugs from '@/views/addon/DrugsView.vue'
@@ -102,48 +95,13 @@ const routes: Array<RouteRecordRaw> = [
     meta: { auth: true }
   },
   {
-    path: '/system/blood-type',
-    component: SystemBloodType,
+    path: '/system/users',
+    component: SystemUser,
     meta: { auth: true }
   },
   {
-    path: '/system/last-education',
-    component: SystemLastEducation,
-    meta: { auth: true }
-  },
-  {
-    path: '/system/ethnic-group',
-    component: SystemEthnicGroup,
-    meta: { auth: true }
-  },
-  {
-    path: '/system/marital-status',
-    component: SystemMaritalStatus,
-    meta: { auth: true }
-  },
-  {
-    path: '/system/marketing',
-    component: SystemMarketing,
-    meta: { auth: true }
-  },
-  {
-    path: '/system/religion',
-    component: SystemReligion,
-    meta: { auth: true }
-  },
-  {
-    path: '/system/title',
-    component: SystemTitle,
-    meta: { auth: true }
-  },
-  {
-    path: '/system/working-status',
-    component: SystemWorkingStatus,
-    meta: { auth: true }
-  },
-  {
-    path: '/system/region/area',
-    component: SystemArea,
+    path: '/system/areas',
+    component: SystemAreas,
     meta: { auth: true }
   },
   {

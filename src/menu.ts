@@ -80,8 +80,8 @@ export const LIST_MENU = <MenuProps[]>[
     },
     children: [
       {
-        name: 'Golongan Darah',
-        href: '/system/blood-type',
+        name: 'Users (Interface)',
+        href: '/system/users',
         icon: 'chevron-right',
         status: true,
         order: 1,
@@ -95,116 +95,11 @@ export const LIST_MENU = <MenuProps[]>[
         }
       },
       {
-        name: 'Pendidikan Terakhir',
-        href: '/system/last-education',
+        name: 'Areas (Interface)',
+        href: '/system/areas',
         icon: 'chevron-right',
         status: true,
-        order: 2,
-        privilage: {
-          create: true,
-          read: true,
-          update: true,
-          delete: true,
-          import: true,
-          export: true
-        }
-      },
-      {
-        name: 'Suku',
-        href: '/system/ethnic-group',
-        icon: 'chevron-right',
-        status: true,
-        order: 3,
-        privilage: {
-          create: true,
-          read: true,
-          update: true,
-          delete: true,
-          import: true,
-          export: true
-        }
-      },
-      {
-        name: 'Status Pernikahan',
-        href: '/system/marital-status',
-        icon: 'chevron-right',
-        status: true,
-        order: 4,
-        privilage: {
-          create: true,
-          read: true,
-          update: true,
-          delete: true,
-          import: true,
-          export: true
-        }
-      },
-      {
-        name: 'Marketing',
-        href: '/system/marketing',
-        icon: 'chevron-right',
-        status: true,
-        order: 5,
-        privilage: {
-          create: true,
-          read: true,
-          update: true,
-          delete: true,
-          import: true,
-          export: true
-        }
-      },
-      {
-        name: 'Agama',
-        href: '/system/religion',
-        icon: 'chevron-right',
-        status: true,
-        order: 6,
-        privilage: {
-          create: true,
-          read: true,
-          update: true,
-          delete: true,
-          import: true,
-          export: true
-        }
-      },
-      {
-        name: 'Title',
-        href: '/system/title',
-        icon: 'chevron-right',
-        status: true,
-        order: 7,
-        privilage: {
-          create: true,
-          read: true,
-          update: true,
-          delete: true,
-          import: true,
-          export: true
-        }
-      },
-      {
-        name: 'Status Pekerjaan',
-        href: '/system/working-status',
-        icon: 'chevron-right',
-        status: true,
-        order: 8,
-        privilage: {
-          create: true,
-          read: true,
-          update: true,
-          delete: true,
-          import: true,
-          export: true
-        }
-      },
-      {
-        name: 'Area',
-        href: '/system/region/area',
-        icon: 'chevron-right',
-        status: true,
-        order: 10,
+        order: 1,
         privilage: {
           create: true,
           read: true,
