@@ -34,6 +34,7 @@ import OutPatients from '@/views/outpatient/IndexView.vue'
 import Payments from '@/views/payment/IndexView.vue'
 import MedicalRecord from '@/views/MedicalRecordView.vue'
 import NotFound from '@/views/NotFoundView.vue'
+import System from '@/views/SettingsView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -258,6 +259,11 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/crm/drugs',
     component: MedicalRecord,
+    meta: { auth: true }
+  },
+  {
+    path: '/settings',
+    component: System,
     meta: { auth: true }
   },
   {

@@ -132,7 +132,7 @@
 
                     <li class="mt-auto">
                       <router-link
-                        to="/admin/settings"
+                        to="/settings"
                         class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-800 hover:text-white">
                         <VIcons
                           :name="'cog-6-tooth'"
@@ -235,7 +235,7 @@
 
             <li class="mt-auto">
               <router-link
-                to="/admin/settings"
+                to="/settings"
                 class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-800 hover:text-white">
                 <VIcons
                   :name="'cog-6-tooth'"
