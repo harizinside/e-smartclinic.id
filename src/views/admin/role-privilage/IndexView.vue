@@ -77,6 +77,7 @@
 import { ref } from 'vue'
 import { useHead } from '@unhead/vue'
 import { TransitionRoot } from '@headlessui/vue'
+import type { INavigation } from '@/interfaces/navs'
 import type { IAlert } from '@/interfaces/alerts'
 import type { IColumnHeader } from '@/interfaces/tables'
 import type { IPagination } from '@/interfaces/pagination'
@@ -99,8 +100,7 @@ interface IData {
 const dialogDelete = ref<boolean>(false)
 const alert = ref<IAlert>()
 
-const navs = ref([
-  { name: 'Dashboard', link: '/', active: false },
+const navs = ref<INavigation[]>([
   { name: 'Otoritasi', link: '/admin', active: false },
   { name: 'Hak Akses', link: '/admin/role-privilages', active: true }
 ])

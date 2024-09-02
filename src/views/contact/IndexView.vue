@@ -94,6 +94,7 @@ import { TransitionRoot } from '@headlessui/vue'
 import type { IAlert } from '@/interfaces/alerts'
 import type { IColumnHeader } from '@/interfaces/tables'
 import type { IPagination } from '@/interfaces/pagination'
+import type { INavigation } from '@/interfaces/navs'
 import AdminLayouts from '@/views/AdminLayouts.vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
 import VAlerts from '@/components/VAlerts.vue'
@@ -114,10 +115,9 @@ interface IData {
   createAt: string
 }
 
-const navs = [
-  { name: 'Dashboard', link: '/', active: false },
+const navs = ref<INavigation[]>([
   { name: 'Contacts', link: '/contacts', active: true }
-]
+])
 
 const alert = ref<IAlert>()
 const dialogDelete = ref<boolean>(false)

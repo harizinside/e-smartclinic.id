@@ -2,7 +2,7 @@
   <div>
     <AdminLayouts>
       <VBreadcrumbNavigation :navs="navs" />
-      User View
+      Diagnosis View
     </AdminLayouts>
   </div>
 </template>
@@ -16,11 +16,11 @@ import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
 
 const navs = ref<INavigation[]>([
   { name: 'Add On', link: '/add-on', active: false },
-  { name: 'Services', link: '/contacts', active: true }
+  { name: 'Diagnosis', link: '/add-on/diagnosis', active: true }
 ])
 
 useHead({
-  title: 'Services | e-Smart Clinic'
+  title: 'Diagnosis | e-Smart Clinic'
 })
 </script>
 

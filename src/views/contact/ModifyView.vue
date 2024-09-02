@@ -372,6 +372,7 @@ import { useHead } from '@unhead/vue'
 import { TransitionRoot, Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 import { ChevronUpIcon } from '@heroicons/vue/20/solid'
 import type { IAlert } from '@/interfaces/alerts'
+import type { INavigation } from '@/interfaces/navs'
 import AdminLayouts from '@/views/AdminLayouts.vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
 import VAlerts from '@/components/VAlerts.vue'
@@ -382,11 +383,10 @@ interface UploadedFile {
   url: string;
 }
 
-const navs = [
-  { name: 'Dashboard', link: '/', active: false },
+const navs = ref<INavigation[]>([
   { name: 'Contacts', link: '/contacts', active: false },
   { name: 'Create', link: '/contacts/create', active: true }
-]
+])
 
 const alert = ref<IAlert>()
 const isSaved = ref<boolean>(false)

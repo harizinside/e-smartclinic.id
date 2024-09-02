@@ -2,7 +2,7 @@
   <div>
     <AdminLayouts>
       <VBreadcrumbNavigation :navs="navs" />
-      User View
+      Insurance Guarantee
     </AdminLayouts>
   </div>
 </template>
@@ -10,12 +10,13 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useHead } from '@unhead/vue'
+import type { INavigation } from '@/interfaces/navs'
 import AdminLayouts from '@/views/AdminLayouts.vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
 
-const navs = ref([
-  { name: 'Dashboard', link: '/', active: false },
-  { name: 'Contacts', link: '/contacts', active: true }
+const navs = ref<INavigation[]>([
+  { name: 'Add On', link: '/add-on', active: false },
+  { name: 'Insurance Guarantee', link: '/add-on/insurance-guarantee', active: true }
 ])
 
 useHead({

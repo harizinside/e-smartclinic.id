@@ -278,7 +278,7 @@ export const LIST_MENU = <MenuProps[]>[
   },
   {
     name: 'Tambahan',
-    href: '/addon',
+    href: '/add-on',
     icon: 'puzzle-piece',
     status: true,
     order: 4,
@@ -293,7 +293,7 @@ export const LIST_MENU = <MenuProps[]>[
     children: [
       {
         name: 'Obat-Obatan',
-        href: '/addon/drugs',
+        href: '/add-on/drugs',
         icon: 'chevron-right',
         status: true,
         order: 1,
@@ -308,7 +308,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Layanan',
-        href: '/addon/services',
+        href: '/add-on/services',
         icon: 'chevron-right',
         status: true,
         order: 2,
@@ -323,7 +323,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Asuransi & Jaminan',
-        href: '/addon/insurance-guarantee',
+        href: '/add-on/insurance-guarantee',
         icon: 'chevron-right',
         status: true,
         order: 3,
@@ -338,7 +338,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Penyakit (Subjective)',
-        href: '/addon/disease',
+        href: '/add-on/disease',
         icon: 'chevron-right',
         status: true,
         order: 4,
@@ -353,7 +353,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Diagnosa (Assesment)',
-        href: '/addon/diagnosis',
+        href: '/add-on/diagnosis',
         icon: 'chevron-right',
         status: true,
         order: 5,
@@ -368,7 +368,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'Prognosa (Assesment)',
-        href: '/addon/prognosis',
+        href: '/add-on/prognosis',
         icon: 'chevron-right',
         status: true,
         order: 6,
@@ -383,7 +383,7 @@ export const LIST_MENU = <MenuProps[]>[
       },
       {
         name: 'ICD-10 (Assesment)',
-        href: '/addon/icd-10',
+        href: '/add-on/icd-10',
         icon: 'chevron-right',
         status: true,
         order: 7,

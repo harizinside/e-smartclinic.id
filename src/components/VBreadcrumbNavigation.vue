@@ -9,7 +9,7 @@
         <li>
           <div>
             <router-link
-              to="#"
+              to="/"
               class="text-gray-400 hover:text-gray-500">
               <HomeIcon
                 class="h-5 w-5 flex-shrink-0"

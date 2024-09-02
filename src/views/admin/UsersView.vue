@@ -123,6 +123,7 @@ import { TransitionRoot } from '@headlessui/vue'
 import type { IAlert } from '@/interfaces/alerts'
 import type { IColumnHeader } from '@/interfaces/tables'
 import type { IPagination } from '@/interfaces/pagination'
+import type { INavigation } from '@/interfaces/navs'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
 import VDialogFindUsers from '@/components/VDialogFindUsers.vue'
 import VDialogSetRole from '@/components/VDialogSetRole.vue'
@@ -158,11 +159,10 @@ const columnHeader = ref<IColumnHeader[]>([
 
 const tableInfo = ref<IPagination<IData[]>>(JsonData)
 
-const navs = [
-  { name: 'Dashboard', link: '/', active: false },
+const navs = ref<INavigation[]>([
   { name: 'Otoritasi', link: '/admin', active: false },
   { name: 'Pengguna', link: '/admin/users', active: true }
-]
+])
 
 const processDelete = () => {
   dialogDelete.value = false

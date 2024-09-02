@@ -65,6 +65,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useHead } from '@unhead/vue'
+import type { INavigation } from '@/interfaces/navs'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
 import BasicView from './additional/BasicView.vue'
 import AdvancedView from './additional/AdvancedView.vue'
@@ -72,8 +73,7 @@ import AdminLayouts from '@/views/AdminLayouts.vue'
 
 const active = ref<string>('General')
 
-const navs = ref([
-  { name: 'Dashboard', link: '/', active: false },
+const navs = ref<INavigation[]>([
   { name: 'Otoritasi', link: '/admin', active: false },
   { name: 'Hak Akses', link: '/admin/role-privilages', active: false },
   { name: 'Additional', link: '/admin/role-privilages/create', active: false }

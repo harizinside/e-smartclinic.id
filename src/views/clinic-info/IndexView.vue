@@ -7,14 +7,15 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import { useHead } from '@unhead/vue'
+import type { INavigation } from '@/interfaces/navs'
 import AdminLayouts from '@/views/AdminLayouts.vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
 
-const navs = [
-  { name: 'Dashboard', link: '/', active: false },
+const navs = ref<INavigation[]>([
   { name: 'Clinic Info', link: '/clinic-info', active: true }
-]
+])
 
 useHead({
   title: 'Contacts Info | e-Smart Clinic'

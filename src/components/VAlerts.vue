@@ -14,11 +14,11 @@
           </p>
           <ul
             v-if="props.errors"
-            class="mt-1.5 list-disc list-inside">
+            :class="[textClass, 'mt-1.5 list-disc list-inside text-xs font-medium']">
             <li
               v-for="(err, index) in props.errors"
               :key="index">
-              <span class="font-semibold">{{ err.field }}</span>&nbsp;{{ err.message }}
+              <span class="">{{ err.field }}</span>&nbsp;{{ err.message }}
             </li>
           </ul>
         </div>

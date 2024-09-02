@@ -7,10 +7,16 @@ import ForgotPassword from '@/views/auth/ForgotPasswordView.vue'
 import Recovery from '@/views/auth/RecoveryView.vue'
 import RolePrivilage from '@/views/admin/role-privilage/IndexView.vue'
 import RolePrivilageCreate from '@/views/admin/role-privilage/AdditionalView.vue'
-import Users from '@/views/admin/UsersView.vue'
-import AddOnArea from '@/views/addon/AreaView.vue'
-import AddOnUsers from '@/views/addon/UserView.vue'
 import Home from '@/views/HomeView.vue'
+import Profile from '@/views/ProfileView.vue'
+import Users from '@/views/admin/UsersView.vue'
+import AddOnDiagnosis from '@/views/addon/DiagnosisView.vue'
+import AddOnDisease from '@/views/addon/DiseaseView.vue'
+import AddOnDrugs from '@/views/addon/DrugsViews.vue'
+import AddOnIcd10 from '@/views/addon/Icd10View.vue'
+import AddOnInsuranceGuarantee from '@/views/addon/InsuranceGuaranteeView.vue'
+import AddOnPrognosis from '@/views/addon/PrognosisView.vue'
+import AddOnServices from '@/views/addon/ServicesView.vue'
 import ClinicInfo from '@/views/clinic-info/IndexView.vue'
 import Patients from '@/views/contact/IndexView.vue'
 import PatientsModif from '@/views/contact/ModifyView.vue'
@@ -63,6 +69,11 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     component: Home,
+    meta: { auth: true }
+  },
+  {
+    path: '/profile',
+    component: Profile,
     meta: { auth: true }
   },
   {
@@ -147,37 +158,37 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/add-on/drugs',
-    component: AddOnArea,
+    component: AddOnDrugs,
     meta: { auth: true }
   },
   {
     path: '/add-on/services',
-    component: AddOnUsers,
+    component: AddOnServices,
     meta: { auth: true }
   },
   {
     path: '/add-on/insurance-guarantee',
-    component: AddOnUsers,
+    component: AddOnInsuranceGuarantee,
     meta: { auth: true }
   },
   {
     path: '/add-on/disease',
-    component: AddOnUsers,
+    component: AddOnDisease,
     meta: { auth: true }
   },
   {
     path: '/add-on/diagnosis',
-    component: AddOnUsers,
+    component: AddOnDiagnosis,
     meta: { auth: true }
   },
   {
     path: '/add-on/prognosis',
-    component: AddOnUsers,
+    component: AddOnPrognosis,
     meta: { auth: true }
   },
   {
     path: '/add-on/icd-10',
-    component: AddOnUsers,
+    component: AddOnIcd10,
     meta: { auth: true }
   },
   {
@@ -227,7 +238,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/payments/online',
-    component: AddOnUsers,
+    component: Payments,
     meta: { auth: true }
   },
   {
