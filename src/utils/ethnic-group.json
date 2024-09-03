@@ -1,10 +1,10 @@
 {
   "from": 1,
   "to": 10,
-  "total": 34,
+  "total": 79,
   "per_page": 10,
   "current_page": 1,
-  "last_page": 4,
+  "last_page": 80,
   "first_page_url": "page=1&limit=10",
   "last_page_url": "page=1&limit=10",
   "next_page_url": "page=1&limit=10",
@@ -13,71 +13,57 @@
   "data": [
     {
       "id": 1,
-      "code": "11",
-      "name": "ACEH",
+      "name": "Jawa",
+      "status": true,
       "createdAt": "2023-08-23T12:34:56",
       "updatedAt": "2023-08-23T12:34:56"
     },
     {
       "id": 2,
-      "code": "12",
-      "name": "SUMATERA UTARA",
+      "name": "Sunda",
+      "status": true,
       "createdAt": "2023-08-23T12:34:56",
       "updatedAt": "2023-08-23T12:34:56"
     },
     {
       "id": 3,
-      "code": "13",
-      "name": "SUMATERA BARAT",
+      "name": "Batak",
+      "status": true,
       "createdAt": "2023-08-23T12:34:56",
       "updatedAt": "2023-08-23T12:34:56"
     },
     {
       "id": 4,
-      "code": "14",
-      "name": "RIAU",
+      "name": "Melayu",
+      "status": true,
       "createdAt": "2023-08-23T12:34:56",
       "updatedAt": "2023-08-23T12:34:56"
     },
     {
       "id": 5,
-      "code": "15",
-      "name": "JAMBI",
+      "name": "Betawi",
+      "status": true,
       "createdAt": "2023-08-23T12:34:56",
       "updatedAt": "2023-08-23T12:34:56"
     },
     {
       "id": 6,
-      "code": "16",
-      "name": "SUMATERA SELATAN",
+      "name": "Minang",
+      "status": true,
       "createdAt": "2023-08-23T12:34:56",
       "updatedAt": "2023-08-23T12:34:56"
     },
     {
       "id": 7,
-      "code": "17",
-      "name": "BENGKULU",
+      "name": "Palembang",
+      "status": true,
       "createdAt": "2023-08-23T12:34:56",
       "updatedAt": "2023-08-23T12:34:56"
     },
     {
       "id": 8,
-      "code": "18",
-      "name": "LAMPUNG",
-      "createdAt": "2023-08-23T12:34:56",
-      "updatedAt": "2023-08-23T12:34:56"
-    },
-    {
-      "id": 9,
-      "code": "19",
-      "name": "KEPULAUAN BANGKA BELITUNG",
-      "createdAt": "2023-08-23T12:34:56",
-      "updatedAt": "2023-08-23T12:34:56"
-    },
-    {
-      "id": 10,
-      "code": "20",
-      "name": "KEPULAUAN RIAU",
+      "name": "China",
+      "status": true,
       "createdAt": "2023-08-23T12:34:56",
       "updatedAt": "2023-08-23T12:34:56"
     }

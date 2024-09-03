@@ -50,7 +50,7 @@ defineEmits([ 'close' ])
 const props = defineProps<IAlert>()
 
 const panelClass = computed(() => {
-switch (props.type) {
+  switch (props.type) {
     case 'success':
       return 'bg-green-50'
     case 'warning':
@@ -65,7 +65,7 @@ switch (props.type) {
 })
 
 const iconClass = computed(() => {
-switch (props.type) {
+  switch (props.type) {
     case 'success':
       return 'text-green-400'
     case 'warning':
@@ -80,7 +80,7 @@ switch (props.type) {
 })
 
 const textClass = computed(() => {
-switch (props.type) {
+  switch (props.type) {
     case 'success':
       return 'text-green-800'
     case 'warning':
