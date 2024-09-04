@@ -99,7 +99,22 @@ export const LIST_MENU = <MenuProps[]>[
         href: '/system/areas',
         icon: 'chevron-right',
         status: true,
-        order: 1,
+        order: 2,
+        privilage: {
+          create: true,
+          read: true,
+          update: true,
+          delete: true,
+          import: true,
+          export: true
+        }
+      },
+      {
+        name: 'Medicals (Interface)',
+        href: '/system/medicals',
+        icon: 'chevron-right',
+        status: true,
+        order: 3,
         privilage: {
           create: true,
           read: true,
@@ -162,66 +177,6 @@ export const LIST_MENU = <MenuProps[]>[
         icon: 'chevron-right',
         status: true,
         order: 3,
-        privilage: {
-          create: true,
-          read: true,
-          update: true,
-          delete: true,
-          import: true,
-          export: true
-        }
-      },
-      {
-        name: 'Penyakit (Subjective)',
-        href: '/add-on/disease',
-        icon: 'chevron-right',
-        status: true,
-        order: 4,
-        privilage: {
-          create: true,
-          read: true,
-          update: true,
-          delete: true,
-          import: true,
-          export: true
-        }
-      },
-      {
-        name: 'Diagnosa (Assesment)',
-        href: '/add-on/diagnosis',
-        icon: 'chevron-right',
-        status: true,
-        order: 5,
-        privilage: {
-          create: true,
-          read: true,
-          update: true,
-          delete: true,
-          import: true,
-          export: true
-        }
-      },
-      {
-        name: 'Prognosa (Assesment)',
-        href: '/add-on/prognosis',
-        icon: 'chevron-right',
-        status: true,
-        order: 6,
-        privilage: {
-          create: true,
-          read: true,
-          update: true,
-          delete: true,
-          import: true,
-          export: true
-        }
-      },
-      {
-        name: 'ICD-10 (Assesment)',
-        href: '/add-on/icd-10',
-        icon: 'chevron-right',
-        status: true,
-        order: 7,
         privilage: {
           create: true,
           read: true,

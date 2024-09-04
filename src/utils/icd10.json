@@ -1,0 +1,105 @@
+{
+  "from": 1,
+  "to": 10,
+  "total": 18549,
+  "per_page": 10,
+  "current_page": 1,
+  "last_page": 1855,
+  "first_page_url": "page=1&limit=10",
+  "last_page_url": "page=1&limit=10",
+  "next_page_url": "page=1&limit=10",
+  "prev_page_url": "page=1&limit=10",
+  "path": "http://192.168.3.221:8001/rheinmedika/medical-check/accounts",
+  "data": [
+    {
+      "id": 1,
+      "code": "A00",
+      "str": "Cholera",
+      "sab": "ICD10_2010",
+      "status": true,
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 2,
+      "code": "A00.0",
+      "str": "Cholera due to vibrio cholerae 01, biovar cholerae",
+      "sab": "ICD10_2010",
+      "status": true,
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 3,
+      "code": "A00.1",
+      "str": "Cholera due to vibrio cholerae 01, biovar eltor",
+      "sab": "ICD10_2010",
+      "status": true,
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 4,
+      "code": "A00.9",
+      "str": "Cholera, unspecified",
+      "sab": "ICD10_2010",
+      "status": true,
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 5,
+      "code": "A01",
+      "str": "Typhoid and paratyphoid fevers",
+      "sab": "ICD10_2010",
+      "status": true,
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 6,
+      "code": "A01.0",
+      "str": "Typhoid fever",
+      "sab": "ICD10_2010",
+      "status": true,
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 7,
+      "code": "A01.1",
+      "str": "Paratyphoid fever a",
+      "sab": "ICD10_2010",
+      "status": true,
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 8,
+      "code": "A01.2",
+      "str": "Paratyphoid fever b",
+      "sab": "ICD10_2010",
+      "status": true,
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 9,
+      "code": "A01.3",
+      "str": "Paratyphoid fever c",
+      "sab": "ICD10_2010",
+      "status": true,
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 10,
+      "code": "A01.4",
+      "str": "Paratyphoid fever, unspecified",
+      "sab": "ICD10_2010",
+      "status": true,
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    }
+  ]
+}

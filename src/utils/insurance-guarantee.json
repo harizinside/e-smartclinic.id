@@ -1,7 +1,7 @@
 {
   "from": 1,
   "to": 10,
-  "total": 3,
+  "total": 8,
   "per_page": 10,
   "current_page": 1,
   "last_page": 1,
@@ -13,28 +13,28 @@
   "data": [
     {
       "id": 1,
-      "name": "Konsultasi Sp.KK",
-      "category": "Rawat Jalan",
+      "name": "Umum",
+      "img": "/img/default/no-image-icon.png",
+      "type": null,
       "status": true,
-      "price": 0,
       "createdAt": "2023-08-23T12:34:56",
       "updatedAt": "2023-08-23T12:34:56"
     },
     {
       "id": 2,
-      "name": "Konsultasi Sp.DV",
-      "category": "Rawat Jalan",
+      "name": "BPJS",
+      "img": "/img/insurances/bpjs-ketenagakerjaan.png",
+      "type": "assurance",
       "status": true,
-      "price": 0,
       "createdAt": "2023-08-23T12:34:56",
       "updatedAt": "2023-08-23T12:34:56"
     },
     {
       "id": 3,
-      "name": "Konsultasi Umum",
-      "category": "Rawat Jalan",
+      "name": "AXA Mandiri",
+      "img": "/img/insurances/axa-mandiri.png",
+      "type": "assurance",
       "status": true,
-      "price": 0,
       "createdAt": "2023-08-23T12:34:56",
       "updatedAt": "2023-08-23T12:34:56"
     }

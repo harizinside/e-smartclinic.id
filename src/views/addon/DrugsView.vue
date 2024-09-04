@@ -48,8 +48,8 @@
           </td>
           <td class="px-6 py-4">
             <VBadge
-              type="danger"
-              :message="row.manufacturing" />
+              :type="(row.stock < 5) ? 'danger' : 'success'"
+              :message="row.stock.toString()" />
           </td>
           <th class="px-6 py-4">
             Rp.{{ new Intl.NumberFormat('id-ID', { maximumSignificantDigits: 3 }).format(row.price) }}
@@ -85,7 +85,9 @@
         :show="dialogAdditional">
         <VDrawers
           title="Additional"
-          @close="dialogAdditional=false" />
+          @close="dialogAdditional=false">
+          <VDrugs />
+        </VDrawers>
       </TransitionRoot>
     </AdminLayouts>
   </div>
@@ -108,6 +110,7 @@ import VTableColumn from '@/components/VTableColumn.vue'
 import VHumanDate from '@/components/VHumanDate.vue'
 import VDialogDelete from '@/components/VDialogDelete.vue'
 import VDrawers from '@/components/VDrawers.vue'
+import VDrugs from './component/VDrugs.vue'
 import JsonData from '@/utils/drugs.json'
 
 interface IData {
@@ -118,6 +121,7 @@ interface IData {
   price: number
   dose: string
   packaging: string
+  stock: number
   manufacturing: string
   createdAt: string
   updatedAt: string
@@ -130,8 +134,8 @@ const alert = ref<IAlert>()
 const columnHeader = ref<IColumnHeader[]>([
   { name: '#' },
   { name: 'Nama', type: 'label', order: 'normal'  },
+  { name: 'Last Stock', type: 'label', order: 'normal' },
   { name: 'Price', type: 'label' },
-  { name: 'Manufactur', type: 'label' },
   { name: 'Create at', type: 'label' },
   { name: 'Aksi', type: 'label' }
 ])

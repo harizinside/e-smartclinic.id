@@ -53,8 +53,7 @@
                   <select
                     id="tabs"
                     name="tabs"
-                    class="block w-full rounded-md border-gray-300 focus:border-orange-500 focus:ring-orange-500"
-                    @change="changeTab">
+                    class="block w-full rounded-md border-gray-300 focus:border-orange-500 focus:ring-orange-500">
                     <option
                       v-for="tab in tabs"
                       :key="tab.name">
@@ -65,21 +64,20 @@
                 <div class="hidden sm:block">
                   <div class="border-b border-gray-200">
                     <nav
-                      class="-mb-px grid grid-cols-2"
+                      class="-mb-px grid grid-cols-3"
                       aria-label="Tabs">
-                      <a
-                        v-for="tab in tabs"
-                        :key="tab.name"
-                        :href="tab.href"
+                      <button
+                        v-for="(tab, index) in tabs"
+                        :key="index"
                         :class="[tab.name === tabActive ? 'border-orange-500 text-orange-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700', 'group inline-flex items-center justify-center border-b-2 w-full py-4 px-1 text-sm font-medium']"
                         :aria-current="tab.name ? 'page' : undefined"
-                        @click="changeTab">
+                        @click="changeTab(tab.name)">
                         <component
                           :is="tab.icon"
                           :class="[tab.name === tabActive ? 'text-orange-500' : 'text-gray-400 group-hover:text-gray-500', '-ml-0.5 mr-2 h-5 w-5']"
                           aria-hidden="true" />
                         <span>{{ tab.name }}</span>
-                      </a>
+                      </button>
                     </nav>
                   </div>
                 </div>
@@ -122,11 +120,33 @@
               </div>
             </div>
             <div
-              v-else
+              v-else-if="tabActive === 'Camera'"
               class="mt-2 px-4">
               <WebCamUI
                 :fullscreen-state="false"
                 @photo-taken="photoTaken" />
+            </div>
+            <div
+              v-else
+              class="mt-2 px-4">
+              <form @submit.prevent="getImage">
+                <div class="flex flex-row gap-2 pt-2">
+                  <div class="mb-5 grow">
+                    <input
+                      id="base-input"
+                      v-model="urlImage"
+                      type="url"
+                      class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
+                  </div>
+                  <div class="mb-5">
+                    <button
+                      type="submit"
+                      class="inline-flex w-full justify-center rounded-md px-3 py-2 text-sm font-semibold text-white shadow-sm sm:ml-3 sm:w-auto cursor-pointer bg-orange-600 hover:bg-orange-500 focus-visible:outline-orange-500">
+                      Dapatkan Gambar
+                    </button>
+                  </div>
+                </div>
+              </form>
             </div>
             <div>
               <div
@@ -185,6 +205,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import type { Component } from 'vue'
 import { WebCamUI } from 'vue-camera-lib'
 import {
   TransitionChild,
@@ -192,7 +213,7 @@ import {
   DialogPanel,
   DialogTitle
 } from '@headlessui/vue'
-import { CameraIcon, PhotoIcon, ArrowPathIcon } from '@heroicons/vue/20/solid'
+import { CameraIcon, PhotoIcon, ArrowPathIcon, LinkIcon } from '@heroicons/vue/20/solid'
 import { XMarkIcon } from '@heroicons/vue/24/outline'
 
 interface UploadedFile {
@@ -205,9 +226,15 @@ interface BlobFile {
   image_data_url: string;
 }
 
-const tabActive = ref<'Camera' | 'Galery'>('Galery')
+interface IFile {
+  name: 'Camera' | 'Galery' | 'Uri';
+  icon: Component;
+}
+
+const tabActive = ref<'Camera' | 'Galery' | 'Uri'>('Galery')
 const listOfImages = ref<UploadedFile[]>([])
 const submitted = ref(false)
+const urlImage = ref<string>('')
 
 const props = defineProps<{
   multipleImage: boolean
@@ -215,17 +242,14 @@ const props = defineProps<{
 
 const emit = defineEmits([ 'close', 'images' ])
 
-const tabs = [
-  { name: 'Galery', href: '#', icon: PhotoIcon },
-  { name: 'Camera', href: '#', icon: CameraIcon }
+const tabs: IFile[] = [
+  { name: 'Galery', icon: PhotoIcon },
+  { name: 'Camera', icon: CameraIcon },
+  { name: 'Uri', icon: LinkIcon }
 ]
 
-const changeTab = () => {
-  if (tabActive.value === 'Galery') {
-    tabActive.value = 'Camera'
-  } else {
-    tabActive.value = 'Galery'
-  }
+const changeTab = (args: 'Camera' | 'Galery' | 'Uri') => {
+  tabActive.value = args
 }
 
 const handleDragOver = () => {
@@ -243,6 +267,26 @@ const handleFileChange = (event: Event) => {
   const files = target.files
   if (files && files.length > 0) {
     handleFiles(files)
+  }
+}
+
+const getImage = async () => {
+  try {
+    const response = await fetch(urlImage.value)
+    if (!response.ok) {
+      throw new Error('Failed to fetch image')
+    }
+
+    const blob = await response.blob()
+    const file = new File([ blob ], window.crypto.randomUUID() + blob.type, { type: blob.type })
+
+    const dataTransfer = new DataTransfer()
+    dataTransfer.items.add(file)
+    const fileList = dataTransfer.files
+
+    handleFiles(fileList)
+  } catch (error) {
+    console.error(error)
   }
 }
 

@@ -12,12 +12,9 @@ import Home from '@/views/HomeView.vue'
 import Profile from '@/views/ProfileView.vue'
 import SystemAreas from '@/views/system/areas/IndexView.vue'
 import SystemUser from '@/views/system/users/IndexView.vue'
-import AddOnDiagnosis from '@/views/addon/DiagnosisView.vue'
-import AddOnDisease from '@/views/addon/DiseaseView.vue'
+import SystemMedicals from '@/views/system/medicals/IndexView.vue'
 import AddOnDrugs from '@/views/addon/DrugsView.vue'
-import AddOnIcd10 from '@/views/addon/Icd10View.vue'
 import AddOnInsuranceGuarantee from '@/views/addon/InsuranceGuaranteeView.vue'
-import AddOnPrognosis from '@/views/addon/PrognosisView.vue'
 import AddOnServices from '@/views/addon/ServicesView.vue'
 import ClinicInfo from '@/views/clinic-info/IndexView.vue'
 import Patients from '@/views/contact/IndexView.vue'
@@ -105,6 +102,11 @@ const routes: Array<RouteRecordRaw> = [
     meta: { auth: true }
   },
   {
+    path: '/system/medicals',
+    component: SystemMedicals,
+    meta: { auth: true }
+  },
+  {
     path: '/add-on/drugs',
     component: AddOnDrugs,
     meta: { auth: true }
@@ -117,26 +119,6 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/add-on/insurance-guarantee',
     component: AddOnInsuranceGuarantee,
-    meta: { auth: true }
-  },
-  {
-    path: '/add-on/disease',
-    component: AddOnDisease,
-    meta: { auth: true }
-  },
-  {
-    path: '/add-on/diagnosis',
-    component: AddOnDiagnosis,
-    meta: { auth: true }
-  },
-  {
-    path: '/add-on/prognosis',
-    component: AddOnPrognosis,
-    meta: { auth: true }
-  },
-  {
-    path: '/add-on/icd-10',
-    component: AddOnIcd10,
     meta: { auth: true }
   },
   {

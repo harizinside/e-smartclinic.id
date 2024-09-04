@@ -19,6 +19,7 @@
       "price": 21702,
       "dose": "2 x sehari 1 kaplet salut selaput",
       "packaging": "Box, 5 strip @ 6 kaplet salut selaput",
+      "stock": 24,
       "manufacturing": "Mahakam Beta Farma",
       "createdAt": "2023-08-23T12:34:56",
       "updatedAt": "2023-08-23T12:34:56"
@@ -31,6 +32,7 @@
       "price": 171554,
       "dose": "1 tablet per hari.",
       "packaging": "Botol plastik @ 30 tablet",
+      "stock": 10,
       "manufacturing": "Kalbe Farma",
       "createdAt": "2023-08-23T12:34:56",
       "updatedAt": "2023-08-23T12:34:56"
@@ -43,6 +45,7 @@
       "price": 10416,
       "dose": "Xonce Rasa Jeruk 2 Tablet dapat dikonsumsi 1â€“2 tablet isap per hari.",
       "packaging": "Dus, 50 strip @ 2 tablet isap",
+      "stock": 12,
       "manufacturing": "Kalbe Farma",
       "createdAt": "2023-08-23T12:34:56",
       "updatedAt": "2023-08-23T12:34:56"
@@ -55,6 +58,7 @@
       "price": 155705,
       "dose": "1 tablet, tiap hari setelah makan.",
       "packaging": "Botol kaca @ 30 tablet ",
+      "stock": 3,
       "manufacturing": "PT Kalbe Blackmores Nutrition",
       "createdAt": "2023-08-23T12:34:56",
       "updatedAt": "2023-08-23T12:34:56"
@@ -67,6 +71,7 @@
       "price": 3615,
       "dose": "Dosis 1â€“2 tablet per hari.",
       "packaging": "Dus, 50 strip @ 2 tablet ",
+      "stock": 10,
       "manufacturing": "PT Darya Varia Laboratoria TBK",
       "createdAt": "2023-08-23T12:34:56",
       "updatedAt": "2023-08-23T12:34:56"
@@ -79,6 +84,7 @@
       "price": 165000,
       "dose": "Sehari 1 kali 1 tablet",
       "packaging": "Dus, Botol @ 30 Tablet",
+      "stock": 100,
       "manufacturing": "PYRIDAM FARMA",
       "createdAt": "2023-08-23T12:34:56",
       "updatedAt": "2023-08-23T12:34:56"
@@ -91,6 +97,7 @@
       "price": 34656,
       "dose": "Sehari 1 kali 1 tablet",
       "packaging": "Strip @ 6 Tablet",
+      "stock": 14,
       "manufacturing": "Lapi Laboratories",
       "createdAt": "2023-08-23T12:34:56",
       "updatedAt": "2023-08-23T12:34:56"
@@ -103,6 +110,7 @@
       "price": 46435,
       "dose": "Dewasa dan anak-anak (8 tahun ke atas) : 1 tablet per hari",
       "packaging": "Strip @ 10 Tablet",
+      "stock": 55,
       "manufacturing": "Totalcare Nutraceutical",
       "createdAt": "2023-08-23T12:34:56",
       "updatedAt": "2023-08-23T12:34:56"
@@ -115,6 +123,7 @@
       "price": 319289,
       "dose": "1 tablet 1 kali sehari.",
       "packaging": "Botol @ 90 tablet",
+      "stock": 67,
       "manufacturing": "Radiant Sentral Nutrindo",
       "createdAt": "2023-08-23T12:34:56",
       "updatedAt": "2023-08-23T12:34:56"
@@ -127,6 +136,7 @@
       "price": 198275,
       "dose": "1x sehari 1 kaplet, setelah makan.",
       "packaging": "-",
+      "stock": 87,
       "manufacturing": "PT MIDIX GRAHA FARMA",
       "createdAt": "2023-08-23T12:34:56",
       "updatedAt": "2023-08-23T12:34:56"
