@@ -185,6 +185,21 @@ export const LIST_MENU = <MenuProps[]>[
           import: true,
           export: true
         }
+      },
+      {
+        name: 'Poliklinik',
+        href: '/add-on/polyclinic',
+        icon: 'chevron-right',
+        status: true,
+        order: 4,
+        privilage: {
+          create: true,
+          read: true,
+          update: true,
+          delete: true,
+          import: true,
+          export: true
+        }
       }
     ]
   },

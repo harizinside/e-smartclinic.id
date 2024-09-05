@@ -16,56 +16,56 @@
       "name": "Poli Umum",
       "category": "Rawat Jalan",
       "status": true,
-      "createAt": "2023-08-23T12:34:56",
-      "updateAt": "2023-08-23T12:34:56"
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
     },
     {
       "id": 2,
       "name": "Poli Gigi & Mulut",
       "category": "Rawat Jalan",
       "status": true,
-      "createAt": "2023-08-23T12:34:56",
-      "updateAt": "2023-08-23T12:34:56"
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
     },
     {
       "id": 3,
       "name": "Poli KIA",
       "category": "Rawat Jalan",
       "status": true,
-      "createAt": "2023-08-23T12:34:56",
-      "updateAt": "2023-08-23T12:34:56"
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
     },
     {
       "id": 4,
       "name": "Poli KB",
       "category": "Rawat Jalan",
       "status": true,
-      "createAt": "2023-08-23T12:34:56",
-      "updateAt": "2023-08-23T12:34:56"
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
     },
     {
       "id": 5,
       "name": "Poli Lansia",
       "category": "Rawat Jalan",
       "status": true,
-      "createAt": "2023-08-23T12:34:56",
-      "updateAt": "2023-08-23T12:34:56"
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
     },
     {
       "id": 6,
       "name": "Laboratorium",
       "category": "Rawat Jalan",
       "status": true,
-      "createAt": "2023-08-23T12:34:56",
-      "updateAt": "2023-08-23T12:34:56"
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
     },
     {
       "id": 7,
       "name": "Kunjungan Online",
       "category": "Rawat Jalan",
       "status": true,
-      "createAt": "2023-08-23T12:34:56",
-      "updateAt": "2023-08-23T12:34:56"
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
     }
   ]
 }

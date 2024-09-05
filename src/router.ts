@@ -16,6 +16,7 @@ import SystemMedicals from '@/views/system/medicals/IndexView.vue'
 import AddOnDrugs from '@/views/addon/DrugsView.vue'
 import AddOnInsuranceGuarantee from '@/views/addon/InsuranceGuaranteeView.vue'
 import AddOnServices from '@/views/addon/ServicesView.vue'
+import AddOnPolyclinic from '@/views/addon/PolyclinicView.vue'
 import ClinicInfo from '@/views/clinic-info/IndexView.vue'
 import Patients from '@/views/contact/IndexView.vue'
 import PatientsModif from '@/views/contact/ModifyView.vue'
@@ -119,6 +120,11 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/add-on/insurance-guarantee',
     component: AddOnInsuranceGuarantee,
+    meta: { auth: true }
+  },
+  {
+    path: '/add-on/polyclinic',
+    component: AddOnPolyclinic,
     meta: { auth: true }
   },
   {

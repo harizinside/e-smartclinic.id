@@ -15,7 +15,10 @@
           {{ index + tableInfo.from }}
         </td>
         <td class="px-6 py-4">
-          {{ row.name }}
+          {{ row.code }}
+        </td>
+        <td class="px-6 py-4">
+          {{ row.str }}
         </td>
         <td class="px-6 py-4">
           {{ row.status }}

@@ -34,7 +34,9 @@
             </button>
           </nav>
         </div>
-        <div class="pt-4" />
+        <div class="pt-4">
+          <Icd10Component v-if="tabState === 'Icd-10'" />
+        </div>
       </div>
     </AdminLayouts>
   </div>
@@ -46,6 +48,7 @@ import { useHead } from '@unhead/vue'
 import type { INavigation } from '@/interfaces/navs'
 import AdminLayouts from '@/views/AdminLayouts.vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
+import Icd10Component from './Icd10Component.vue'
 
 const tabState = ref<string>('Icd-10')
 
