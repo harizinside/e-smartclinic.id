@@ -2,7 +2,7 @@
   <div>
     <AdminLayouts>
       <VBreadcrumbNavigation :navs="navs" />
-      <div class="mx-auto lg:flex lg:gap-x-16">
+      <div class="mx-auto lg:flex lg:gap-x-2">
         <h1 class="sr-only">
           General Settings
         </h1>
