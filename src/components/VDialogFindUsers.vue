@@ -38,10 +38,10 @@
                       name="tabs"
                       class="block w-full rounded-md border-gray-300 focus:border-orange-500 focus:ring-orange-500">
                       <option
-                        v-for="tab in tabs"
-                        :key="tab.name"
-                        :selected="tab.current">
-                        {{ tab.name }}
+                        v-for="(row, index) in tabs"
+                        :key="index"
+                        :selected="(row.state === tabState) ? true : false">
+                        {{ row.name }}
                       </option>
                     </select>
                   </div>
@@ -49,80 +49,262 @@
                     <nav
                       class="flex space-x-4"
                       aria-label="Tabs">
-                      <a
-                        v-for="tab in tabs"
-                        :key="tab.name"
-                        :href="tab.href"
-                        :class="[tab.current ? 'bg-orange-100 text-orange-700' : 'text-gray-500 hover:text-gray-700', 'rounded-md px-3 py-2 text-sm font-medium']"
-                        :aria-current="tab.current ? 'page' : undefined">{{ tab.name }}</a>
+                      <button
+                        v-for="(row, index) in tabs"
+                        :key="index"
+                        :class="[row.state === tabState ? 'bg-orange-100 text-orange-700' : 'text-gray-500 hover:text-gray-700', 'rounded-md px-3 py-2 text-sm font-medium']"
+                        :aria-current="row.state === tabState ? 'page' : undefined"
+                        @click="switchTabs(row.state)">
+                        {{ row.name }}
+                      </button>
                     </nav>
                   </div>
                 </div>
-                <div class="flex flex-wrap gap-1 pt-3">
-                  <button
-                    type="button"
-                    class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-2 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      class="bi bi-filter size-5"
-                      viewBox="0 0 16 16">
-                      <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
-                    </svg>
-                  </button>
-                  <input
-                    id="table-search-users"
-                    type="text"
-                    class="block text-sm text-gray-900 border border-gray-300 rounded-lg w-80 py-2 bg-gray-50 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
-                    placeholder="Cari">
-                  <button
-                    type="button"
-                    class="inline-flex w-full justify-center rounded-md bg-red-600 px-5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto">
-                    Cari
-                  </button>
+                <Disclosure>
+                  <div class="flex flex-row gap-2 pt-4">
+                    <DisclosureButton
+                      as="button"
+                      type="button"
+                      class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-2 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        class="bi bi-filter size-5"
+                        viewBox="0 0 16 16">
+                        <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
+                      </svg>
+                    </DisclosureButton>
+                    <input
+                      id="table-search-users"
+                      type="text"
+                      class="block text-sm text-gray-900 border border-gray-300 rounded-lg w-full py-2 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
+                      placeholder="Cari">
+                    <button
+                      type="button"
+                      class="inline-flex w-full justify-center rounded-md bg-red-600 px-5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:w-auto">
+                      Cari
+                    </button>
+                  </div>
+                  <DisclosurePanel class="text-gray-500 pt-4 border-b">
+                    <fieldset>
+                      <legend class="text-sm font-semibold leading-6 text-gray-900">
+                        Cari berdasarkan
+                      </legend>
+                      <div class="mt-2 space-y-0.5">
+                        <div class="relative flex gap-x-3">
+                          <div class="flex h-6 items-center">
+                            <input
+                              id="comments"
+                              name="comments"
+                              type="checkbox"
+                              class="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-600">
+                          </div>
+                          <div class="text-sm leading-6">
+                            <label
+                              for="comments"
+                              class="font-normal text-gray-900">Nama</label>
+                          </div>
+                        </div>
+                        <div class="relative flex gap-x-3">
+                          <div class="flex h-6 items-center">
+                            <input
+                              id="candidates"
+                              name="candidates"
+                              type="checkbox"
+                              class="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-600">
+                          </div>
+                          <div class="text-sm leading-6">
+                            <label
+                              for="candidates"
+                              class="font-normal text-gray-900">Identitas</label>
+                          </div>
+                        </div>
+                        <div class="relative flex gap-x-3">
+                          <div class="flex h-6 items-center">
+                            <input
+                              id="offers"
+                              name="offers"
+                              type="checkbox"
+                              class="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-600">
+                          </div>
+                          <div class="text-sm leading-6">
+                            <label
+                              for="offers"
+                              class="font-normal text-gray-900">Asuransi</label>
+                          </div>
+                        </div>
+                        <div class="relative flex gap-x-3">
+                          <div class="flex h-6 items-center">
+                            <input
+                              id="offers"
+                              name="offers"
+                              type="checkbox"
+                              class="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-600">
+                          </div>
+                          <div class="text-sm leading-6">
+                            <label
+                              for="offers"
+                              class="font-normal text-gray-900">Kode daftar</label>
+                          </div>
+                        </div>
+                        <div class="relative flex gap-x-3">
+                          <div class="flex h-6 items-center">
+                            <input
+                              id="offers"
+                              name="offers"
+                              type="checkbox"
+                              class="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-600">
+                          </div>
+                          <div class="text-sm leading-6">
+                            <label
+                              for="offers"
+                              class="font-normal text-gray-900">Nomor HP</label>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <div class="mb-3 pt-2">
+                        <label
+                          for="base-input"
+                          class="block mb-2 text-sm font-semibold text-gray-900 dark:text-white">Kategori</label>
+                        <select
+                          id="country"
+                          name="country"
+                          autocomplete="country-name"
+                          class="rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 w-full sm:text-sm sm:leading-6">
+                          <option>Rawat Jalan</option>
+                          <option>Rawat Inap</option>
+                        </select>
+                      </div>
+                    </fieldset>
+                    <fieldset class="pb-2">
+                      <legend class="text-sm font-semibold leading-6 text-gray-900">
+                        Status
+                      </legend>
+                      <div class="mt-2 space-y-0.5">
+                        <div class="relative flex gap-x-3">
+                          <div class="flex h-6 items-center">
+                            <input
+                              id="offers"
+                              name="offers"
+                              type="checkbox"
+                              class="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-600">
+                          </div>
+                          <div class="text-sm leading-6">
+                            <label
+                              for="offers"
+                              class="font-normal text-gray-900">Aktif</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mt-2 space-y-0.5">
+                        <div class="relative flex gap-x-3">
+                          <div class="flex h-6 items-center">
+                            <input
+                              id="offers"
+                              name="offers"
+                              type="checkbox"
+                              class="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-600">
+                          </div>
+                          <div class="text-sm leading-6">
+                            <label
+                              for="offers"
+                              class="font-normal text-gray-900">Tidak aktif</label>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </DisclosurePanel>
+                </Disclosure>
+                <div v-if="tabState === ListTabs.FULLPATIENTS">
+                  <ul
+                    role="list"
+                    class="divide-y divide-gray-100">
+                    <li
+                      v-for="(person, index) in dataJson"
+                      :key="index"
+                      class="relative flex justify-between gap-x-6 py-5">
+                      <div class="flex min-w-0 gap-x-4">
+                        <img
+                          class="h-12 w-12 flex-none rounded-full bg-gray-50"
+                          :src="person.img"
+                          alt="">
+                        <div class="min-w-0 flex-auto">
+                          <p class="text-sm font-semibold leading-6 text-gray-900">
+                            <button @click="transferUser">
+                              <span class="absolute inset-x-0 -top-px bottom-0" />
+                              {{ person.name }}
+                            </button>
+                          </p>
+                          <p class="mt-1 flex text-xs leading-5 text-gray-500">
+                            <a
+                              :href="`mailto:${person.regCode}`"
+                              class="relative truncate hover:underline">{{ person.regCode }}</a>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="flex shrink-0 items-center gap-x-4">
+                        <div class="hidden sm:flex sm:flex-col sm:items-end">
+                          <p class="text-sm leading-6 text-gray-900">
+                            {{ person.nik }}
+                          </p>
+                          <p
+                            class="mt-1 text-xs leading-5 text-gray-500">
+                            {{ person.type }}
+                          </p>
+                        </div>
+                        <ChevronRightIcon
+                          class="h-5 w-5 flex-none text-gray-400"
+                          aria-hidden="true" />
+                      </div>
+                    </li>
+                  </ul>
                 </div>
-                <ul
-                  role="list"
-                  class="divide-y divide-gray-100">
-                  <li
-                    v-for="person in people"
-                    :key="person.email"
-                    class="relative flex justify-between gap-x-6 py-5">
-                    <div class="flex min-w-0 gap-x-4">
-                      <img
-                        class="h-12 w-12 flex-none rounded-full bg-gray-50"
-                        :src="person.imageUrl"
-                        alt="">
-                      <div class="min-w-0 flex-auto">
-                        <p class="text-sm font-semibold leading-6 text-gray-900">
-                          <button @click="transferUser">
-                            <span class="absolute inset-x-0 -top-px bottom-0" />
-                            {{ person.name }}
-                          </button>
-                        </p>
-                        <p class="mt-1 flex text-xs leading-5 text-gray-500">
-                          <a
-                            :href="`mailto:${person.email}`"
-                            class="relative truncate hover:underline">{{ person.email }}</a>
-                        </p>
+                <div v-else>
+                  <ul
+                    role="list"
+                    class="divide-y divide-gray-100">
+                    <li
+                      v-for="(person, index) in dataJson.slice(0, 3)"
+                      :key="index"
+                      class="relative flex justify-between gap-x-6 py-5">
+                      <div class="flex min-w-0 gap-x-4">
+                        <img
+                          class="h-12 w-12 flex-none rounded-full bg-gray-50"
+                          :src="person.img"
+                          alt="">
+                        <div class="min-w-0 flex-auto">
+                          <p class="text-sm font-semibold leading-6 text-gray-900">
+                            <button @click="transferUser">
+                              <span class="absolute inset-x-0 -top-px bottom-0" />
+                              {{ person.name }}
+                            </button>
+                          </p>
+                          <p class="mt-1 flex text-xs leading-5 text-gray-500">
+                            <a
+                              :href="`mailto:${person.regCode}`"
+                              class="relative truncate hover:underline">{{ person.regCode }}</a>
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div class="flex shrink-0 items-center gap-x-4">
-                      <div class="hidden sm:flex sm:flex-col sm:items-end">
-                        <p class="text-sm leading-6 text-gray-900">
-                          {{ person.role }}
-                        </p>
-                        <p
-                          class="mt-1 text-xs leading-5 text-gray-500">
-                          {{ person.lastSeen }}
-                        </p>
+                      <div class="flex shrink-0 items-center gap-x-4">
+                        <div class="hidden sm:flex sm:flex-col sm:items-end">
+                          <p class="text-sm leading-6 text-gray-900">
+                            {{ person.nik }}
+                          </p>
+                          <p
+                            class="mt-1 text-xs leading-5 text-gray-500">
+                            {{ person.type }}
+                          </p>
+                        </div>
+                        <ChevronRightIcon
+                          class="h-5 w-5 flex-none text-gray-400"
+                          aria-hidden="true" />
                       </div>
-                      <ChevronRightIcon
-                        class="h-5 w-5 flex-none text-gray-400"
-                        aria-hidden="true" />
-                    </div>
-                  </li>
-                </ul>
+                    </li>
+                  </ul>
+                </div>
               </div>
               <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                 <button
@@ -143,77 +325,56 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { Dialog, DialogPanel, TransitionChild } from '@headlessui/vue'
+import { 
+  Dialog, 
+  DialogPanel, 
+  TransitionChild,
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel
+} from '@headlessui/vue'
 import { ChevronRightIcon } from '@heroicons/vue/20/solid'
+import JsonData from '@/utils/contacts.json'
 
+enum ListTabs {
+  FULLPATIENTS,
+  QUEUE
+}
+
+interface ITabs {
+  name: string
+  state: ListTabs
+}
+
+interface IData {
+  id: number
+  img: string
+  regCode: string
+  name: string
+  nik: string
+  type: string
+  BPJS?: string
+  createAt: string
+}
+
+const tabState = ref<ListTabs>(ListTabs.FULLPATIENTS)
 const completeButtonRef = ref(null)
 const emit = defineEmits([ 'close', 'isset' ])
+
+const tabs = ref<ITabs[]>([
+  { name: 'Full pasien', state: ListTabs.FULLPATIENTS },
+  { name: 'Antrian', state: ListTabs.QUEUE }
+])
+
+const dataJson = ref<IData[]>(JsonData.data)
+
+const switchTabs = (args: ListTabs) => {
+  tabState.value = args
+}
 
 const transferUser = () => {
   emit('isset', 'goes')
 }
-
-const tabs = ref([
-  { name: 'Full pasien', href: '#', current: true },
-  { name: 'Antrian', href: '#', current: false }
-])
-
-const people = ref([
-  {
-    name: 'Feronika Agnesia',
-    email: 'NMW-PP04501 -',
-    role: '31750423058*****',
-    imageUrl:
-      'https://avatar.iran.liara.run/public/girl?usearname=Feronika+Agnesia',
-    href: '#',
-    lastSeen: 'Umum'
-  },
-  {
-    name: 'Zesisca Unathary',
-    email: 'NMW-PG04827 -',
-    role: '53010657020*****',
-    imageUrl:
-      'https://avatar.iran.liara.run/public/girl?usearname=Zesisca+Unathary',
-    href: '#',
-    lastSeen: 'BPJS Kesehatan'
-  },
-  {
-    name: 'Robiatul Putri Caharani',
-    email: 'NMW-NH04706 -',
-    role: '31740256029*****',
-    imageUrl:
-      'https://avatar.iran.liara.run/public/girl?usearname=Robiatul+Putri+Caharani',
-    href: '#',
-    lastSeen: 'BPJS Kesehatan'
-  },
-  {
-    name: 'Annisa Halimah Imron',
-    email: 'NMW-PP04499 -',
-    role: '31730855048*****',
-    imageUrl:
-      'https://avatar.iran.liara.run/public/girl?usearname=Annisa+Halimah+Imron',
-    href: '#',
-    lastSeen: 'BPJS Kesehatan'
-  },
-  {
-    name: 'Dewi Feronika',
-    email: 'NMW-TB04467 -',
-    role: '36033049049*****',
-    imageUrl:
-      'https://avatar.iran.liara.run/public/girl?usearname=Dewi+Feronika',
-    href: '#',
-    lastSeen: 'Umum'
-  },
-  {
-    name: 'Inggrita Wisnuwardani',
-    email: 'NMW-TB04463 -',
-    role: '36711128050*****',
-    imageUrl:
-      'https://avatar.iran.liara.run/public/girl?usearname=Inggrita+Wisnuwardani',
-    href: '#',
-    lastSeen: 'AXA Mandiri'
-  }
-])
 </script>
 
 <style></style>

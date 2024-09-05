@@ -34,7 +34,7 @@
             <VGeneral v-if="tabState === ListTabs.GENERAL" />
             <VAddress v-if="tabState === ListTabs.ADDRESS" />
             <VMemberTeams v-if="tabState === ListTabs.MEMBERTEAM" />
-            <VAccounting v-if="tabState === ListTabs.OPERATIONAL" />
+            <VAccounting v-if="tabState === ListTabs.ACCOUNTING" />
             <VOperationalHours v-if="tabState === ListTabs.OPERATIONAL" />
             <VCertification v-if="tabState === ListTabs.CERTIFICATION" />
           </div>

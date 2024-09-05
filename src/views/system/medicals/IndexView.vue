@@ -57,6 +57,11 @@ enum ListTabs {
   PROGNOSIS
 }
 
+interface ITabs {
+  name: string
+  state: ListTabs
+}
+
 const tabState = ref<ListTabs>(ListTabs.ICD10)
 
 const navs = ref<INavigation[]>([
@@ -64,7 +69,7 @@ const navs = ref<INavigation[]>([
   { name: 'Medicals (Interface)', link: '/add-on/medicals', active: true }
 ])
 
-const tabs = ref([ 
+const tabs = ref<ITabs[]>([ 
   { name: 'Icd-10', state: ListTabs.ICD10 },
   { name: 'Disease', state: ListTabs.DISEASE },
   { name: 'Diagnosis', state: ListTabs.DIAGNOSIS },
