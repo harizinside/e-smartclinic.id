@@ -69,12 +69,12 @@
                       <button
                         v-for="(tab, index) in tabs"
                         :key="index"
-                        :class="[tab.name === tabActive ? 'border-orange-500 text-orange-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700', 'group inline-flex items-center justify-center border-b-2 w-full py-4 px-1 text-sm font-medium']"
+                        :class="[tab.state === tabActive ? 'border-orange-500 text-orange-600' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700', 'group inline-flex items-center justify-center border-b-2 w-full py-4 px-1 text-sm font-medium']"
                         :aria-current="tab.name ? 'page' : undefined"
-                        @click="changeTab(tab.name)">
+                        @click="changeTab(tab.state)">
                         <component
                           :is="tab.icon"
-                          :class="[tab.name === tabActive ? 'text-orange-500' : 'text-gray-400 group-hover:text-gray-500', '-ml-0.5 mr-2 h-5 w-5']"
+                          :class="[tab.state === tabActive ? 'text-orange-500' : 'text-gray-400 group-hover:text-gray-500', '-ml-0.5 mr-2 h-5 w-5']"
                           aria-hidden="true" />
                         <span>{{ tab.name }}</span>
                       </button>
@@ -85,7 +85,7 @@
             </div>
 
             <div
-              v-if="tabActive === 'Galery'"
+              v-if="tabActive === ListTabs.GALERY"
               class="mt-2 px-4">
               <div class="flex items-center justify-center w-full">
                 <label
@@ -120,7 +120,7 @@
               </div>
             </div>
             <div
-              v-else-if="tabActive === 'Camera'"
+              v-else-if="tabActive === ListTabs.CAMERA"
               class="mt-2 px-4">
               <WebCamUI
                 :fullscreen-state="false"
@@ -216,6 +216,12 @@ import {
 import { CameraIcon, PhotoIcon, ArrowPathIcon, LinkIcon } from '@heroicons/vue/20/solid'
 import { XMarkIcon } from '@heroicons/vue/24/outline'
 
+enum ListTabs {
+  CAMERA,
+  GALERY,
+  URI
+}
+
 interface UploadedFile {
   file: File;
   url: string;
@@ -227,11 +233,12 @@ interface BlobFile {
 }
 
 interface IFile {
-  name: 'Camera' | 'Galery' | 'Uri';
-  icon: Component;
+  name: string
+  icon: Component
+  state: ListTabs
 }
 
-const tabActive = ref<'Camera' | 'Galery' | 'Uri'>('Galery')
+const tabActive = ref<ListTabs>(ListTabs.GALERY)
 const listOfImages = ref<UploadedFile[]>([])
 const submitted = ref(false)
 const urlImage = ref<string>('')
@@ -243,12 +250,12 @@ const props = defineProps<{
 const emit = defineEmits([ 'close', 'images' ])
 
 const tabs: IFile[] = [
-  { name: 'Galery', icon: PhotoIcon },
-  { name: 'Camera', icon: CameraIcon },
-  { name: 'Uri', icon: LinkIcon }
+  { name: 'Galery', icon: PhotoIcon, state: ListTabs.GALERY },
+  { name: 'Camera', icon: CameraIcon, state: ListTabs.CAMERA },
+  { name: 'Uri', icon: LinkIcon, state: ListTabs.URI }
 ]
 
-const changeTab = (args: 'Camera' | 'Galery' | 'Uri') => {
+const changeTab = (args: ListTabs) => {
   tabActive.value = args
 }
 
@@ -304,11 +311,7 @@ const handleFiles = (files: FileList) => {
 }
 
 const deleteImage = (index: number) => {
-  if (tabActive.value === 'Galery') {
-    listOfImages.value.splice(index, 1)
-  } else {
-    listOfImages.value.splice(index, 1)
-  }
+  listOfImages.value.splice(index, 1)
 }
 
 const photoTaken = (data: BlobFile) => {
