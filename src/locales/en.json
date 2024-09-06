@@ -1,0 +1,98 @@
+{
+  "greetings": {
+    "hello": "Hello",
+    "good_morning": "Good Morning",
+    "good_afternoon": "Good Afternoon",
+    "good_evening": "Good Evening",
+    "good_night": "Good Night"
+  },
+  "common": {
+    "yes": "Yes",
+    "no": "No",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "submit": "Submit",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "errors": {
+    "network_error": "Network errors. Please try again.",
+    "404": "Page not found",
+    "500": "Server error. Please try again later."
+  },
+  "forms": {
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Submit",
+    "reset": "Reset",
+    "sex": {
+      "value": "Sex",
+      "male": "Male",
+      "female": "Female"
+    },
+    "cammera_galery": "Camera or Gallery",
+    "identity": "Identity Number",
+    "mobile_phone": "Phone Number",
+    "birth": {
+      "location": "Birth Location",
+      "date": "Birth Date"
+    },
+    "address": "Address",
+    "region": "Province / City / Subdistrict / Village",
+    "pos": "POS Code",
+    "role": "Role",
+    "marital": "Marital status",
+    "profession": "Profession",
+    "education": "Education",
+    "blood": "Blood Group",
+    "religion": "Religion",
+    "ethnic": "Ethnic Group",
+    "price": "Price",
+    "discount": "Discount",
+    "category": "Category",
+    "status": "Status"
+  },
+  "validation": {
+    "required_field": "This field is mandatory"
+  },
+  "messages": {
+    "welcome": "Welcome to our app!",
+    "thank_you": "Thank you for using our service."
+  },
+  "dates": {
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "tomorrow": "Tomorrow",
+    "day_of_week": {
+      "sunday": "Sunday",
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday"
+    },
+    "months": {
+      "january": "January",
+      "february": "February",
+      "march": "March",
+      "april": "April",
+      "may": "May",
+      "june": "June",
+      "july": "July",
+      "august": "August",
+      "september": "September",
+      "october": "October",
+      "november": "November",
+      "december": "December"
+    }
+  },
+  "currency": {
+    "idr": "Rp",
+    "usd": "$",
+    "eur": "€",
+    "jpy": "¥"
+  }
+}

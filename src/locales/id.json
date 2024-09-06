@@ -1,0 +1,95 @@
+{
+  "greetings": {
+    "hello": "Halo",
+    "good_morning": "Selamat Pagi",
+    "good_afternoon": "Selamat Siang",
+    "good_evening": "Selamat Sore",
+    "good_night": "Selamat Malam"
+  },
+  "common": {
+    "yes": "Ya",
+    "no": "Tidak",
+    "cancel": "Batal",
+    "confirm": "Konfirmasi",
+    "submit": "Kirim",
+    "back": "Kembali",
+    "next": "Berikutnya",
+    "previous": "Sebelumnya"
+  },
+  "errors": {
+    "network_error": "Kesalahan jaringan. Silakan coba lagi.",
+    "404": "Halaman tidak ditemukan",
+    "500": "Kesalahan server. Silakan coba lagi nanti."
+  },
+  "forms": {
+    "name": "Nama",
+    "email": "Email",
+    "password": "Kata Sandi",
+    "submit": "Kirim",
+    "reset": "Atur Ulang",
+    "sex": {
+      "value": "Jenis kelamin",
+      "male": "Laki-laki",
+      "female": "Perempuan"
+    },
+    "cammera_galery": "Kamera atau Galery",
+    "identity": "Nomor Identitas",
+    "mobile_phone": "Nomor Telepon",
+    "birth": {
+      "location": "Lokasi Kelahiran",
+      "date": "Tanggal lahir"
+    },
+    "address": "Alamat",
+    "region": "Provinsi / Kota / Kecamatan / Kelurahan",
+    "pos": "Kode POS",
+    "role": "Peranan",
+    "marital": "Status Pernikahan",
+    "profession": "Profesi",
+    "education": "Pendidikan",
+    "blood": "Golongan darah",
+    "religion": "Agama",
+    "ethnic": "Suku",
+    "price": "Harga",
+    "discount": "Diskon",
+    "category": "Kategori",
+    "status": "Status"
+  },
+  "messages": {
+    "welcome": "Selamat datang di aplikasi kami!",
+    "thank_you": "Terima kasih telah menggunakan layanan kami."
+  },
+  "dates": {
+    "today": "Hari ini",
+    "yesterday": "Kemarin",
+    "tomorrow": "Besok",
+    "day_of_week": {
+      "sunday": "Minggu",
+      "monday": "Senin",
+      "tuesday": "Selasa",
+      "wednesday": "Rabu",
+      "thursday": "Kamis",
+      "friday": "Jumat",
+      "saturday": "Sabtu"
+    },
+    "months": {
+      "january": "Januari",
+      "february": "Februari",
+      "march": "Maret",
+      "april": "April",
+      "may": "Mei",
+      "june": "Juni",
+      "july": "Juli",
+      "august": "Agustus",
+      "september": "September",
+      "october": "Oktober",
+      "november": "November",
+      "december": "Desember"
+    }
+  },
+  "currency": {
+    "idr": "Rp",
+    "usd": "$",
+    "eur": "€",
+    "jpy": "¥"
+  }
+}
