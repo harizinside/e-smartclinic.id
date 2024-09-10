@@ -38,6 +38,20 @@
             <VOperationalHours v-if="tabState === ListTabs.OPERATIONAL" />
             <VCertification v-if="tabState === ListTabs.CERTIFICATION" />
           </div>
+          <section>
+            <div class="flex flex-row-reverse gap-2 py-4">
+              <button
+                type="submit"
+                class="inline-flex w-full justify-center rounded-md px-3 py-2 text-sm font-semibold text-white shadow-sm sm:ml-3 sm:w-auto cursor-pointer bg-orange-600 hover:bg-orange-500 focus-visible:outline-orange-500">
+                Simpan data
+              </button>
+              <button
+                type="button"
+                class="rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:ring-gray-400">
+                Batalkan
+              </button>
+            </div>
+          </section>
         </section>
       </div>
     </AdminLayouts>

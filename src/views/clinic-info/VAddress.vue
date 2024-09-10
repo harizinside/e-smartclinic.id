@@ -1,8 +1,8 @@
 <template>
   <div>
     <form>
-      <fieldset class="pt-5">
-        <div class="border-gray-900/10 pb-4 pt-4">
+      <fieldset>
+        <div class="border-gray-900/10 pb-4">
           <h2 class="text-base font-semibold leading-7 text-gray-900">
             Alamat klinik
           </h2>
