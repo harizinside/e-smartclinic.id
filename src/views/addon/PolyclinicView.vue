@@ -63,7 +63,7 @@
         as="template"
         :show="dialogDelete">
         <VDialogDelete
-          panel="label"
+          :dialog="deleted"
           @close="dialogDelete=false"
           @process="processDelete" />
       </TransitionRoot>
@@ -86,7 +86,8 @@ import { useHead } from '@unhead/vue'
 import { TransitionRoot } from '@headlessui/vue'
 import type { IAlert } from '@/interfaces/alerts'
 import type { IColumnHeader } from '@/interfaces/tables'
-import type { IPagination } from '@/interfaces/pagination'
+import type { IDialog } from '@/interfaces/dialogs'
+import type { IPagination } from '@/interfaces/paginations'
 import type { INavigation } from '@/interfaces/navs'
 import AdminLayouts from '@/views/AdminLayouts.vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
@@ -111,6 +112,10 @@ interface IData {
 
 const dialogAdditional = ref<boolean>(false)
 const dialogDelete = ref<boolean>(false)
+const deleted = ref<IDialog>({
+  description: 'Rawat Jalan',
+  title: 'Poli Umum'
+})
 const alert = ref<IAlert>()
 
 const columnHeader = ref<IColumnHeader[]>([

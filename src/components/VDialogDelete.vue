@@ -44,29 +44,25 @@
                         Data kemungkinan akan hanya di sembunyikan, karena ditakutkan ada beberapa data terkait data yang akan dihapus.
                       </p>
                       <div class="mt-4">
-                        <div v-if="props.panel === 'image'">
-                          <div class="flex items-center py-4 pl-2 text-gray-900 whitespace-nowrap dark:text-white border rounded-xl">
-                            <img
-                              class="w-10 h-10 rounded-full"
-                              src="https://avatar.iran.liara.run/public/girl?username=dr.+Margaret+Mauren"
-                              alt="Jese image">
-                            <div class="ps-3">
-                              <div class="text-sm font-semibold">
-                                dr. Margaret Mauren Hanang, dipl.CIBTAC
-                              </div>
-                              <div class="text-xs text-gray-500">
-                                margaretmauren@***.id
-                              </div>
+                        <div class="flex items-center py-4 pl-2 text-gray-900 whitespace-nowrap dark:text-white border rounded-xl">
+                          <img
+                            v-if="dialog?.img"
+                            class="w-10 h-10 rounded-full"
+                            :src="dialog?.img"
+                            alt="Jese image">
+                          <div class="ps-3">
+                            <div
+                              v-if="dialog?.title"
+                              class="text-sm font-semibold">
+                              {{ dialog?.title }}
+                            </div>
+                            <div
+                              v-if="dialog?.description"
+                              class="text-xs text-gray-500">
+                              {{ dialog?.description }}
                             </div>
                           </div>
                         </div>
-                        <input
-                          v-else
-                          id="email"
-                          type="email"
-                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
-                          readonly
-                          value="Warehouse">
                       </div>
                     </div>
                   </div>
@@ -99,14 +95,15 @@
 import { ref } from 'vue'
 import { Dialog, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/vue'
 import { ExclamationTriangleIcon } from '@heroicons/vue/24/outline'
-
-const cancelButtonRef = ref(null)
-
-const props = defineProps<{
-  panel: string
-}>()
+import type { IDialog } from '@/interfaces/dialogs'
 
 defineEmits([ 'close', 'process' ])
+
+defineProps<{
+  dialog?: IDialog
+}>()
+
+const cancelButtonRef = ref(null)
 </script>
 
 <style></style>

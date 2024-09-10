@@ -37,7 +37,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { IColumnHeader } from '@/interfaces/tables'
-import type { IPagination } from '@/interfaces/pagination'
+import type { IPagination } from '@/interfaces/paginations'
 import VTable from '@/components/VTable.vue'
 import VTableColumn from '@/components/VTableColumn.vue'
 import VHumanDate from '@/components/VHumanDate.vue'

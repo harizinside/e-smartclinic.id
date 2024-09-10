@@ -66,7 +66,7 @@
         as="template"
         :show="dialogDelete">
         <VDialogDelete
-          panel="label"
+          :dialog="deleted"
           @close="dialogDelete=false"
           @process="processDelete" />
       </TransitionRoot>
@@ -80,8 +80,9 @@ import { useHead } from '@unhead/vue'
 import { TransitionRoot } from '@headlessui/vue'
 import type { INavigation } from '@/interfaces/navs'
 import type { IAlert } from '@/interfaces/alerts'
+import type { IDialog } from '@/interfaces/dialogs'
 import type { IColumnHeader } from '@/interfaces/tables'
-import type { IPagination } from '@/interfaces/pagination'
+import type { IPagination } from '@/interfaces/paginations'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
 import VDialogDelete from '@/components/VDialogDelete.vue'
 import VAlerts from '@/components/VAlerts.vue'
@@ -99,6 +100,9 @@ interface IData {
 }
 
 const dialogDelete = ref<boolean>(false)
+const deleted = ref<IDialog>({
+  title: 'Administrator'
+})
 const alert = ref<IAlert>()
 
 const navs = ref<INavigation[]>([

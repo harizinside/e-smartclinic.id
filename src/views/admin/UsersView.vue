@@ -109,7 +109,7 @@
         as="template"
         :show="dialogDelete">
         <VDialogDelete
-          panel="image"
+          :dialog="deleted"
           @close="dialogDelete=false"
           @process="processDelete" />
       </TransitionRoot>
@@ -123,7 +123,8 @@ import { useHead } from '@unhead/vue'
 import { TransitionRoot } from '@headlessui/vue'
 import type { IAlert } from '@/interfaces/alerts'
 import type { IColumnHeader } from '@/interfaces/tables'
-import type { IPagination } from '@/interfaces/pagination'
+import type { IDialog } from '@/interfaces/dialogs'
+import type { IPagination } from '@/interfaces/paginations'
 import type { INavigation } from '@/interfaces/navs'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
 import VDialogFindUsers from '@/components/VDialogFindUsers.vue'
@@ -147,6 +148,11 @@ interface IData {
 const dialogTransfer = ref<boolean>(false)
 const dialogSetRole = ref<boolean>(false)
 const dialogDelete = ref<boolean>(false)
+const deleted = ref<IDialog>({
+  img: 'https://avatar.iran.liara.run/public/girl?usearname=dr.Niken+Anggraeni',
+  description: 'nikeng***@***.com',
+  title: 'dr. Sista Sandhi Prawista'
+})
 const alert = ref<IAlert>()
 
 const columnHeader = ref<IColumnHeader[]>([
@@ -167,6 +173,7 @@ const navs = ref<INavigation[]>([
 
 const processDelete = () => {
   dialogDelete.value = false
+  
   alert.value = {
     message: 'Data berhasil dihapus',
     type: 'danger'

@@ -88,7 +88,7 @@
         as="template"
         :show="dialogDelete">
         <VDialogDelete
-          panel="label"
+          :dialog="deleted"
           @close="dialogDelete=false"
           @process="processDelete" />
       </TransitionRoot>
@@ -102,7 +102,8 @@ import { useHead } from '@unhead/vue'
 import { TransitionRoot } from '@headlessui/vue'
 import type { IAlert } from '@/interfaces/alerts'
 import type { IColumnHeader } from '@/interfaces/tables'
-import type { IPagination } from '@/interfaces/pagination'
+import type { IDialog } from '@/interfaces/dialogs'
+import type { IPagination } from '@/interfaces/paginations'
 import type { INavigation } from '@/interfaces/navs'
 import AdminLayouts from '@/views/AdminLayouts.vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
@@ -130,6 +131,11 @@ const navs = ref<INavigation[]>([
 
 const alert = ref<IAlert>()
 const dialogDelete = ref<boolean>(false)
+const deleted = ref<IDialog>({
+  img: 'https://avatar.iran.liara.run/public/girl?usearname=dr.Niken+Anggraeni',
+  description: 'nikeng***@***.com',
+  title: 'dr. Sista Sandhi Prawista'
+})
 
 const columnHeader = ref<IColumnHeader[]>([
   { name: '#', type: 'label' },

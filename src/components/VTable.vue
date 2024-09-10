@@ -43,7 +43,7 @@ import VTableCompSearch from './VTableCompSearch.vue'
 import VTablePagination from './VTablePagination.vue'
 import VTableHeader from './VTableHeader.vue'
 import type { IColumnHeader } from '@/interfaces/tables'
-import type { IPagination } from '@/interfaces/pagination'
+import type { IPagination } from '@/interfaces/paginations'
 
 const emit = defineEmits<{
   setLimit: [number]
