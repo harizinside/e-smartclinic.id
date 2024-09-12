@@ -1,0 +1,515 @@
+{
+  "from": 1,
+  "to": 10,
+  "total": 8,
+  "per_page": 10,
+  "current_page": 1,
+  "last_page": 1,
+  "first_page_url": "page=1&limit=10",
+  "last_page_url": "page=1&limit=10",
+  "next_page_url": "page=1&limit=10",
+  "prev_page_url": "page=1&limit=10",
+  "path": "http://192.168.3.221:8001/rheinmedika/medical-check/accounts",
+  "data": [
+    {
+      "date": "2024-09-09T00:00:00.000+00:00",
+      "user": [
+        {
+          "id": 1,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Muhammad+Haaris+Setiawan",
+          "name": "dr. Nataliani Mawardi, dipl.CIBTAC",
+          "sip": "10/2.102/31.74.07.1007/-1.779.3/e/2017",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "blue"
+        },
+        {
+          "id": 2,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Damar+Sajiwo+MARS",
+          "name": "dr. Damar Sajiwo, MARS",
+          "sip": "No.7/B.15A/31.74.07.1007.01.009.C.1.b.g/4/-1.779.3/6/2021",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "orange"
+        },
+        {
+          "id": 3,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Amelia+Puspitasari",
+          "name": "dr. Amelia Puspitasari",
+          "sip": "440/0501/dr/00009/DPMPTSP/2019",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "red"
+        }
+      ]
+    },
+    {
+      "date": "2024-09-10T00:00:00.000+00:00",
+      "user": [
+        {
+          "id": 4,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Muhammad+Haaris+Setiawan",
+          "name": "dr. Nataliani Mawardi, dipl.CIBTAC",
+          "sip": "10/2.102/31.74.07.1007/-1.779.3/e/2017",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "blue"
+        },
+        {
+          "id": 5,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Damar+Sajiwo+MARS",
+          "name": "dr. Bambang Wicaksana, Sp.BP-RE(K)",
+          "sip": "446.1//3776/01-DPMPTSP/OL/2019",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Sp.DV (Rawat Jalan)",
+          "color": "amber"
+        },
+        {
+          "id": 6,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Amelia+Puspitasari",
+          "name": "dr. Bambino Bismara Mamuaya, BMedSc(Hons)",
+          "sip": "12/B.15a/31.74.07.1007/-1.779.3/e/2018",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Sp.KK (Rawat Jalan)",
+          "color": "yellow"
+        }
+      ]
+    },
+    {
+      "date": "2024-09-11T00:00:00.000+00:00",
+      "user": [
+        {
+          "id": 7,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Damar+Sajiwo+MARS",
+          "name": "dr. Damar Sajiwo, MARS",
+          "sip": "No.7/B.15A/31.74.07.1007.01.009.C.1.b.g/4/-1.779.3/6/2021",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "orange"
+        },
+        {
+          "id": 8,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Amelia+Puspitasari",
+          "name": "dr. Amelia Puspitasari",
+          "sip": "440/0501/dr/00009/DPMPTSP/2019",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "red"
+        },
+        {
+          "id": 9,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Muhammad+Haaris+Setiawan",
+          "name": "dr. Nataliani Mawardi, dipl.CIBTAC",
+          "sip": "10/2.102/31.74.07.1007/-1.779.3/e/2017",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "blue"
+        },
+        {
+          "id": 10,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Damar+Sajiwo+MARS",
+          "name": "dr. Bambang Wicaksana, Sp.BP-RE(K)",
+          "sip": "446.1//3776/01-DPMPTSP/OL/2019",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Sp.DV (Rawat Jalan)",
+          "color": "amber"
+        },
+        {
+          "id": 11,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Amelia+Puspitasari",
+          "name": "dr. Bambino Bismara Mamuaya, BMedSc(Hons)",
+          "sip": "12/B.15a/31.74.07.1007/-1.779.3/e/2018",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "yellow"
+        }
+      ]
+    },
+    {
+      "date": "2024-09-12T00:00:00.000+00:00",
+      "user": [
+        {
+          "id": 12,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Damar+Sajiwo+MARS",
+          "name": "dr. Brigitta Intan Priwita Sari",
+          "sip": "446/0053/SIPdokter/DPMPTSP/SIMPOK/1/2021",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "lime"
+        },
+        {
+          "id": 13,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Amelia+Puspitasari",
+          "name": "dr. Christian Salim",
+          "sip": "8/B.15a/31.74.07.1007/-1.779.3/e/2018",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "green"
+        }
+      ]
+    },
+    {
+      "date": "2024-09-13T00:00:00.000+00:00",
+      "user": [
+        {
+          "id": 14,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Amelia+Puspitasari",
+          "name": "dr. Dinar Rahmania, Sp.BP-RE",
+          "sip": "446.1/3776/01-DPMPTSP/OL/2019",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "indigo"
+        },
+        {
+          "id": 15,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Damar+Sajiwo+MARS",
+          "name": "dr. Hani Primadini",
+          "sip": "7/B.15a/31.74.07.1007/-1.779.3/e/2018",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "violet"
+        },
+        {
+          "id": 16,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Amelia+Puspitasari",
+          "name": "dr. Lidya Yuniwati, Dipl.AAAM",
+          "sip": "446.1/2225/02-DPMPTSP/OL/2019",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "purple"
+        }
+      ]
+    },
+    {
+      "date": "2024-09-14T00:00:00.000+00:00",
+      "user": [
+        {
+          "id": 17,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Muhammad+Haaris+Setiawan",
+          "name": "dr. Nataliani Mawardi, dipl.CIBTAC",
+          "sip": "10/2.102/31.74.07.1007/-1.779.3/e/2017",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "blue"
+        },
+        {
+          "id": 18,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Damar+Sajiwo+MARS",
+          "name": "dr. Lucia Bernadetha Dien",
+          "sip": "5/B.15a/31.74.07/1007/-1.779.3/e/2019",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "fuchsia"
+        }
+      ]
+    },
+    {
+      "date": "2024-09-15T00:00:00.000+00:00",
+      "user": [
+        {
+          "id": 19,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Amelia+Puspitasari",
+          "name": "dr. Magdalena Niken Hapsari P",
+          "sip": "446.1/0228/02-DPMPTSP/OL/2018",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "emerald"
+        },
+        {
+          "id": 20,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Muhammad+Haaris+Setiawan",
+          "name": "dr. Nataliani Mawardi, dipl.CIBTAC",
+          "sip": "10/2.102/31.74.07.1007/-1.779.3/e/2017",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "blue"
+        },
+        {
+          "id": 21,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Damar+Sajiwo+MARS",
+          "name": "dr. Margaret Mauren Hanang, dipl.CIBTAC",
+          "sip": "446.1/0144/02-DPMPTSP/OL/2017",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "cyan"
+        },
+        {
+          "id": 22,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Amelia+Puspitasari",
+          "name": "dr. Hani Primadini",
+          "sip": "7/B.15a/31.74.07.1007/-1.779.3/e/2018",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "pink"
+        }
+      ]
+    },
+
+    {
+      "date": "2024-09-16T00:00:00.000+00:00",
+      "user": [
+        {
+          "id": 23,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Damar+Sajiwo+MARS",
+          "name": "dr. Nataliani Mawardi, dipl.CIBTAC",
+          "sip": "10/2.102/31.74.07.1007/-1.779.3/e/2017",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "blue"
+        },
+        {
+          "id": 24,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Amelia+Puspitasari",
+          "name": "dr. Hani Primadini",
+          "sip": "7/B.15a/31.74.07.1007/-1.779.3/e/2018",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "zinc"
+        }
+      ]
+    },
+    {
+      "date": "2024-09-17T00:00:00.000+00:00",
+      "user": [
+        {
+          "id": 25,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Amelia+Puspitasari",
+          "name": "dr. Dinar Rahmania, Sp.BP-RE",
+          "sip": "446.1/3776/01-DPMPTSP/OL/2019",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "zinc"
+        },
+        {
+          "id": 26,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Damar+Sajiwo+MARS",
+          "name": "dr. Damar Sajiwo, MARS",
+          "sip": "No.7/B.15A/31.74.07.1007.01.009.C.1.b.g/4/-1.779.3/6/2021",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "orange"
+        },
+        {
+          "id": 27,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Amelia+Puspitasari",
+          "name": "dr. Amelia Puspitasari",
+          "sip": "440/0501/dr/00009/DPMPTSP/2019",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "red"
+        }
+      ]
+    },
+    {
+      "date": "2024-09-18T00:00:00.000+00:00",
+      "user": [
+        {
+          "id": 28,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Amelia+Puspitasari",
+          "name": "dr. Hani Primadini",
+          "sip": "12/B.15a/31.74.07.1007/-1.779.3/e/2018",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "test"
+        }
+      ]
+    },
+    {
+      "date": "2024-09-19T00:00:00.000+00:00",
+      "user": [
+        {
+          "id": 29,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Amelia+Puspitasari",
+          "name": "dr. Nataliani Mawardi, dipl.CIBTAC",
+          "sip": "10/2.102/31.74.07.1007/-1.779.3/e/2017",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "blue"
+        },
+        {
+          "id": 30,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Muhammad+Haaris+Setiawan",
+          "name": "dr. Sista Sandhi Prawista",
+          "sip": "10/2.102/31.74.07.1007/-1.779.3/e/2017",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "blue"
+        },
+        {
+          "id": 31,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Damar+Sajiwo+MARS",
+          "name": "dr. Mia Ckristina",
+          "sip": "440/0773/DU/DPM-PTSP.PPJU/OL",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "red"
+        },
+        {
+          "id": 32,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Amelia+Puspitasari",
+          "name": "dr. Jessica Yulianti",
+          "sip": "12/B.15a/31.74.07.1007/-1.779.3/e/2018",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "lime"
+        }
+      ]
+    },
+    {
+      "date": "2024-09-20T00:00:00.000+00:00",
+      "user": [
+        {
+          "id": 33,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Damar+Sajiwo+MARS",
+          "name": "dr. Brigitta Intan Priwita Sari",
+          "sip": "12/B.15a/31.74.07.1007/-1.779.3/e/2018",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "lime"
+        },
+        {
+          "id": 34,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Amelia+Puspitasari",
+          "name": "dr. Christian Salim",
+          "sip": "8/B.15a/31.74.07.1007/-1.779.3/e/2018",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "green"
+        }
+      ]
+    },
+    {
+      "date": "2024-09-21T00:00:00.000+00:00",
+      "user": [
+        {
+          "id": 35,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Amelia+Puspitasari",
+          "name": "dr. Magdalena Niken Hapsari P",
+          "sip": "446.1/0228/02-DPMPTSP/OL/2018",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "emerald"
+        },
+        {
+          "id": 36,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Muhammad+Haaris+Setiawan",
+          "name": "dr. Nataliani Mawardi, dipl.CIBTAC",
+          "sip": "10/2.102/31.74.07.1007/-1.779.3/e/2017",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "blue"
+        },
+        {
+          "id": 37,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Damar+Sajiwo+MARS",
+          "name": "dr. Aulia Livia",
+          "sip": "NO. 446.3/0373/04/03/01-Dinkes/2017",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "neutral"
+        },
+        {
+          "id": 38,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Amelia+Puspitasari",
+          "name": "dr. Aulia Nurul Fatimah",
+          "sip": "440/0030/DU/DPM-PTSP.PPJU",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "red"
+        }
+      ]
+    },
+    {
+      "date": "2024-09-22T00:00:00.000+00:00",
+      "user": [
+        {
+          "id": 39,
+          "img": "https://avatar.iran.liara.run/public/boy?usearname=Amelia+Puspitasari",
+          "name": "dr. Jessica Yulianti",
+          "sip": "446/dr.736/SIP.I/DPMPTSP/2019",
+          "location": "NMW Klinik Petogogan",
+          "startTime": "08:00:00",
+          "endTime": "17:00:00",
+          "description": "Konsultasi Umum (Rawat Jalan)",
+          "color": "yellow"
+        }
+      ]
+    }
+  ]
+}

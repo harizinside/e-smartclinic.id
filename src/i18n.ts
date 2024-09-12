@@ -32,7 +32,7 @@ export const i18n = createI18n<{
     en: {
       // Min, 20 Desember 2020
       long: {
-        weekday: 'short',
+        weekday: 'long',
         day: 'numeric',
         month: 'long',
         year: 'numeric'
@@ -72,7 +72,7 @@ export const i18n = createI18n<{
       long: {
         weekday: 'short',
         day: 'numeric',
-        month: 'long',
+        month: 'short',
         year: 'numeric'
       },
       //  20/12/2020
