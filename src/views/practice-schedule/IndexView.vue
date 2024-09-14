@@ -47,11 +47,11 @@
             v-for="(row, index) in tableInfo.data"
             :key="index"
             class="aspect-square w-full">
-            <div class="text-center border-t border-red-400">
+            <div class="text-center border-t border-black">
               title
             </div>
             <div
-              class="whitespace-normal py-2 pl-4 pr-3 text-xs font-medium text-gray-900 border-t border-r border-yellow-400 sm:pl-2 pb-60">
+              :class="[panelClass(index), 'border-black whitespace-normal py-2 pl-4 pr-3 text-xs font-medium text-gray-90 sm:pl-2 pb-60']">
               <div class="flex flex-row gap-2 items-center mb-1">
                 <svg
                   class="h-1.5 w-1.5 fill-red-500"
@@ -123,18 +123,16 @@ const dialogAdditional = ref<boolean>(false)
 const tableInfo = ref<IPagination<IData[]>>(JsonData)
 
 const panelClass = (index: number): string => {
-  if (index < 5) {
-    return 'border-r border-t'
-  } else if (index < 6) {
-    return 'border-t border-r'
-  } else if (index < 7) {
-    return 'border-t'
-  } else if (index < 12) {
-    return 'border-t border-b border-r'
-    } else if (index < 13) {
-    return 'border-t border-b border-r'
+  if (index === 0) {
+    return 'border-l border-t border-r'
+  } else if (index === 6) {
+    return 'border-t border-r border-red-200 bg-red-50'
+  } else if (index === 7) {
+    return 'border-l border-t border-r border-b '
+  } else if (index >= 8 && index <= 13) {
+    return 'border-b border-t border-r '
   } else {
-    return 'border-t border-b'
+    return 'border-t border-r'
   }
 }
 
