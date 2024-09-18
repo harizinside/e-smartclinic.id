@@ -40,33 +40,31 @@
           </button>
         </div>
       </div>
-      <div class="pt-2 w-full overflow-x-auto">
+      <div class="pt-2 w-full overflow-x-auto overflow-y-auto">
         <div class="grid grid-cols-7 min-w-[1920px]">
           <!-- <div class="flex flex-nowrap w-full overflow-x-auto"> -->
           <div
             v-for="(row, index) in tableInfo.data"
             :key="index"
             class="aspect-square w-full">
-            <div class="text-center border-t border-black">
-              title
+            <div :class="[row.today ? 'bg-orange-400 text-white' : 'bg-white', 'text-center text-sm border-t']">
+              {{ $d(Date.parse(row.date), 'long') }}
             </div>
             <div
-              :class="[panelClass(index), 'border-black whitespace-normal py-2 pl-4 pr-3 text-xs font-medium text-gray-90 sm:pl-2 pb-60']">
-              <div class="flex flex-row gap-2 items-center mb-1">
-                <svg
-                  class="h-1.5 w-1.5 fill-red-500"
-                  viewBox="0 0 6 6"
-                  aria-hidden="true">
-                  <circle
-                    cx="3"
-                    cy="3"
-                    r="3" />
-                </svg>
-                <UserIcon
-                  class="h-3"
-                  aria-hidden="true" />
-                <span class="">08.00  dr. Bambino Bismara Mamuaya, BMedSc(Hons)</span>
-              </div>
+              :class="[panelClass(index), ' overflow-y-auto whitespace-normal py-2 pl-4 pr-3 text-xs font-medium text-gray-90 sm:pl-2 h-60']">
+              <LabelComponent
+                v-for="(user, i) in row.user"
+                :id="user.id" 
+                :key="i"
+                :description="user.description"
+                :end-time="user.endTime"
+                :start-time="user.startTime"
+                :img="user.img"
+                :location="user.location"
+                :color="user.color"
+                :name="user.name"
+                :sip="user.sip"
+              />
             </div>
           </div>
         </div>
@@ -85,14 +83,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { useHead } from '@unhead/vue'
 import { TransitionRoot } from '@headlessui/vue'
 import type { IPagination } from '@/interfaces/paginations'
 import type { INavigation } from '@/interfaces/navs'
 import { MagnifyingGlassIcon, ChevronRightIcon, ChevronLeftIcon } from '@heroicons/vue/24/outline'
-import { UserIcon, MapPinIcon, ClockIcon } from '@heroicons/vue/24/solid'
-import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import AdminLayouts from '@/views/AdminLayouts.vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
 import VDrawers from '@/components/VDrawers.vue'
@@ -102,6 +98,7 @@ import JsonData from '@/utils/practice-schedule.json'
 
 interface IData {
   date: string
+  today: boolean
   user: {
     id: number
     img: string
@@ -129,8 +126,10 @@ const panelClass = (index: number): string => {
     return 'border-t border-r border-red-200 bg-red-50'
   } else if (index === 7) {
     return 'border-l border-t border-r border-b '
-  } else if (index >= 8 && index <= 13) {
-    return 'border-b border-t border-r '
+  } else if (index >= 8 && index <= 12) {
+    return 'border-b border-t border-r'
+  } else if (index === 13 ) {
+    return 'bg-red-50 border-t border-r border-b border-red-200'
   } else {
     return 'border-t border-r'
   }

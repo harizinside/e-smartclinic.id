@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <Popover class="relative">
+  <div class="relative hover:absolute">
+    <Popover class="">
       <PopoverButton
         as="div"
         class="flex flex-row gap-2 items-center cursor-pointer">
         <svg
-          class="h-1.5 w-1.5 fill-blue-500"
+          :class="`h-1.5 w-1.5 fill-${props.color}-500`"
           viewBox="0 0 6 6"
           aria-hidden="true">
           <circle
@@ -16,7 +16,7 @@
         <UserIcon
           class="h-3"
           aria-hidden="true" />
-        <span>08.00  dr. Damar Sajiwo, MARS</span>
+        <span>{{ $d(Date.parse(props.startTime), 'timeSmall') }} &nbsp; {{ props.name }}</span>
       </PopoverButton>
       <transition
         enter-active-class="transition duration-200 ease-out"

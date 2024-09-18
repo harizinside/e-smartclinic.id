@@ -30,6 +30,10 @@ export const i18n = createI18n<{
   },
   datetimeFormats: {
     en: {
+      timeSmall: {
+        hour: '2-digit', 
+        minute: '2-digit'
+      },
       // Min, 20 Desember 2020
       long: {
         weekday: 'long',
@@ -68,6 +72,10 @@ export const i18n = createI18n<{
       }
     },
     id: {
+      timeSmall: {
+        hour: '2-digit', 
+        minute: '2-digit'
+      },
       // Min, 20 Desember 2020
       long: {
         weekday: 'short',

@@ -153,11 +153,6 @@ const routes: Array<RouteRecordRaw> = [
     meta: { auth: true }
   },
   {
-    path: '/outpatient/insurance-guarantee',
-    component: OutPatients,
-    meta: { auth: true }
-  },
-  {
     path: '/medical-record',
     component: MedicalRecord,
     meta: { auth: true }

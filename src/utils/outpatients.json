@@ -1,0 +1,55 @@
+{
+  "from": 1,
+  "to": 10,
+  "total": 7,
+  "per_page": 10,
+  "current_page": 1,
+  "last_page": 1,
+  "first_page_url": "page=1&limit=10",
+  "last_page_url": "page=1&limit=10",
+  "next_page_url": "page=1&limit=10",
+  "prev_page_url": "page=1&limit=10",
+  "path": "http://192.168.3.221:8001/rheinmedika/medical-check/accounts",
+  "data": [
+    {
+      "id": 1,
+      "poli": "Poli Umum",
+      "category": "Rawat Jalan",
+      "schedule": {
+        "id": 2,
+        "name": "dr. Damar Sajiwo, MARS",
+        "startTime": "2024-09-18T08:00:00+0700",
+        "endTime": "2024-09-18T17:00:00+0700"
+      },
+      "patients": {
+        "id": 3,
+        "regCode": "NMW-CN01105500",
+        "name": "Rina Chairunnisa",
+        "type": "BPJS"
+      },
+      "status": "WAITING_CALL",
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 2,
+      "poli": "Poli Umum",
+      "category": "Rawat Jalan",
+      "schedule": {
+        "id": 3,
+        "name": "dr. Damar Sajiwo, MARS",
+        "startTime": "2024-09-18T08:00:00+0700",
+        "endTime": "2024-09-18T17:00:00+0700"
+      },
+      "patients": {
+        "id": 6,
+        "regCode": "NMW-BR00605240",
+        "name": "Laela Fijarwati",
+        "type": "Mandiri"
+      },
+      "status": "WAITING_CALL",
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    }
+  ]
+}

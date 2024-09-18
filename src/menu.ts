@@ -265,38 +265,7 @@ export const LIST_MENU = <MenuProps[]>[
       import: true,
       export: true
     },
-    children: [
-      {
-        name: 'Penilaian (Assesment)',
-        href: '/outpatient',
-        icon: 'chevron-right',
-        status: true,
-        order: 1,
-        privilage: {
-          create: true,
-          read: true,
-          update: true,
-          delete: true,
-          import: true,
-          export: true
-        }
-      },
-      {
-        name: 'Asuransi & Jaminan',
-        href: '/outpatient/insurance-guarantee',
-        icon: 'chevron-right',
-        status: true,
-        order: 2,
-        privilage: {
-          create: true,
-          read: true,
-          update: true,
-          delete: true,
-          import: true,
-          export: true
-        }
-      }
-    ]
+    children: []
   },
   {
     name: 'Rekam Medis',

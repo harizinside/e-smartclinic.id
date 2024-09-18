@@ -13,6 +13,7 @@
   "data": [
     {
       "date": "2024-09-09T00:00:00.000+00:00",
+      "today": false,
       "user": [
         {
           "id": 1,
@@ -20,8 +21,8 @@
           "name": "dr. Nataliani Mawardi, dipl.CIBTAC",
           "sip": "10/2.102/31.74.07.1007/-1.779.3/e/2017",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "blue"
         },
@@ -31,10 +32,10 @@
           "name": "dr. Damar Sajiwo, MARS",
           "sip": "No.7/B.15A/31.74.07.1007.01.009.C.1.b.g/4/-1.779.3/6/2021",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
-          "color": "orange"
+          "color": "fuchsia"
         },
         {
           "id": 3,
@@ -42,8 +43,8 @@
           "name": "dr. Amelia Puspitasari",
           "sip": "440/0501/dr/00009/DPMPTSP/2019",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "red"
         }
@@ -51,6 +52,7 @@
     },
     {
       "date": "2024-09-10T00:00:00.000+00:00",
+      "today": false,
       "user": [
         {
           "id": 4,
@@ -58,8 +60,8 @@
           "name": "dr. Nataliani Mawardi, dipl.CIBTAC",
           "sip": "10/2.102/31.74.07.1007/-1.779.3/e/2017",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "blue"
         },
@@ -69,8 +71,8 @@
           "name": "dr. Bambang Wicaksana, Sp.BP-RE(K)",
           "sip": "446.1//3776/01-DPMPTSP/OL/2019",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Sp.DV (Rawat Jalan)",
           "color": "amber"
         },
@@ -80,8 +82,8 @@
           "name": "dr. Bambino Bismara Mamuaya, BMedSc(Hons)",
           "sip": "12/B.15a/31.74.07.1007/-1.779.3/e/2018",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Sp.KK (Rawat Jalan)",
           "color": "yellow"
         }
@@ -89,6 +91,7 @@
     },
     {
       "date": "2024-09-11T00:00:00.000+00:00",
+      "today": false,
       "user": [
         {
           "id": 7,
@@ -96,8 +99,8 @@
           "name": "dr. Damar Sajiwo, MARS",
           "sip": "No.7/B.15A/31.74.07.1007.01.009.C.1.b.g/4/-1.779.3/6/2021",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "orange"
         },
@@ -107,8 +110,8 @@
           "name": "dr. Amelia Puspitasari",
           "sip": "440/0501/dr/00009/DPMPTSP/2019",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "red"
         },
@@ -118,8 +121,8 @@
           "name": "dr. Nataliani Mawardi, dipl.CIBTAC",
           "sip": "10/2.102/31.74.07.1007/-1.779.3/e/2017",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "blue"
         },
@@ -129,8 +132,8 @@
           "name": "dr. Bambang Wicaksana, Sp.BP-RE(K)",
           "sip": "446.1//3776/01-DPMPTSP/OL/2019",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Sp.DV (Rawat Jalan)",
           "color": "amber"
         },
@@ -140,8 +143,8 @@
           "name": "dr. Bambino Bismara Mamuaya, BMedSc(Hons)",
           "sip": "12/B.15a/31.74.07.1007/-1.779.3/e/2018",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "yellow"
         }
@@ -149,6 +152,7 @@
     },
     {
       "date": "2024-09-12T00:00:00.000+00:00",
+      "today": false,
       "user": [
         {
           "id": 12,
@@ -156,8 +160,8 @@
           "name": "dr. Brigitta Intan Priwita Sari",
           "sip": "446/0053/SIPdokter/DPMPTSP/SIMPOK/1/2021",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "lime"
         },
@@ -167,8 +171,8 @@
           "name": "dr. Christian Salim",
           "sip": "8/B.15a/31.74.07.1007/-1.779.3/e/2018",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "green"
         }
@@ -176,6 +180,7 @@
     },
     {
       "date": "2024-09-13T00:00:00.000+00:00",
+      "today": false,
       "user": [
         {
           "id": 14,
@@ -183,8 +188,8 @@
           "name": "dr. Dinar Rahmania, Sp.BP-RE",
           "sip": "446.1/3776/01-DPMPTSP/OL/2019",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "indigo"
         },
@@ -194,8 +199,8 @@
           "name": "dr. Hani Primadini",
           "sip": "7/B.15a/31.74.07.1007/-1.779.3/e/2018",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "violet"
         },
@@ -205,8 +210,8 @@
           "name": "dr. Lidya Yuniwati, Dipl.AAAM",
           "sip": "446.1/2225/02-DPMPTSP/OL/2019",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "purple"
         }
@@ -214,6 +219,7 @@
     },
     {
       "date": "2024-09-14T00:00:00.000+00:00",
+      "today": false,
       "user": [
         {
           "id": 17,
@@ -221,8 +227,8 @@
           "name": "dr. Nataliani Mawardi, dipl.CIBTAC",
           "sip": "10/2.102/31.74.07.1007/-1.779.3/e/2017",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "blue"
         },
@@ -232,8 +238,8 @@
           "name": "dr. Lucia Bernadetha Dien",
           "sip": "5/B.15a/31.74.07/1007/-1.779.3/e/2019",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "fuchsia"
         }
@@ -241,6 +247,7 @@
     },
     {
       "date": "2024-09-15T00:00:00.000+00:00",
+      "today": false,
       "user": [
         {
           "id": 19,
@@ -248,8 +255,8 @@
           "name": "dr. Magdalena Niken Hapsari P",
           "sip": "446.1/0228/02-DPMPTSP/OL/2018",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "emerald"
         },
@@ -259,8 +266,8 @@
           "name": "dr. Nataliani Mawardi, dipl.CIBTAC",
           "sip": "10/2.102/31.74.07.1007/-1.779.3/e/2017",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "blue"
         },
@@ -270,8 +277,8 @@
           "name": "dr. Margaret Mauren Hanang, dipl.CIBTAC",
           "sip": "446.1/0144/02-DPMPTSP/OL/2017",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "cyan"
         },
@@ -281,8 +288,8 @@
           "name": "dr. Hani Primadini",
           "sip": "7/B.15a/31.74.07.1007/-1.779.3/e/2018",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "pink"
         }
@@ -291,6 +298,7 @@
 
     {
       "date": "2024-09-16T00:00:00.000+00:00",
+      "today": false,
       "user": [
         {
           "id": 23,
@@ -298,8 +306,8 @@
           "name": "dr. Nataliani Mawardi, dipl.CIBTAC",
           "sip": "10/2.102/31.74.07.1007/-1.779.3/e/2017",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "blue"
         },
@@ -309,8 +317,8 @@
           "name": "dr. Hani Primadini",
           "sip": "7/B.15a/31.74.07.1007/-1.779.3/e/2018",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "zinc"
         }
@@ -318,6 +326,7 @@
     },
     {
       "date": "2024-09-17T00:00:00.000+00:00",
+      "today": false,
       "user": [
         {
           "id": 25,
@@ -325,8 +334,8 @@
           "name": "dr. Dinar Rahmania, Sp.BP-RE",
           "sip": "446.1/3776/01-DPMPTSP/OL/2019",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "zinc"
         },
@@ -336,8 +345,8 @@
           "name": "dr. Damar Sajiwo, MARS",
           "sip": "No.7/B.15A/31.74.07.1007.01.009.C.1.b.g/4/-1.779.3/6/2021",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "orange"
         },
@@ -347,8 +356,8 @@
           "name": "dr. Amelia Puspitasari",
           "sip": "440/0501/dr/00009/DPMPTSP/2019",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "red"
         }
@@ -356,6 +365,7 @@
     },
     {
       "date": "2024-09-18T00:00:00.000+00:00",
+      "today": true,
       "user": [
         {
           "id": 28,
@@ -363,15 +373,16 @@
           "name": "dr. Hani Primadini",
           "sip": "12/B.15a/31.74.07.1007/-1.779.3/e/2018",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
-          "color": "test"
+          "color": "blue"
         }
       ]
     },
     {
       "date": "2024-09-19T00:00:00.000+00:00",
+      "today": false,
       "user": [
         {
           "id": 29,
@@ -379,8 +390,8 @@
           "name": "dr. Nataliani Mawardi, dipl.CIBTAC",
           "sip": "10/2.102/31.74.07.1007/-1.779.3/e/2017",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "blue"
         },
@@ -390,8 +401,8 @@
           "name": "dr. Sista Sandhi Prawista",
           "sip": "10/2.102/31.74.07.1007/-1.779.3/e/2017",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "blue"
         },
@@ -401,8 +412,8 @@
           "name": "dr. Mia Ckristina",
           "sip": "440/0773/DU/DPM-PTSP.PPJU/OL",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "red"
         },
@@ -412,8 +423,8 @@
           "name": "dr. Jessica Yulianti",
           "sip": "12/B.15a/31.74.07.1007/-1.779.3/e/2018",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "lime"
         }
@@ -421,6 +432,7 @@
     },
     {
       "date": "2024-09-20T00:00:00.000+00:00",
+      "today": false,
       "user": [
         {
           "id": 33,
@@ -428,8 +440,8 @@
           "name": "dr. Brigitta Intan Priwita Sari",
           "sip": "12/B.15a/31.74.07.1007/-1.779.3/e/2018",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "lime"
         },
@@ -439,8 +451,8 @@
           "name": "dr. Christian Salim",
           "sip": "8/B.15a/31.74.07.1007/-1.779.3/e/2018",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "green"
         }
@@ -448,6 +460,7 @@
     },
     {
       "date": "2024-09-21T00:00:00.000+00:00",
+      "today": false,
       "user": [
         {
           "id": 35,
@@ -455,8 +468,8 @@
           "name": "dr. Magdalena Niken Hapsari P",
           "sip": "446.1/0228/02-DPMPTSP/OL/2018",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "emerald"
         },
@@ -466,8 +479,8 @@
           "name": "dr. Nataliani Mawardi, dipl.CIBTAC",
           "sip": "10/2.102/31.74.07.1007/-1.779.3/e/2017",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "blue"
         },
@@ -477,8 +490,8 @@
           "name": "dr. Aulia Livia",
           "sip": "NO. 446.3/0373/04/03/01-Dinkes/2017",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "neutral"
         },
@@ -488,8 +501,8 @@
           "name": "dr. Aulia Nurul Fatimah",
           "sip": "440/0030/DU/DPM-PTSP.PPJU",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "red"
         }
@@ -497,6 +510,7 @@
     },
     {
       "date": "2024-09-22T00:00:00.000+00:00",
+      "today": false,
       "user": [
         {
           "id": 39,
@@ -504,8 +518,8 @@
           "name": "dr. Jessica Yulianti",
           "sip": "446/dr.736/SIP.I/DPMPTSP/2019",
           "location": "NMW Klinik Petogogan",
-          "startTime": "08:00:00",
-          "endTime": "17:00:00",
+          "startTime": "2024-09-18T08:00:00+0700",
+          "endTime": "2024-09-18T17:00:00+0700",
           "description": "Konsultasi Umum (Rawat Jalan)",
           "color": "yellow"
         }
