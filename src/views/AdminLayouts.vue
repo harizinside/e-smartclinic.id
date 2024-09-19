@@ -77,7 +77,7 @@
                           <router-link
                             v-if="!item.children?.length"
                             :to="item.href"
-                            :class="[$route.path === item.href ? 'bg-gray-800 text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-white', 'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6']">
+                            :class="[$route.path === item.href || $route.path.startsWith(item.href)? 'bg-gray-800 text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-white', 'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6']">
                             <VIcons
                               :name="item.icon"
                               class="h-6 w-6 shrink-0"
@@ -181,7 +181,7 @@
                     <router-link
                       v-if="!item.children?.length"
                       :to="item.href"
-                      :class="[$route.path === item.href ? 'bg-gray-800 text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-white', 'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6']">
+                      :class="[$route.path === item.href || $route.path.startsWith(item.href) ? 'bg-gray-800 text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-white', 'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6']">
                       <VIcons
                         :name="item.icon"
                         class="h-6 w-6 shrink-0"

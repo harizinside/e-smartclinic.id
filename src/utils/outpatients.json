@@ -1,7 +1,7 @@
 {
   "from": 1,
-  "to": 10,
-  "total": 7,
+  "to": 1,
+  "total": 2,
   "per_page": 10,
   "current_page": 1,
   "last_page": 1,
@@ -17,12 +17,15 @@
       "category": "Rawat Jalan",
       "schedule": {
         "id": 2,
+        "img": "https://avatar.iran.liara.run/public/boy?usearname=dr.Damar+Sajiwo",
         "name": "dr. Damar Sajiwo, MARS",
-        "startTime": "2024-09-18T08:00:00+0700",
-        "endTime": "2024-09-18T17:00:00+0700"
+        "location": "NMW Klinik Petogogan",
+        "time": "2024-09-18T08:00:00+0700",
+        "slot": 1
       },
-      "patients": {
+      "patient": {
         "id": 3,
+        "img": "https://avatar.iran.liara.run/public/girl?usearname=CN01105500",
         "regCode": "NMW-CN01105500",
         "name": "Rina Chairunnisa",
         "type": "BPJS"
@@ -37,12 +40,15 @@
       "category": "Rawat Jalan",
       "schedule": {
         "id": 3,
+        "img": "https://avatar.iran.liara.run/public/boy?usearname=dr.Damar+Sajiwo",
         "name": "dr. Damar Sajiwo, MARS",
-        "startTime": "2024-09-18T08:00:00+0700",
-        "endTime": "2024-09-18T17:00:00+0700"
+        "location": "NMW Klinik Petogogan",
+        "time": "2024-09-18T08:30:00+0700",
+        "slot": 2
       },
-      "patients": {
+      "patient": {
         "id": 6,
+        "img": "https://avatar.iran.liara.run/public/girl?usearname=BR00605240",
         "regCode": "NMW-BR00605240",
         "name": "Laela Fijarwati",
         "type": "Mandiri"
