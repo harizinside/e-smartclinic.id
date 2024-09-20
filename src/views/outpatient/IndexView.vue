@@ -144,7 +144,6 @@ interface IData {
   updatedAt: string
 }
 
-const dialogTransfer = ref<boolean>(false)
 const dialogDelete = ref<boolean>(false)
 const deleted = ref<IDialog>({
   img: 'https://avatar.iran.liara.run/public/girl?usearname=dr.Niken+Anggraeni',
