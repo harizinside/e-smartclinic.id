@@ -24,7 +24,7 @@ import Schedule from '@/views/practice-schedule/IndexView.vue'
 import OutPatients from '@/views/outpatient/IndexView.vue'
 import CreateOutPatients from '@/views/outpatient/CreateView.vue'
 import Payments from '@/views/payment/IndexView.vue'
-import MedicalRecord from '@/views/MedicalRecordView.vue'
+import MedicalRecord from '@/views/medical-records/IndexView.vue'
 import NotFound from '@/views/NotFoundView.vue'
 import System from '@/views/SettingsView.vue'
 
