@@ -25,6 +25,7 @@ import OutPatients from '@/views/outpatient/IndexView.vue'
 import CreateOutPatients from '@/views/outpatient/CreateView.vue'
 import Payments from '@/views/payment/IndexView.vue'
 import MedicalRecord from '@/views/medical-records/IndexView.vue'
+import MedicalRecordCreate from '@/views/medical-records/ModifView.vue'
 import NotFound from '@/views/NotFoundView.vue'
 import System from '@/views/SettingsView.vue'
 
@@ -163,14 +164,19 @@ const routes: Array<RouteRecordRaw> = [
     component: MedicalRecord,
     meta: { auth: true }
   },
-  {
-    path: '/inventory',
-    component: OutPatients,
+   {
+    path: '/medical-record/create',
+    component: MedicalRecordCreate,
     meta: { auth: true }
   },
   {
     path: '/payments',
     component: Payments,
+    meta: { auth: true }
+  },
+  {
+    path: '/inventory',
+    component: OutPatients,
     meta: { auth: true }
   },
   {

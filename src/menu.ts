@@ -284,22 +284,6 @@ export const LIST_MENU = <MenuProps[]>[
     children: []
   },
   {
-    name: 'Inventori',
-    href: '/inventory',
-    icon: 'squares-2x2',
-    status: true,
-    order: 10,
-    privilage: {
-      create: true,
-      read: true,
-      update: true,
-      delete: true,
-      import: true,
-      export: true
-    },
-    children: []
-  },
-  {
     name: 'Pembelian',
     href: '/payments',
     icon: 'calculator',
@@ -345,6 +329,22 @@ export const LIST_MENU = <MenuProps[]>[
         }
       }
     ]
+  },
+  {
+    name: 'Inventori',
+    href: '/inventory',
+    icon: 'squares-2x2',
+    status: true,
+    order: 10,
+    privilage: {
+      create: true,
+      read: true,
+      update: true,
+      delete: true,
+      import: true,
+      export: true
+    },
+    children: []
   },
   {
     name: 'Laporan',
