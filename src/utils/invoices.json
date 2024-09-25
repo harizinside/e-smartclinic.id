@@ -1,0 +1,81 @@
+{
+  "from": 1,
+  "to": 10,
+  "total": 8,
+  "per_page": 10,
+  "current_page": 1,
+  "last_page": 1,
+  "first_page_url": "page=1&limit=10",
+  "last_page_url": "page=1&limit=10",
+  "next_page_url": "page=1&limit=10",
+  "prev_page_url": "page=1&limit=10",
+  "path": "http://192.168.3.221:8001/rheinmedika/medical-check/accounts",
+  "data": [
+    {
+      "id": 1,
+      "poli": "Poli Umum",
+      "category": "Rawat Jalan",
+      "date": "2023-08-23T08:00:00",
+      "patient": {
+        "id": 1,
+        "name": "Hartono Surianto",
+        "img": "https://avatar.iran.liara.run/public/boy?usearname=CG11105000",
+        "regCode": "NMW-CG11105000",
+        "type": "AXA Insurance"
+      },
+      "doctor": {
+        "id": 1,
+        "name": "dr. Damar Sajiwo, MARS",
+        "img": "https://avatar.iran.liara.run/public/boy?usearname=dr.Damar+Sajiwo",
+        "sip": "440/0501/dr/00009/DPMPTSP/2019"
+      },
+      "status": false,
+      "createAt": "2023-08-23T12:34:56",
+      "updateAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 2,
+      "poli": "Poli Umum",
+      "category": "Rawat Jalan",
+      "date": "2023-08-23T08:15:00",
+      "patient": {
+        "id": 1,
+        "name": "Anisha Ulfah Annas",
+        "img": "https://avatar.iran.liara.run/public/girl?usearname=CM0060530",
+        "regCode": "NMW-CM00605300",
+        "type": "BPJS"
+      },
+      "doctor": {
+        "id": 1,
+        "name": "dr. Damar Sajiwo, MARS",
+        "img": "https://avatar.iran.liara.run/public/boy?usearname=dr.Damar+Sajiwo",
+        "sip": "440/0501/dr/00009/DPMPTSP/2019"
+      },
+      "status": false,
+      "createAt": "2023-08-23T12:34:56",
+      "updateAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 3,
+      "poli": "Poli Umum",
+      "category": "Rawat Jalan",
+      "date": "2023-08-23T08:30:00",
+      "patient": {
+        "id": 1,
+        "name": "Laela Fijarwati",
+        "img": "https://avatar.iran.liara.run/public/girl?usearname=BR00605240",
+        "regCode": "NMW-BR00605240",
+        "type": "Mandiri"
+      },
+      "doctor": {
+        "id": 1,
+        "name": "dr. Damar Sajiwo, MARS",
+        "img": "https://avatar.iran.liara.run/public/boy?usearname=dr.Damar+Sajiwo",
+        "sip": "440/0501/dr/00009/DPMPTSP/2019"
+      },
+      "status": false,
+      "createAt": "2023-08-23T12:34:56",
+      "updateAt": "2023-08-23T12:34:56"
+    }
+  ]
+}

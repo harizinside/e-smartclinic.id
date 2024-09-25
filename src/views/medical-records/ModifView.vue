@@ -2,15 +2,341 @@
   <div>
     <AdminLayouts>
       <VBreadcrumbNavigation :navs="navs" />
-      <h1>This medical record create</h1>
+      <form>
+        <fieldset>
+          <!-- Subjective -->
+          <section class="pt-2">
+            <div class="border rounded-lg p-4">
+              <div class="flex gap-4">
+                <div class="mb-5 grow">
+                  <label
+                    for="base-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Berat Badan <span class="text-red-600">**</span></label>
+                  <input
+                    id="base-input"
+                    type="text"
+                    class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
+                </div>
+                <div class="mb-5 grow">
+                  <label
+                    for="base-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tinggi Badan <span class="text-red-600">**</span></label>
+                  <input
+                    id="base-input"
+                    type="text"
+                    class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
+                </div>
+                <div class="mb-5 grow">
+                  <label
+                    for="base-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tekanan Nadi <span class="text-red-600">**</span></label>
+                  <input
+                    id="base-input"
+                    type="text"
+                    class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
+                </div>
+                <div class="mb-5 grow">
+                  <label
+                    for="base-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Respirasi <span class="text-red-600">**</span></label>
+                  <input
+                    id="base-input"
+                    type="text"
+                    class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
+                </div>
+              </div>
+              <div class="col-span-full mb-5">
+                <label
+                  for="cover-photo"
+                  class="block text-sm font-medium leading-6 text-gray-900">Assets File</label>
+                <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                  <div class="text-center">
+                    <PhotoIcon
+                      class="mx-auto h-12 w-12 text-gray-300"
+                      aria-hidden="true" />
+                    <div class="mt-4 flex text-sm leading-6 text-gray-600">
+                      <label
+                        for="file-upload"
+                        class="relative cursor-pointer rounded-md bg-white font-semibold text-orange-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-orange-600 focus-within:ring-offset-2 hover:text-orange-500">
+                        <span>Upload a file</span>
+                        <input
+                          id="file-upload"
+                          name="file-upload"
+                          type="file"
+                          class="sr-only">
+                      </label>
+                      <p class="pl-1">
+                        or drag and drop
+                      </p>
+                    </div>
+                    <p class="text-xs leading-5 text-gray-600">
+                      PNG, JPG, GIF up to 10MB
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-5">
+                <label
+                  for="base-input"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Riwayat Penyakit <span class="text-red-600">**</span></label>
+                <input
+                  id="base-input"
+                  type="text"
+                  class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
+              </div>
+              <div class="mb-5">
+                <label
+                  for="base-input"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kondisi Penyakit Lainnya<span class="text-red-600">**</span></label>
+                <input
+                  id="base-input"
+                  type="text"
+                  class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
+              </div>
+              <div class="mb-5">
+                <label
+                  for="base-input"
+                  type="base"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Keluhan Utama <span class="text-red-600">**</span></label>
+                <textarea
+                  id="base-input"
+                  type="base"
+                  class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500" />
+              </div>
+              <div class="">
+                <label
+                  for="base-input"
+                  type="base"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Anamnesis <span class="text-red-600">**</span></label>
+                <textarea
+                  id="base-input"
+                  type="base"
+                  class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500" />
+              </div>
+            </div>
+          </section>
+          <!-- Objective -->
+          <section class="pt-6">
+            <div class="border rounded-lg p-4">
+              <ul
+                role="list"
+                class="divide-y divide-gray-100 overflow-hidden bg-white sm:rounded-xl">
+                <li
+                  v-for="person in people"
+                  :key="person.email"
+                  class="relative flex justify-between gap-x-6 px-4 py-5 sm:px-6">
+                  <div class="flex min-w-0 gap-x-4">
+                    <img
+                      class="h-12 w-12 flex-none rounded-full bg-gray-50"
+                      :src="person.imageUrl"
+                      alt="">
+                    <div class="min-w-0 flex-auto">
+                      <p class="text-sm font-semibold leading-6 text-gray-900">
+                        <a :href="person.href">
+                          <span class="absolute inset-x-0 -top-px bottom-0" />
+                          {{ person.name }}
+                        </a>
+                      </p>
+                      <p class="mt-1 flex text-xs leading-5 text-gray-500">
+                        <a
+                          :href="`mailto:${person.email}`"
+                          class="relative truncate hover:underline">{{ person.email }}</a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex shrink-0 items-center gap-x-4">
+                    <div class="hidden sm:flex sm:flex-col sm:items-end">
+                      <p class="text-sm leading-6 text-gray-900">
+                        {{ person.role }}
+                      </p>
+                      <p
+                        v-if="person.lastSeen"
+                        class="mt-1 text-xs leading-5 text-gray-500">
+                        Last seen <time :datetime="person.lastSeenDateTime">{{ person.lastSeen }}</time>
+                      </p>
+                      <div
+                        v-else
+                        class="mt-1 flex items-center gap-x-1.5">
+                        <div class="flex-none rounded-full bg-emerald-500/20 p-1">
+                          <div class="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                        </div>
+                        <p class="text-xs leading-5 text-gray-500">
+                          Online
+                        </p>
+                      </div>
+                    </div>
+                    <ChevronRightIcon
+                      class="h-5 w-5 flex-none text-gray-400"
+                      aria-hidden="true" />
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <!-- Assessment -->
+          <section class="pt-6">
+            <div class="border rounded-lg p-4">
+              <div class="mb-5">
+                <label
+                  for="base-input"
+                  type="base"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pemeriksaan <span class="text-red-600">**</span></label>
+                <textarea
+                  id="base-input"
+                  type="base"
+                  class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500" />
+              </div>
+              <div class="mb-5 grow">
+                <label
+                  for="base-input"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Diagnosa <span class="text-red-600">**</span></label>
+                <input
+                  id="base-input"
+                  type="text"
+                  class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 mb-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
+                <textarea
+                  id="base-input"
+                  type="base"
+                  class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500" />
+              </div>
+              <div class="mb-5">
+                <label
+                  for="base-input"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Prognosa<span class="text-red-600">**</span></label>
+                <input
+                  id="base-input"
+                  type="text"
+                  class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
+              </div>
+              <div class="mb-5">
+                <label
+                  for="base-input"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ICD-10<span class="text-red-600">**</span></label>
+                <input
+                  id="base-input"
+                  type="text"
+                  class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
+              </div>
+            </div>
+          </section>
+          <!-- Plan -->
+          <section class="pt-6">
+            <div class="border rounded-lg p-4">
+              <div class="pb-4">
+                <table class="min-w-full divide-y divide-gray-300">
+                  <thead>
+                    <tr>
+                      <th
+                        scope="col"
+                        class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">
+                        Layanan/Tindakan
+                      </th>
+                      <th
+                        scope="col"
+                        class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:table-cell">
+                        Jenis Tanggungan
+                      </th>
+                      <th
+                        scope="col"
+                        class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 lg:table-cell">
+                        Jumlah
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-200 bg-white">
+                    <tr>
+                      <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                        &nbsp;
+                      </td>
+                      <td class="hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 sm:table-cell">
+                        &nbsp;
+                      </td>
+                      <td class="hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 lg:table-cell">
+                        &nbsp;
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="mt-4 sm:mt-0 sm:flex-none">
+                  <button
+                    type="button"
+                    class="block rounded-md bg-orange-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">
+                    Add user
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <table class="min-w-full divide-y divide-gray-300">
+                  <thead>
+                    <tr>
+                      <th
+                        scope="col"
+                        class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">
+                        Obat
+                      </th>
+                      <th
+                        scope="col"
+                        class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:table-cell">
+                        Prioritas
+                      </th>
+                      <th
+                        scope="col"
+                        class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 lg:table-cell">
+                        Cara Penggunaan
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-200 bg-white">
+                    <tr>
+                      <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                        &nbsp;
+                      </td>
+                      <td class="hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 sm:table-cell">
+                        &nbsp;
+                      </td>
+                      <td class="hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 lg:table-cell">
+                        &nbsp;
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="mt-4 sm:mt-0 sm:flex-none">
+                  <button
+                    type="button"
+                    class="block rounded-md bg-orange-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">
+                    Add user
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="flex flex-row-reverse gap-2 py-4">
+              <button
+                type="submit"
+                class="inline-flex w-full justify-center rounded-md px-3 py-2 text-sm font-semibold text-white shadow-sm sm:ml-3 sm:w-auto cursor-pointer bg-orange-600 hover:bg-orange-500 focus-visible:outline-orange-500">
+                Simpan data
+              </button>
+              <button
+                type="button"
+                class="rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:ring-gray-400">
+                Batalkan
+              </button>
+            </div>
+          </section>
+        </fieldset>
+      </form>
     </AdminLayouts>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { onBeforeRouteLeave } from 'vue-router'
 import { useHead } from '@unhead/vue'
 import { TransitionRoot } from '@headlessui/vue'
+import { ChevronRightIcon, PhotoIcon } from '@heroicons/vue/20/solid'
 import type { IAlert } from '@/interfaces/alerts'
 import type { IColumnHeader } from '@/interfaces/tables'
 import type { IDialog } from '@/interfaces/dialogs'
@@ -35,10 +361,85 @@ interface IData {
   privilage: string
 }
 
+const isSaved = ref<boolean>(false)
+const people = [
+  {
+    name: 'Leslie Alexander',
+    email: 'leslie.alexander@example.com',
+    role: 'Co-Founder / CEO',
+    imageUrl:
+      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    href: '#',
+    lastSeen: '3h ago',
+    lastSeenDateTime: '2023-01-23T13:23Z'
+  },
+  {
+    name: 'Michael Foster',
+    email: 'michael.foster@example.com',
+    role: 'Co-Founder / CTO',
+    imageUrl:
+      'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    href: '#',
+    lastSeen: '3h ago',
+    lastSeenDateTime: '2023-01-23T13:23Z'
+  },
+  {
+    name: 'Dries Vincent',
+    email: 'dries.vincent@example.com',
+    role: 'Business Relations',
+    imageUrl:
+      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    href: '#',
+    lastSeen: null
+  },
+  {
+    name: 'Lindsay Walton',
+    email: 'lindsay.walton@example.com',
+    role: 'Front-end Developer',
+    imageUrl:
+      'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    href: '#',
+    lastSeen: '3h ago',
+    lastSeenDateTime: '2023-01-23T13:23Z'
+  },
+  {
+    name: 'Courtney Henry',
+    email: 'courtney.henry@example.com',
+    role: 'Designer',
+    imageUrl:
+      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    href: '#',
+    lastSeen: '3h ago',
+    lastSeenDateTime: '2023-01-23T13:23Z'
+  },
+  {
+    name: 'Tom Cook',
+    email: 'tom.cook@example.com',
+    role: 'Director of Product',
+    imageUrl:
+      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    href: '#',
+    lastSeen: null
+  }
+]
+
 const navs = ref<INavigation[]>([
   { name: 'Medical Record', link: '/admin', active: false },
   { name: 'Create', link: '/admin/users', active: true }
 ])
+
+onBeforeRouteLeave((to, from, next) => {
+  if (!isSaved.value) {
+    const answer = window.confirm('Do you really want to leave? You have unsaved changes!')
+    if (!answer) {
+      next(false)
+    } else {
+      next()
+    }
+  } else {
+    next()
+  }
+})
 
 useHead({
   title: 'Home | e-Smart Clinic'

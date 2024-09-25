@@ -24,6 +24,7 @@ import Schedule from '@/views/practice-schedule/IndexView.vue'
 import OutPatients from '@/views/outpatient/IndexView.vue'
 import CreateOutPatients from '@/views/outpatient/CreateView.vue'
 import Payments from '@/views/payment/IndexView.vue'
+import PaymentsCreate from '@/views/payment/CreateView.vue'
 import MedicalRecord from '@/views/medical-records/IndexView.vue'
 import MedicalRecordCreate from '@/views/medical-records/ModifView.vue'
 import NotFound from '@/views/NotFoundView.vue'
@@ -172,6 +173,11 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/payments',
     component: Payments,
+    meta: { auth: true }
+  },
+  {
+    path: '/payments/create',
+    component: PaymentsCreate,
     meta: { auth: true }
   },
   {

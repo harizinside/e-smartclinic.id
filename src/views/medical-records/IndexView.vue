@@ -78,7 +78,6 @@
           </td>
         </VTableColumn>
       </VTable>
-      <h1>Medical Record</h1>
     </AdminLayouts>
   </div>
 </template>
