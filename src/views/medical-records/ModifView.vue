@@ -6,7 +6,10 @@
         <fieldset>
           <!-- Subjective -->
           <section class="pt-2">
-            <div class="border rounded-lg p-4">
+            <div class="border-x border-t p-2 font-semibold text-sm rounded-t-lg bg-gray-200 text-slate-500">
+              Subjective
+            </div>
+            <div class="border rounded-b-lg p-4">
               <div class="flex gap-4">
                 <div class="mb-5 grow">
                   <label
@@ -117,51 +120,47 @@
           </section>
           <!-- Objective -->
           <section class="pt-6">
-            <div class="border rounded-lg p-4">
+            <div class="border-x border-t p-2 font-semibold text-sm rounded-t-lg bg-gray-200 text-slate-500">
+              Objective
+            </div>
+            <div class="border rounded-b-lg p-4">
+              <span class="text-sm font-medium mb-2">Riwayat Konsultasi</span>
               <ul
                 role="list"
                 class="divide-y divide-gray-100 overflow-hidden bg-white sm:rounded-xl">
                 <li
-                  v-for="person in people"
-                  :key="person.email"
+                  v-for="(row, index) in objective.data!"
+                  :key="index"
                   class="relative flex justify-between gap-x-6 px-4 py-5 sm:px-6">
                   <div class="flex min-w-0 gap-x-4">
                     <img
                       class="h-12 w-12 flex-none rounded-full bg-gray-50"
-                      :src="person.imageUrl"
+                      :src="row.doctor.img"
                       alt="">
                     <div class="min-w-0 flex-auto">
                       <p class="text-sm font-semibold leading-6 text-gray-900">
-                        <a :href="person.href">
+                        <a :href="`api/diagnosa/${row.id}`">
                           <span class="absolute inset-x-0 -top-px bottom-0" />
-                          {{ person.name }}
+                          {{ row.doctor.name }}
                         </a>
                       </p>
                       <p class="mt-1 flex text-xs leading-5 text-gray-500">
-                        <a
-                          :href="`mailto:${person.email}`"
-                          class="relative truncate hover:underline">{{ person.email }}</a>
+                        {{ $d(Date.parse(row.date), 'full') }}
                       </p>
                     </div>
                   </div>
                   <div class="flex shrink-0 items-center gap-x-4">
                     <div class="hidden sm:flex sm:flex-col sm:items-end">
                       <p class="text-sm leading-6 text-gray-900">
-                        {{ person.role }}
-                      </p>
-                      <p
-                        v-if="person.lastSeen"
-                        class="mt-1 text-xs leading-5 text-gray-500">
-                        Last seen <time :datetime="person.lastSeenDateTime">{{ person.lastSeen }}</time>
+                        {{ row.diagnosis.join(', ') }}
                       </p>
                       <div
-                        v-else
                         class="mt-1 flex items-center gap-x-1.5">
                         <div class="flex-none rounded-full bg-emerald-500/20 p-1">
                           <div class="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                         </div>
                         <p class="text-xs leading-5 text-gray-500">
-                          Online
+                          {{ row.doctor.sip }}
                         </p>
                       </div>
                     </div>
@@ -175,7 +174,10 @@
           </section>
           <!-- Assessment -->
           <section class="pt-6">
-            <div class="border rounded-lg p-4">
+            <div class="border-x border-t p-2 font-semibold text-sm rounded-t-lg bg-gray-200 text-slate-500">
+              Assessment
+            </div>
+            <div class="border rounded-b-lg p-4">
               <div class="mb-5">
                 <label
                   for="base-input"
@@ -221,7 +223,10 @@
           </section>
           <!-- Plan -->
           <section class="pt-6">
-            <div class="border rounded-lg p-4">
+            <div class="border-x border-t p-2 font-semibold text-sm rounded-t-lg bg-gray-200 text-slate-500">
+              Plan
+            </div>
+            <div class="border rounded-b-lg p-4">
               <div class="pb-4">
                 <table class="min-w-full divide-y divide-gray-300">
                   <thead>
@@ -335,93 +340,28 @@
 import { ref } from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 import { useHead } from '@unhead/vue'
-import { TransitionRoot } from '@headlessui/vue'
 import { ChevronRightIcon, PhotoIcon } from '@heroicons/vue/20/solid'
-import type { IAlert } from '@/interfaces/alerts'
-import type { IColumnHeader } from '@/interfaces/tables'
-import type { IDialog } from '@/interfaces/dialogs'
-import type { IPagination } from '@/interfaces/paginations'
 import type { INavigation } from '@/interfaces/navs'
+import type { IPagination } from '@/interfaces/paginations'
 import AdminLayouts from '@/views/AdminLayouts.vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
-import VDialogFindUsers from '@/components/VDialogFindUsers.vue'
-import VDialogSetRole from '@/components/VDialogSetRole.vue'
-import VDialogDelete from '@/components/VDialogDelete.vue'
-import VAlerts from '@/components/VAlerts.vue'
-import VTable from '@/components/VTable.vue'
-import VTableColumn from '@/components/VTableColumn.vue'
-import JsonData from '@/utils/users.json'
+import JsonData from '@/utils/objective.json'
 
-interface IData {
+interface IObjective {
   id: number
-  img: string
-  name: string
-  email: string
-  position: string
-  privilage: string
+  date: string
+  doctor: {
+    id: number
+    img: string
+    name: string
+    sip: string
+    branch: string
+  }
+  diagnosis: string[]
 }
 
 const isSaved = ref<boolean>(false)
-const people = [
-  {
-    name: 'Leslie Alexander',
-    email: 'leslie.alexander@example.com',
-    role: 'Co-Founder / CEO',
-    imageUrl:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    href: '#',
-    lastSeen: '3h ago',
-    lastSeenDateTime: '2023-01-23T13:23Z'
-  },
-  {
-    name: 'Michael Foster',
-    email: 'michael.foster@example.com',
-    role: 'Co-Founder / CTO',
-    imageUrl:
-      'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    href: '#',
-    lastSeen: '3h ago',
-    lastSeenDateTime: '2023-01-23T13:23Z'
-  },
-  {
-    name: 'Dries Vincent',
-    email: 'dries.vincent@example.com',
-    role: 'Business Relations',
-    imageUrl:
-      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    href: '#',
-    lastSeen: null
-  },
-  {
-    name: 'Lindsay Walton',
-    email: 'lindsay.walton@example.com',
-    role: 'Front-end Developer',
-    imageUrl:
-      'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    href: '#',
-    lastSeen: '3h ago',
-    lastSeenDateTime: '2023-01-23T13:23Z'
-  },
-  {
-    name: 'Courtney Henry',
-    email: 'courtney.henry@example.com',
-    role: 'Designer',
-    imageUrl:
-      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    href: '#',
-    lastSeen: '3h ago',
-    lastSeenDateTime: '2023-01-23T13:23Z'
-  },
-  {
-    name: 'Tom Cook',
-    email: 'tom.cook@example.com',
-    role: 'Director of Product',
-    imageUrl:
-      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    href: '#',
-    lastSeen: null
-  }
-]
+const objective = ref<IPagination<IObjective[]>>(JsonData)
 
 const navs = ref<INavigation[]>([
   { name: 'Medical Record', link: '/admin', active: false },
