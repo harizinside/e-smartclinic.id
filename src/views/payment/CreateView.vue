@@ -221,7 +221,8 @@
                     <div>
                       <button
                         type="button"
-                        class="rounded-md bg-orange-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">
+                        class="rounded-md bg-orange-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600"
+                        @click="dialogPayment = true">
                         Process Pay
                       </button>
                     </div>
@@ -240,6 +241,12 @@
           </div>
         </div>
       </template>
+      <TransitionRoot
+        as="template"
+        :show="dialogPayment">
+        <PaymentMethode
+          @close="dialogPayment = false" />
+      </TransitionRoot>
     </AdminLayouts>
   </div>
 </template>
@@ -250,12 +257,14 @@ import { useHead } from '@unhead/vue'
 import {
     Disclosure,
     DisclosureButton,
-    DisclosurePanel
+    DisclosurePanel,
+    TransitionRoot
   } from '@headlessui/vue'
+import { PlusIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/24/outline'
 import type { INavigation } from '@/interfaces/navs'
 import AdminLayouts from '@/views/AdminLayouts.vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
-import { PlusIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/24/outline'
+import PaymentMethode from './PaymentMethode.vue'
 
 interface IPaymentData {
   id: number
@@ -317,6 +326,7 @@ interface IPaymentData {
   }
 }
 
+const dialogPayment = ref<boolean>(false)
 const navs = ref<INavigation[]>([
   { name: 'Payments', link: '/payments', active: true },
   { name: 'Create', link: '/payments/create', active: true }
