@@ -14,15 +14,15 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@unhead/vue": "^1.11.2",
-    "@vueuse/core": "^11.0.3",
+    "@unhead/vue": "^1.11.7",
+    "@vueuse/core": "^11.1.0",
     "dayjs": "^1.11.13",
     "pinia": "^2.2.2",
     "qrcode": "^1.5.4",
-    "vue": "^3.5.4",
+    "vue": "^3.5.10",
     "vue-camera-lib": "^1.0.6",
-    "vue-i18n": "^10.0.1",
-    "vue-router": "^4.4.4"
+    "vue-i18n": "^10.0.3",
+    "vue-router": "^4.4.5"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.7.23",
