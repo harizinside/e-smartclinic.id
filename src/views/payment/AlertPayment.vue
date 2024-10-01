@@ -28,18 +28,18 @@
             </DialogTitle>
             <div class="px-4 pb-4 sm:p-3 sm:pb-4 ">
               <div class="text-center ">
-                <p class="text-sm font-bold text-slate-600">
+                <p class="text-sm font-thin text-slate-600">
                   Kembali
                 </p>
                 <p class="mb-0.5 font-bold text-3xl text-slate-600">
                   {{ $n(73500, 'currency') }} ,-
                 </p>
-                <p class="text-[10px]">
+                <p class="text-[10px] font-thin">
                   Order ID #sample-store-17279987654
                 </p>
               </div>
               <div class="pt-2">
-                sas
+                <PaperClip />
               </div>
             </div>
             <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
@@ -47,7 +47,14 @@
                 type="button"
                 class="inline-flex w-full justify-center rounded-md bg-orange-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 sm:ml-3 sm:w-auto"
                 @click="$emit('close')">
-                Selesai Transaksi
+                Cetak & Tutup Transaksi
+              </button>
+              <button
+                ref="cancelButtonRef"
+                type="button"
+                class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                @click="$emit('close')">
+                Cetak Transaksi
               </button>
             </div>
           </DialogPanel>
@@ -59,6 +66,7 @@
 
 <script setup lang="ts">
 import { Dialog, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/vue'
+import PaperClip from './PaperClip.vue'
 
 defineEmits([ 'close', 'submit' ])
 </script>

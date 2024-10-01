@@ -13,14 +13,14 @@
                   <div class="flex min-w-0 gap-x-4">
                     <img
                       class="h-12 w-12 object-contain flex-none rounded-full bg-gray-50"
-                      src="">
+                      :src="invoices.patients.img">
                     <div class="min-w-0 flex-auto">
                       <p class="text-sm font-semibold leading-6 text-gray-900">
                         <span class="absolute inset-x-0 -top-px bottom-0" />
-                        sasasas
+                        {{ invoices.patients.name }}
                       </p>
                       <p class="mt-1 flex text-xs leading-5 text-gray-500">
-                        <span class="relative truncate hover:underline">sasasas</span>
+                        <span class="relative truncate hover:underline">{{ invoices.patients.code }}</span>
                       </p>
                     </div>
                   </div>
@@ -31,7 +31,7 @@
                         <div class="flex-none rounded-full bg-emerald-500/20 p-1">
                           <div class="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                         </div>
-                        <p class="text-xs leading-5 text-gray-500">sasa</p>
+                        <p class="text-xs leading-5 text-gray-500">{{ invoices.patients.type }}</p>
                       </div>
                     </div>
                     <ChevronRightIcon
@@ -43,21 +43,81 @@
             </a>
           </section>
           <section>
-            <Disclosure v-slot="{ open }">
+            <!-- Items -->
+            <Disclosure
+              v-for="(row, index) in invoices.products"
+              :key="index"
+              v-slot="{ open }">
               <ul
                 role="list"
                 class="mt-6 divide-y border-t divide-gray-200 border-gray-200 text-sm font-medium text-gray-500">
                 <li class="flex space-x-5 py-5">
                   <img
-                    src="/img/default/produk-racikan-pot.webp"
+                    :src="row.url"
                     alt="produk-racikan-pott"
-                    class="h-24 w-24 flex-none rounded-md bg-gray-100 object-cover object-center">
+                    class="h-24 w-24 flex-none border rounded-xl bg-gray-100 object-cover object-center">
                   <div class="flex-auto space-y-1">
                     <h3 class="text-gray-900">
-                      <span>Racikan (M2A)</span>
+                      <span class="font-semibold">{{ row.name }}</span>
                     </h3>
-                    <p>10ML</p>
-                    <p>1</p>
+                    <p class="font-medium">
+                      Price: {{ $n(row.price, 'currency') }}
+                    </p>
+                    <p class="font-medium">
+                      Quantity:&nbsp;{{ row.quantity }}
+                    </p>
+                  </div>
+                  <p class="flex-none font-medium text-gray-900">
+                    {{ $n(row.price, 'currency') }}
+                  </p>
+                </li>
+              </ul>
+              <DisclosureButton
+                class="flex w-full justify-between bg-orange-100 rounded-lg px-4 py-2 text-left text-sm font-medium text-gray-900 hover:bg-grey-200 focus:outline-none focus-visible:ring focus-visible:ring-grey-500/75">
+                <span class="font-medium text-sm">Additional info</span>
+                <ChevronLeftIcon
+                  :class="open ? 'rotate-90 transform' : ''"
+                  class="h-4 w-4 text-orange-500" />
+              </DisclosureButton>
+              <DisclosurePanel class="px-4 pb-2 pt-2 text-sm text-gray-500">
+                <legend class="text-sm font-semibold leading-6 text-gray-900">
+                  Discounts
+                </legend>
+                <div class="pt-2 grid grid-cols-3 gap-3">
+                  <div
+                    v-for="(disc, i) in row.discount"
+                    :key="i"
+                    class="border rounded-lg">
+                    <div class="p-4">
+                      <p class="text-sm font-medium">
+                        {{ $n(disc.value, 'currency') }}
+                      </p>
+                      <p>Diskon nih</p>
+                      <p>Diskon nih</p>
+                    </div>
+                  </div>
+                </div>
+              </DisclosurePanel>
+            </Disclosure>
+
+            <!-- Services -->
+            <Disclosure v-slot="{ open }">
+              <ul
+                v-for="(row, index) in invoices.services"
+                :key="index"
+                role="list"
+                class="mt-6 divide-y border-t divide-gray-200 border-gray-200 text-sm font-medium text-gray-500">
+                <li class="flex space-x-5 py-5">
+                  <img
+                    :src="row.url"
+                    alt="produk-racikan-pott"
+                    class="h-24 w-24 flex-none border rounded-xl bg-gray-100 object-cover object-center">
+                  <div class="flex-auto space-y-1">
+                    <h3 class="text-gray-900">
+                      <span class="font-semibold">{{ row.name }}</span>
+                    </h3>
+                    <p>Price: {{ $n(row.price, 'currency') }}</p>
+                    <p>Kuantiti: {{ row.quantity }}</p>
                   </div>
                   <p class="flex-none font-medium text-gray-900">
                     {{ $n(30000, 'currency') }}
@@ -79,7 +139,8 @@
             <div class="pt-2">
               <button
                 type="button"
-                class="inline-flex w-full items-center gap-x-2 rounded-lg bg-orange-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">
+                class="inline-flex w-full items-center gap-x-2 rounded-lg bg-orange-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600"
+                @click="dialogProduct = true">
                 <PlusIcon
                   class="-ml-0.5 h-4 w-4"
                   aria-hidden="true" />
@@ -88,127 +149,8 @@
             </div>
           </section> 
         </div>
-        <section>
-          <div class="hidden md:block">
-            <div class="flex flex-col justify-between lg:min-h-[600px] md:min-h-[500px]">
-              <div class="translate-y-[5px] border-l border-white">
-                <img
-                  src="/img/default/paper-cut-footer.svg"
-                  alt=""
-                  class="w-full h-full object-contain">
-              </div>
-              <div class="border-x-[0.9px] text-xs border-black flex-1 p-4 flex flex-col justify-between">
-                <div>
-                  <img
-                    src="/img/icons/e-smartclinic-black.svg"
-                    alt="Logo"
-                    class="w-full h-10 object-contain">
-                  <div class="grid grid-cols-2 gap-1 pt-4">
-                    <div class="text-left font-bold">
-                      No. Invoice
-                    </div>
-                    <div class="text-right font-bold">
-                      #12334567
-                    </div>
-                  </div>
-                  <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
-                </div>
-                <div class="flex-1">
-                  <div class="grid grid-cols-2 gap-1">
-                    <div class="text-left font-medium">
-                      Biaya Product
-                    </div>
-                    <div class="text-right font-medium">
-                      {{ $n(50000, 'currency') }}
-                    </div>
-                    <div class="text-left font-medium">
-                      Biaya Tindakan
-                    </div>
-                    <div class="text-right font-medium">
-                      {{ $n(150000, 'currency') }}
-                    </div>
-                  </div>
-                  <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
-                  <div class="grid grid-cols-2 gap-1">
-                    <div class="text-left font-medium">
-                      Sub Total Biaya
-                    </div>
-                    <div class="text-right font-medium">
-                      {{ $n(200000, 'currency') }}
-                    </div>
-                  </div>
-                  <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
-                  <div class="grid grid-cols-2 gap-1">
-                    <div class="text-left font-medium">
-                      Discount 10%
-                    </div>
-                    <div class="text-right font-medium">
-                      {{ $n(20000, 'currency') }}
-                    </div>
-                    <div class="text-left font-medium">
-                      Asuransi
-                    </div>
-                    <div class="text-right font-medium">
-                      {{ $n(0, 'currency') }}
-                    </div>
-                    <div class="text-left font-medium">
-                      Biaya Admin
-                    </div>
-                    <div class="text-right font-medium">
-                      {{ $n(5000, 'currency') }}
-                    </div>
-                    <div class="text-left font-medium">
-                      PPN 11%
-                    </div>
-                    <div class="text-right font-medium">
-                      {{ $n(10000, 'currency') }}
-                    </div>
-                  </div>
-                  <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
-                  <div class="grid grid-cols-2 gap-1">
-                    <div class="text-left font-semibold">
-                      Total Tagihan
-                    </div>
-                    <div class="text-right font-semibold">
-                      {{ $n(150000, 'currency') }}
-                    </div>
-                    <div class="text-left font-semibold">
-                      Total Bayar Debit
-                    </div>
-                    <div class="text-right font-semibold">
-                      {{ $n(150000, 'currency') }}
-                    </div>
-                    <div class="text-left font-semibold">
-                      Total Bayar Cash
-                    </div>
-                    <div class="text-right font-semibold">
-                      {{ $n(150000, 'currency') }}
-                    </div>
-                  </div>
-                  <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
-                  <div class="grid grid-cols-2 gap-1">
-                    <div class="text-left font-semibold">
-                      Kembali
-                    </div>
-                    <div class="text-right font-semibold">
-                      {{ $n(2000, 'currency') }}
-                    </div>
-                  </div>
-                </div>
-                <div class="text-center">
-                  <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
-                  <span class="font-medium text-grey-800">e-Smart Clinic</span>
-                </div>
-              </div>
-              <div class="-translate-y-[5px] border-r border-white">
-                <img
-                  src="/img/default/paper-cut-header.svg"
-                  alt=""
-                  class="w-full h-full object-contain">
-              </div>
-            </div>
-          </div>
-        </section>
+        
+        <PaperClip />
       </div>
 
       <template #footer>
@@ -247,6 +189,12 @@
         <PaymentMethode
           @close="dialogPayment = false" />
       </TransitionRoot>
+      <TransitionRoot
+        as="template"
+        :show="dialogProduct">
+        <FindProducts
+          @close="dialogProduct = false" />
+      </TransitionRoot>
     </AdminLayouts>
   </div>
 </template>
@@ -265,6 +213,8 @@ import type { INavigation } from '@/interfaces/navs'
 import AdminLayouts from '@/views/AdminLayouts.vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
 import PaymentMethode from './PaymentMethode.vue'
+import PaperClip from './PaperClip.vue'
+import FindProducts from './FindProducts.vue'
 
 interface IPaymentData {
   id: number
@@ -272,10 +222,12 @@ interface IPaymentData {
   code: string
   patients: {
     id: number
-    url: string
+    nik: string
+    img: string
     name: string
     code: string
-  },
+    type: string
+  }
   services: {
     id: number
 		url: string
@@ -284,9 +236,11 @@ interface IPaymentData {
 		quantity: number
     discount?: {
       id: number
+      name: string
       kind: 'FIXED' | 'PERCENTAGE'
+      value: number
     }[]
-  }
+  }[]
   products: {
     id: number
 		url: string
@@ -295,29 +249,24 @@ interface IPaymentData {
 		quantity: number
     discount?: {
       id: number
+      name: string
       kind: 'FIXED' | 'PERCENTAGE'
       value: number
     }[]
   }[]
   discount?: {
     id: number
+    name: string
     kind: 'FIXED' | 'PERCENTAGE'
     value: number
   }[] 
   voucher?: {
     id: number
+    name: string
     kind: 'FIXED' | 'PERCENTAGE'
     value: number
   }[]
-  status:
-		| 'PENDING'
-		| 'WAITING_PAYMENT'
-		| 'WAITING_CONFIRM'
-		| 'SUCCESS'
-		| 'FAILED'
-		| 'EXPIRED'
-		| 'REQUEST_REFUND'
-		| 'REFUND_APPROVED';
+  status: 'PENDING' | 'WAITING_PAYMENT' | 'WAITING_CONFIRM' | 'SUCCESS' | 'FAILED' | 'EXPIRED' | 'REQUEST_REFUND' | 'REFUND_APPROVED'
   summary: {
     productsTotal: number
     productsServices: number
@@ -327,6 +276,90 @@ interface IPaymentData {
 }
 
 const dialogPayment = ref<boolean>(false)
+const dialogProduct = ref<boolean>(false)
+const invoices = ref<IPaymentData>({
+  id: 1,
+  date: '2023-08-23T12:34:56',
+  code: '123456789',
+  patients: {
+    id: 1,
+    nik: '3173065405730004',
+    img: 'https://avatar.iran.liara.run/public/girl?usearname=BR00605240',
+    name: 'Laela Fijarwati',
+    code: 'NMW-BR00605240',
+    type: 'BPJS'
+  },
+  services: [
+    {
+      id: 5,
+      url: '/img/treatments/botulinum-toxin-injection.png',
+      name: 'Botulinum Toxin Injection',
+      price: 95000,
+      quantity: 1,
+      total: 95000,
+      discount: [],
+      totalDiscount: 0,
+      grandTotal: 95000
+    }
+  ],
+  products: [
+    {
+      id: 7,
+      url: '/img/items/1660795519_62a19188f15ee840f5660476.png',
+      name: 'Lavit C 10 Tablet',
+      price: 34656,
+      quantity: 2,
+      total: 69312,
+      discount: [
+        {
+          id: 1,
+          name: 'Discount 25% Lapi Laboratories',
+          kind: 'PERCENTAGE',
+          value: 25
+        }
+      ],
+      totalDiscount: 17328,
+      grandTotal: 51984
+    },
+    {
+      id: 5,
+      url: '/img/items/1643872511_thumbnail-vicee_500_rasa_anggur_2_tablet_hisap.jpeg',
+      name: 'Vicee 500 Anggur 2 Tablet',
+      price: 3615,
+      quantity: 1
+    },
+    {
+      id: 10,
+      url: '/img/items/1719910843_inavitamax_c_vita_kaplet.jpeg',
+      name: 'Inavitamax C Vita 30 Kaplet',
+      price: 198275,
+      quantity: 1
+    }
+  ],
+  discount: [
+    {
+      id: 1,
+      name: 'Discpunt 10% Member',
+      kind: 'PERCENTAGE',
+      value: 10
+    }
+  ],
+  voucher: [
+    {
+      id: 1,
+      name: 'Voucher Discount RP.1000',
+      kind: 'FIXED',
+      value: 1000
+    }
+  ],
+  status: 'PENDING',
+  summary: {
+    productsServices: 95000,
+    productsTotal: 5000,
+    subTotal: 5000,
+    grandTotal: 5000
+  }
+})
 const navs = ref<INavigation[]>([
   { name: 'Payments', link: '/payments', active: true },
   { name: 'Create', link: '/payments/create', active: true }

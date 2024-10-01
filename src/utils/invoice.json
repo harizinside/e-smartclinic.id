@@ -1,0 +1,66 @@
+{
+  "id": 1,
+  "date": "2023-08-23T12:34:56",
+  "code": "123456789",
+  "patients": {
+    "id": 1,
+    "nik": "3173065405730004",
+    "img": "https://avatar.iran.liara.run/public/girl?usearname=BR00605240",
+    "name": "Laela Fijarwati",
+    "code": "NMW-BR00605240",
+    "type": "BPJS"
+  },
+  "services": [
+    {
+      "id": 5,
+      "url": "/img/treatments/botulinum-toxin-injection.png",
+      "name": "Botulinum Toxin Injection",
+      "price": 95000,
+      "quantity": 1,
+      "discount": [
+        {
+          "id": 1,
+          "kind": "FIXED",
+          "value": 5000000
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": 7,
+      "url": "/img/items/1660795519_62a19188f15ee840f5660476.png",
+      "name": "Lavit C 10 Tablet",
+      "price": 34656,
+      "quantity": 1,
+      "discount": [
+        {
+          "id": 1,
+          "kind": "FIXED",
+          "value": 5000000
+        }
+      ]
+    }
+  ],
+  "discount": [
+    {
+      "id": 1,
+      "kind": "FIXED",
+      "value": 5000
+    }
+  ],
+  "voucher": [
+    {
+      "id": 1,
+      "kind": "FIXED",
+      "value": 5000
+    }
+  ],
+  "status": "PENDING",
+  "summary": {
+    "productsTotal": 5000,
+    "productsServices": 5000,
+    "subTotal": 5000,
+    "grandTotal": 5000
+  }
+}
