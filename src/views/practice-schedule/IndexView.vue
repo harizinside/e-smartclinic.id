@@ -93,7 +93,7 @@ import AdminLayouts from '@/views/AdminLayouts.vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
 import VDrawers from '@/components/VDrawers.vue'
 import VModifView from './ModifView.vue'
-import LabelComponent from './LabelComponent.vue'
+import LabelComponent from './component/LabelPopup.vue'
 import JsonData from '@/utils/practice-schedule.json'
 
 interface IData {

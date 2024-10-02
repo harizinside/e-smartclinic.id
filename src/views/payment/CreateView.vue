@@ -212,9 +212,9 @@ import { PlusIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/24/o
 import type { INavigation } from '@/interfaces/navs'
 import AdminLayouts from '@/views/AdminLayouts.vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
-import PaymentMethode from './PaymentMethode.vue'
-import PaperClip from './PaperClip.vue'
-import FindProducts from './FindProducts.vue'
+import PaymentMethode from './component/PaymentMethode.vue'
+import PaperClip from './component/PaperClip.vue'
+import FindProducts from './component/FindProducts.vue'
 
 enum PAYCATEGORY {
   FIXED,
