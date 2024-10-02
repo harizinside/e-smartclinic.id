@@ -216,6 +216,22 @@ import PaymentMethode from './PaymentMethode.vue'
 import PaperClip from './PaperClip.vue'
 import FindProducts from './FindProducts.vue'
 
+enum PAYCATEGORY {
+  FIXED,
+  PERCENTAGE
+}
+
+enum PAYSTATUS {
+  PENDING,
+  WAITING_PAYMENT,
+  WAITING_CONFIRM,
+  SUCCESS,
+  FAILED,
+  EXPIRED,
+  REQUEST_REFUND,
+  REFUND_APPROVED
+}
+
 interface IPaymentData {
   id: number
   date: string
@@ -234,12 +250,15 @@ interface IPaymentData {
     name: string
     price: number
 		quantity: number
+    total: number
     discount?: {
       id: number
       name: string
-      kind: 'FIXED' | 'PERCENTAGE'
+      kind: PAYCATEGORY
       value: number
     }[]
+    totalDiscount: number
+    grandTotal: number
   }[]
   products: {
     id: number
@@ -247,30 +266,42 @@ interface IPaymentData {
     name: string
     price: number
 		quantity: number
+    total: number
     discount?: {
       id: number
       name: string
-      kind: 'FIXED' | 'PERCENTAGE'
+      kind: PAYCATEGORY
       value: number
     }[]
+    totalDiscount: number
+    grandTotal: number
   }[]
   discount?: {
     id: number
     name: string
-    kind: 'FIXED' | 'PERCENTAGE'
+    kind: PAYCATEGORY
     value: number
   }[] 
   voucher?: {
     id: number
     name: string
-    kind: 'FIXED' | 'PERCENTAGE'
+    kind: PAYCATEGORY
     value: number
   }[]
-  status: 'PENDING' | 'WAITING_PAYMENT' | 'WAITING_CONFIRM' | 'SUCCESS' | 'FAILED' | 'EXPIRED' | 'REQUEST_REFUND' | 'REFUND_APPROVED'
+  additional?: {
+    id: number
+    name: string
+    kind: PAYCATEGORY
+    value: number
+  }[]
+  status: PAYSTATUS
   summary: {
-    productsTotal: number
-    productsServices: number
-    subTotal: number
+    totalServices: number
+    totalProducts: number
+    total: number
+    totalAdditional: number
+    totalDiscount: number
+    totalVoucher: number
     grandTotal: number
   }
 }
@@ -314,7 +345,7 @@ const invoices = ref<IPaymentData>({
         {
           id: 1,
           name: 'Discount 25% Lapi Laboratories',
-          kind: 'PERCENTAGE',
+          kind: PAYCATEGORY.PERCENTAGE,
           value: 25
         }
       ],
@@ -326,21 +357,29 @@ const invoices = ref<IPaymentData>({
       url: '/img/items/1643872511_thumbnail-vicee_500_rasa_anggur_2_tablet_hisap.jpeg',
       name: 'Vicee 500 Anggur 2 Tablet',
       price: 3615,
-      quantity: 1
+      quantity: 1,
+      total: 3615,
+      discount: [],
+      totalDiscount: 0,
+      grandTotal: 3615
     },
     {
       id: 10,
       url: '/img/items/1719910843_inavitamax_c_vita_kaplet.jpeg',
       name: 'Inavitamax C Vita 30 Kaplet',
       price: 198275,
-      quantity: 1
+      quantity: 1,
+      total: 198275,
+      discount: [],
+      totalDiscount: 0,
+      grandTotal: 198275
     }
   ],
   discount: [
     {
       id: 1,
       name: 'Discpunt 10% Member',
-      kind: 'PERCENTAGE',
+      kind: PAYCATEGORY.PERCENTAGE,
       value: 10
     }
   ],
@@ -348,18 +387,30 @@ const invoices = ref<IPaymentData>({
     {
       id: 1,
       name: 'Voucher Discount RP.1000',
-      kind: 'FIXED',
+      kind: PAYCATEGORY.FIXED,
       value: 1000
     }
   ],
-  status: 'PENDING',
+  additional: [
+    {
+      id: 1,
+      name: 'PPN 12%',
+      kind: PAYCATEGORY.PERCENTAGE,
+      value: 41665
+    }
+  ],
+  status: PAYSTATUS.PENDING,
   summary: {
-    productsServices: 95000,
-    productsTotal: 5000,
-    subTotal: 5000,
-    grandTotal: 5000
+    totalServices: 95000,
+    totalProducts: 253874,
+    total: 348874,
+    totalAdditional: 41665,
+    totalDiscount: 34888,
+    totalVoucher: 1000,
+    grandTotal: 312986
   }
 })
+
 const navs = ref<INavigation[]>([
   { name: 'Payments', link: '/payments', active: true },
   { name: 'Create', link: '/payments/create', active: true }

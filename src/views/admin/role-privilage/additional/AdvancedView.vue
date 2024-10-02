@@ -9,11 +9,11 @@
           as="div"
           class="mt-2">
           <DisclosureButton
-            class="flex w-full justify-between rounded-lg bg-orange-50 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500/75">
+            class="flex w-full justify-between rounded-lg border px-4 py-2 text-left text-sm font-medium text-slate-900 hover:bg-slate-200 focus:outline-none focus-visible:ring focus-visible:ring-slate-500/75">
             <span>{{ row.name }}</span>
             <ChevronUpIcon
               :class="open ? 'rotate-180 transform' : ''"
-              class="h-5 w-5 text-orange-500"
+              class="h-5 w-5 text-slate-500"
             />
           </DisclosureButton>
           <DisclosurePanel class="px-4 pb-2 pt-4 text-sm text-gray-500">
