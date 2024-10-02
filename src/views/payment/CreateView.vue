@@ -2,8 +2,9 @@
   <div>
     <AdminLayouts>
       <VBreadcrumbNavigation :navs="navs" />
-      <div class="grid md:grid-cols-3 gap-4">
-        <div class="col-span-2 pr-2 pt-4">
+      <div class="grid md:grid-cols-3 gap-4 scroll-auto">
+        <div class="col-span-2 pr-2 pt-4 pb-16">
+          <!-- Patients -->
           <section>
             <a>
               <ul
@@ -42,6 +43,7 @@
               </ul>
             </a>
           </section>
+          <!-- Products -->
           <section>
             <!-- Items -->
             <Disclosure
@@ -373,6 +375,28 @@ const invoices = ref<IPaymentData>({
       discount: [],
       totalDiscount: 0,
       grandTotal: 198275
+    },
+    {
+      id: 11,
+      url: '/img/items/1660796486_62a1917af15ee840f56603ff.jpeg',
+      name: 'Max-C 500 mg 10 Tablet',
+      price: 46435,
+      quantity: 1,
+      total: 46435, 
+      discount: [],
+      totalDiscount: 0,
+      grandTotal: 46435
+    },
+    {
+      id: 11,
+      url: '/img/items/1659935216_61dff62de139ec05b9c8cadd.png',
+      name: 'Blackmores Bio C 1000 Mg 30 Tablet',
+      price: 46435,
+      quantity: 1,
+      total: 46435, 
+      discount: [],
+      totalDiscount: 0,
+      grandTotal: 46435
     }
   ],
   discount: [

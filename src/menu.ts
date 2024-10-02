@@ -407,52 +407,5 @@ export const LIST_MENU = <MenuProps[]>[
         }
       }
     ]
-  },
-  {
-    name: 'Statistik (CRM)',
-    href: '/crm',
-    icon: 'variable',
-    status: true,
-    order: 13,
-    privilage: {
-      create: true,
-      read: true,
-      update: true,
-      delete: true,
-      import: true,
-      export: true
-    },
-    children: [
-      {
-        name: 'Patients',
-        href: '/crm/patients',
-        icon: 'chevron-right',
-        status: true,
-        order: 1,
-        privilage: {
-          create: true,
-          read: true,
-          update: true,
-          delete: true,
-          import: true,
-          export: true
-        }
-      },
-      {
-        name: 'Payment',
-        href: '/crm/payment',
-        icon: 'chevron-right',
-        status: true,
-        order: 1,
-        privilage: {
-          create: true,
-          read: true,
-          update: true,
-          delete: true,
-          import: true,
-          export: true
-        }
-      }
-    ]
   }
 ]

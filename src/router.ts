@@ -27,6 +27,9 @@ import Payments from '@/views/payment/IndexView.vue'
 import PaymentsCreate from '@/views/payment/CreateView.vue'
 import MedicalRecord from '@/views/medical-records/IndexView.vue'
 import MedicalRecordCreate from '@/views/medical-records/ModifView.vue'
+import ReportPatients from '@/views/report/PatientsView.vue'
+import ReportPayments from '@/views/report/PaymentsView.vue'
+import ReportDrugs from '@/views/report/DrugsView.vue'
 import NotFound from '@/views/NotFoundView.vue'
 import System from '@/views/SettingsView.vue'
 
@@ -191,33 +194,18 @@ const routes: Array<RouteRecordRaw> = [
     meta: { auth: true }
   },
   {
-    path: '/report/patients',
-    component: MedicalRecord,
+    path: '/reports/patients',
+    component: ReportPatients,
     meta: { auth: true }
   },
   {
-    path: '/report/payment',
-    component: MedicalRecord,
+    path: '/reports/payment',
+    component: ReportPayments,
     meta: { auth: true }
   },
   {
-    path: '/report/drugs',
-    component: MedicalRecord,
-    meta: { auth: true }
-  },
-  {
-    path: '/crm/patients',
-    component: MedicalRecord,
-    meta: { auth: true }
-  },
-  {
-    path: '/crm/payment',
-    component: MedicalRecord,
-    meta: { auth: true }
-  },
-  {
-    path: '/crm/drugs',
-    component: MedicalRecord,
+    path: '/reports/drugs',
+    component: ReportDrugs,
     meta: { auth: true }
   },
   {

@@ -60,7 +60,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import type { Component } from 'vue'
 import { useHead } from '@unhead/vue'
 import {
   AdjustmentsHorizontalIcon,
@@ -70,6 +69,7 @@ import {
   CalendarDateRangeIcon,
   FingerPrintIcon
 } from '@heroicons/vue/24/outline'
+import type { Component } from 'vue'
 import type { INavigation } from '@/interfaces/navs'
 import AdminLayouts from '@/views/AdminLayouts.vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
