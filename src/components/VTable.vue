@@ -7,6 +7,9 @@
       <VTableCompAdd
         v-if="showAdditional"
         @clicked="$emit('onAdditional', true)" />
+      <VTableCompExport
+        v-if="showExport"
+        @set-export="setExportTable" />
     </div>
     <div class="flex gap-2">
       <VTableCompFilter
@@ -36,18 +39,20 @@
 </template>
 
 <script setup lang="ts">
+import type { IColumnHeader } from '@/interfaces/tables'
+import type { IPagination } from '@/interfaces/paginations'
 import VTableCompLimit from './VTableCompLimit.vue'
 import VTableCompAdd from './VTableCompAdd.vue'
+import VTableCompExport from './VTableCompExport.vue'
 import VTableCompFilter from './VTableCompFilter.vue'
 import VTableCompSearch from './VTableCompSearch.vue'
 import VTablePagination from './VTablePagination.vue'
 import VTableHeader from './VTableHeader.vue'
-import type { IColumnHeader } from '@/interfaces/tables'
-import type { IPagination } from '@/interfaces/paginations'
 
 const emit = defineEmits<{
   setLimit: [number]
   onAdditional: [boolean]
+  onExport: [string]
   onFilter: [boolean]
   onSearch: [string]
   onSort: [IColumnHeader]
@@ -58,6 +63,7 @@ const emit = defineEmits<{
 const props = defineProps<{
   showLimit?: boolean
   showAdditional?: boolean
+  showExport?:boolean
   showFilter?: boolean
   showSearch?: boolean
   showPagination?: boolean
@@ -68,6 +74,10 @@ const props = defineProps<{
 
 const setLimitTable = (args: number) => {
   emit('setLimit', args)
+}
+
+const setExportTable = (args: string) => {
+  emit('onExport', args)
 }
 
 const sort = (args: IColumnHeader) => {

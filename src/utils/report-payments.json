@@ -14,79 +14,79 @@
     {
       "id": 1,
       "date": "2023-08-23T12:34:56",
-      "code": "KM-IP24040323",
+      "code": "PG-IP24040323",
       "patients": {
         "id": 27,
         "url": "https://avatar.iran.liara.run/public/girl?usearname=BR00605240",
         "code": "NMW-KG00404240",
         "name": "Radhika Willa Dhanyatha"
       },
-      "branch": "NMW Kelapa Gading",
+      "branch": "NMW Petogogan",
       "total": 442000
     },
     {
       "id": 2,
       "date": "2023-08-23T12:34:56",
-      "code": "KM-IP24040309",
+      "code": "PG-IP24040309",
       "patients": {
         "id": 31,
         "url": "https://avatar.iran.liara.run/public/girl?usearname=BR00605240",
         "code": "NMW-KM00404490",
         "name": "R Yuni Sari Hutagalung"
       },
-      "branch": "NMW Kalimalang",
+      "branch": "NMW Petogogan",
       "total": 150000
     },
     {
       "id": 3,
       "date": "2023-08-23T12:34:56",
-      "code": "KM-IP24040329",
+      "code": "PG-IP24040329",
       "patients": {
         "id": 61,
         "url": "https://avatar.iran.liara.run/public/girl?usearname=BR00605240",
         "code": "NMW-KM00404520",
         "name": "Winda Yulistiani"
       },
-      "branch": "NMW Kalimalang",
+      "branch": "NMW Petogogan",
       "total": 2454755
     },
     {
       "id": 4,
       "date": "2023-08-23T12:34:56",
-      "code": "CB-IP24040170",
+      "code": "PG-IP24040170",
       "patients": {
         "id": 91,
         "url": "https://avatar.iran.liara.run/public/girl?usearname=BR00605240",
         "code": "NMW-CM00404110",
         "name": "Neneng Novi Suhenty"
       },
-      "branch": "NMW Cinere",
+      "branch": "NMW Petogogan",
       "total": 957320
     },
     {
       "id": 5,
       "date": "2023-08-23T12:34:56",
-      "code": "KM-IP24040322",
+      "code": "PG-IP24040322",
       "patients": {
         "id": 11,
         "url": "https://avatar.iran.liara.run/public/girl?usearname=BR00605240",
         "code": "NMW-KM00404570",
         "name": "Muhammad Rizqy"
       },
-      "branch": "NMW Kalimalang",
+      "branch": "NMW Petogogan",
       "total": 1732140
     },
     {
       "id": 6,
       "date": "2023-08-23T12:34:56",
-      "code": "KM-IP24040312",
+      "code": "PG-IP24040312",
       "patients": {
         "id": 45,
         "url": "https://avatar.iran.liara.run/public/girl?usearname=BR00605240",
         "code": "NMW-KM00404590",
         "name": "Nindya Anggi Wulandari"
       },
-      "branch": "NMW Kalimalang",
+      "branch": "NMW Petogogan",
       "total": 334665
     },
     {
@@ -114,32 +114,6 @@
       },
       "branch": "NMW Petogogan",
       "total": 5504800
-    },
-    {
-      "id": 9,
-      "date": "2023-08-23T12:34:56",
-      "code": "CL-IP24040202",
-      "patients": {
-        "id": 78,
-        "url": "https://avatar.iran.liara.run/public/girl?usearname=BR00605240",
-        "code": "NMW-CN00404600",
-        "name": "Feby Wijaya Kusumawati"
-      },
-      "branch": "NMW Cinere",
-      "total": 1150000
-    },
-    {
-      "id": 10,
-      "date": "2023-08-23T12:34:56",
-      "code": "CL-IP24040196",
-      "patients": {
-        "id": 43,
-        "url": "https://avatar.iran.liara.run/public/girl?usearname=BR00605240",
-        "code": "NMW-CN00404700",
-        "name": "Iis Aisah"
-      },
-      "branch": "NMW Cinere",
-      "total": 619380
     }
   ]
 }

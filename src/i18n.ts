@@ -41,7 +41,7 @@ export const i18n = createI18n<{
         month: 'long',
         year: 'numeric'
       },
-      //  20/12/2020
+      // 20/12/2020
       short: {
         day: '2-digit',
         month: '2-digit',

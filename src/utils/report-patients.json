@@ -1,7 +1,7 @@
 {
   "from": 1,
   "to": 10,
-  "total": 8,
+  "total": 5,
   "per_page": 10,
   "current_page": 1,
   "last_page": 1,
@@ -10,5 +10,66 @@
   "next_page_url": "page=1&limit=10",
   "prev_page_url": "page=1&limit=10",
   "path": "http://192.168.3.221:8001/rheinmedika/medical-check/accounts",
-  "data": []
+  "data": [
+    {
+      "id": 1,
+      "patients": {
+        "id": 1269,
+        "code": "NMW-CL10404100",
+        "name": "Hanafi",
+        "type": "Mandiri"
+      },
+      "branch": "NMW Petogogan",
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 2,
+      "patients": {
+        "id": 1274,
+        "code": "NMW-KM00404520",
+        "name": "Winda Yulistiani",
+        "type": "BPJS"
+      },
+      "branch": "NMW Petogogan",
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 3,
+      "patients": {
+        "id": 1279,
+        "code": "NMW-KM00404540",
+        "name": "Santi Palda",
+        "type": "BPJS"
+      },
+      "branch": "NMW Petogogan",
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 4,
+      "patients": {
+        "id": 1276,
+        "code": "NMW-CM00404110",
+        "name": "Neneng Novi Suhenty",
+        "type": "BPJS"
+      },
+      "branch": "NMW Petogogan",
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 5,
+      "patients": {
+        "id": 1275,
+        "code": "NMW-KM00404530",
+        "name": "Nanet Yunita",
+        "type": "BPJS"
+      },
+      "branch": "NMW Petogogan",
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    }
+  ]
 }
