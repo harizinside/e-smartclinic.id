@@ -344,7 +344,68 @@ export const LIST_MENU = <MenuProps[]>[
       import: true,
       export: true
     },
-    children: []
+    children: [
+      {
+        name: 'Purchase Order',
+        href: '/inventory/purchase-order',
+        icon: 'chevron-right',
+        status: true,
+        order: 1,
+        privilage: {
+          create: true,
+          read: true,
+          update: true,
+          delete: true,
+          import: true,
+          export: true
+        }
+      },
+      {
+        name: 'Approval',
+        href: '/inventory/approval',
+        icon: 'chevron-right',
+        status: true,
+        order: 1,
+        privilage: {
+          create: true,
+          read: true,
+          update: true,
+          delete: true,
+          import: true,
+          export: true
+        }
+      },
+      {
+        name: 'Goods Received',
+        href: '/inventory/goods-received',
+        icon: 'chevron-right',
+        status: true,
+        order: 1,
+        privilage: {
+          create: true,
+          read: true,
+          update: true,
+          delete: true,
+          import: true,
+          export: true
+        }
+      },
+      {
+        name: 'Payments',
+        href: '/inventory/payments',
+        icon: 'chevron-right',
+        status: true,
+        order: 1,
+        privilage: {
+          create: true,
+          read: true,
+          update: true,
+          delete: true,
+          import: true,
+          export: true
+        }
+      }
+    ]
   },
   {
     name: 'Laporan',
@@ -407,5 +468,21 @@ export const LIST_MENU = <MenuProps[]>[
         }
       }
     ]
+  },
+  {
+    name: 'Integrasi API',
+    href: '/integrated',
+    icon: 'code-bracket',
+    status: true,
+    order: 11,
+    privilage: {
+      create: true,
+      read: true,
+      update: true,
+      delete: true,
+      import: true,
+      export: true
+    },
+    children: []
   }
 ]

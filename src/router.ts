@@ -28,9 +28,14 @@ import PaymentsCreate from '@/views/payment/CreateView.vue'
 import MedicalRecord from '@/views/medical-records/IndexView.vue'
 import MedicalRecordCreate from '@/views/medical-records/ModifView.vue'
 import Inventorys from '@/views/inventory/IndexView.vue'
+import InvPurchaseOrder from '@/views/inventory/purchase-order/IndexView.vue'
+import InvApproval from '@/views/inventory/approval/IndexView.vue'
+import InvGoodReceived from '@/views/inventory/good-received/IndexView.vue'
+import InvPayments from '@/views/inventory/payments/IndexView.vue'
 import ReportPatients from '@/views/report/PatientsView.vue'
 import ReportPayments from '@/views/report/PaymentsView.vue'
 import ReportDrugs from '@/views/report/DrugsView.vue'
+import IntegratedAPI from './views/integrated/IndexView.vue'
 import NotFound from '@/views/NotFoundView.vue'
 import System from '@/views/SettingsView.vue'
 
@@ -184,14 +189,34 @@ const routes: Array<RouteRecordRaw> = [
     component: PaymentsCreate,
     meta: { auth: true }
   },
+    {
+    path: '/payments/online',
+    component: Payments,
+    meta: { auth: true }
+  },
   {
     path: '/inventory',
     component: Inventorys,
     meta: { auth: true }
   },
   {
-    path: '/payments/online',
-    component: Payments,
+    path: '/inventory/purchase-order',
+    component: InvPurchaseOrder,
+    meta: { auth: true }
+  },
+  {
+    path: '/inventory/approval',
+    component: InvApproval,
+    meta: { auth: true }
+  },
+  {
+    path: '/inventory/goods-received',
+    component: InvGoodReceived,
+    meta: { auth: true }
+  },
+  {
+    path: '/inventory/payments',
+    component: InvPayments,
     meta: { auth: true }
   },
   {
@@ -207,6 +232,11 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/reports/drugs',
     component: ReportDrugs,
+    meta: { auth: true }
+  },
+  {
+    path: '/integrated',
+    component: IntegratedAPI,
     meta: { auth: true }
   },
   {
