@@ -27,6 +27,7 @@ import Payments from '@/views/payment/IndexView.vue'
 import PaymentsCreate from '@/views/payment/CreateView.vue'
 import MedicalRecord from '@/views/medical-records/IndexView.vue'
 import MedicalRecordCreate from '@/views/medical-records/ModifView.vue'
+import Inventorys from '@/views/inventory/IndexView.vue'
 import ReportPatients from '@/views/report/PatientsView.vue'
 import ReportPayments from '@/views/report/PaymentsView.vue'
 import ReportDrugs from '@/views/report/DrugsView.vue'
@@ -185,7 +186,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/inventory',
-    component: OutPatients,
+    component: Inventorys,
     meta: { auth: true }
   },
   {

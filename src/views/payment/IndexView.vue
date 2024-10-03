@@ -128,7 +128,6 @@ const deleted = ref<IDialog>({
   title: 'dr. Sista Sandhi Prawista'
 })
 const alert = ref<IAlert>()
-
 const columnHeader = ref<IColumnHeader[]>([
   { name: 'Tanggal', type: 'label', order: 'normal'  },
   { name: 'Pasien', type: 'label', order: 'normal' },
@@ -136,9 +135,7 @@ const columnHeader = ref<IColumnHeader[]>([
   { name: 'Status', type: 'label' },
   { name: 'Aksi', type: 'label' }
 ])
-
 const tableInfo = ref<IPagination<IData[]>>(JsonData)
-
 const navs = ref<INavigation[]>([
   { name: 'Payments', link: '/payments', active: true }
 ])
