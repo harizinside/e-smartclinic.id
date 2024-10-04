@@ -251,7 +251,7 @@
                             <RadioGroupOption
                               v-for="(row, index) in ListEWallet" 
                               :key="index"
-                              v-slot="{ active, checked }"
+                              v-slot="{ active }"
                               :value="eWallet"
                               :aria-label="row.name"
                               as="template"

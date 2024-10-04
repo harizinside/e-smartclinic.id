@@ -1,0 +1,193 @@
+{
+  "id": 1,
+  "merchant": "",
+  "key": "",
+  "general": {
+    "url": "/vendor/66ff98d7c8c2b4ad07ad9dab/galery/nmw_clinic.png",
+    "name": "NMW Clinic",
+    "email": "hello@nmwclinic.co.id",
+    "phone": "62217221258",
+    "sites": "https://nmwclinic.co.id",
+    "social": {
+      "instagram": "nmwskincare"
+    }
+  },
+  "address": {
+    "province": {
+      "id": "",
+      "code": "",
+      "name": ""
+    },
+    "city": {
+      "id": "",
+      "code": "",
+      "name": ""
+    },
+    "subdistrict": {
+      "id": "",
+      "code": "",
+      "name": ""
+    },
+    "villages": {
+      "id": "",
+      "code": "",
+      "name": ""
+    },
+    "pos_code": "",
+    "address": "",
+    "rt": "",
+    "rw": "",
+    "geo": {
+      "longitude": "",
+      "latitude": ""
+    },
+    "online": {
+      "status": true,
+      "services": [
+        {
+          "name": "Anteraja",
+          "img": "/img/couriers/anteraja.png",
+          "category": "Instant",
+          "status": true
+        },
+        {
+          "name": "Gosend",
+          "img": "/img/couriers/gosend.png",
+          "category": "Instant",
+          "status": true
+        },
+        {
+          "name": "Grab Express",
+          "img": "/img/couriers/grab_express.png",
+          "category": "Instant",
+          "status": true
+        },
+        {
+          "name": "Borzo",
+          "img": "/img/couriers/borzo.png",
+          "category": "Same day",
+          "status": true
+        },
+        {
+          "name": "ID Express",
+          "img": "/img/couriers/idx.png",
+          "category": "Same day",
+          "status": true
+        },
+        {
+          "name": "JNE",
+          "img": "/img/couriers/jne.png",
+          "category": "Same day",
+          "status": true
+        },
+        {
+          "name": "JNT Express",
+          "img": "/img/couriers/jnt.png",
+          "category": "Same day",
+          "status": true
+        },
+        {
+          "name": "JNT Cargo",
+          "img": "/img/couriers/jtcargo.png",
+          "category": "Same day",
+          "status": true
+        },
+        {
+          "name": "Lion Parcel",
+          "img": "/img/couriers/lion.png",
+          "category": "Same day",
+          "status": true
+        },
+        {
+          "name": "NCS",
+          "img": "/img/couriers/ncs.png",
+          "category": "Same day",
+          "status": true
+        },
+        {
+          "name": "Ninja Express",
+          "img": "/img/couriers/ninja.png",
+          "category": "Same day",
+          "status": true
+        },
+        {
+          "name": "Paxel",
+          "img": "/img/couriers/paxel.png",
+          "category": "Same day",
+          "status": true
+        },
+        {
+          "name": "POS Indonesia",
+          "img": "/img/couriers/posindonesia.png",
+          "category": "Same day",
+          "status": true
+        },
+        {
+          "name": "RPX",
+          "img": "/img/couriers/rpx.png",
+          "category": "Same day",
+          "status": true
+        },
+        {
+          "name": "SAP Express",
+          "img": "/img/couriers/sap.png",
+          "category": "Same day",
+          "status": true
+        },
+        {
+          "name": "Sentral Cargo",
+          "img": "/img/couriers/sentral.png",
+          "category": "Same day",
+          "status": true
+        },
+        {
+          "name": "Sicepat Express",
+          "img": "/img/couriers/sicepat.png",
+          "category": "Same day",
+          "status": true
+        },
+        {
+          "name": "Tiki",
+          "img": "/img/couriers/tiki.png",
+          "category": "Same day",
+          "status": true
+        }
+      ]
+    }
+  },
+  "operational": {
+    "sun": {
+      "holiday": {
+        "start": "",
+        "end": ""
+      },
+      "normal": {
+        "start": "",
+        "end": ""
+      }
+    },
+    "mon": {},
+    "tue": {},
+    "wed": {},
+    "thu": {},
+    "fri": {},
+    "sat": {}
+  },
+  "accounting": {
+    "paymentChannel": [
+      {
+        "id": 1,
+        "name": ""
+      }
+    ],
+    "settlement": {
+      "bank": [
+        {
+          "id": 1,
+          "name": "",
+          "account": ""
+        }
+      ]
+    }
+  }
+}

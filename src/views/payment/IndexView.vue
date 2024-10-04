@@ -78,6 +78,13 @@
           </td>
         </VTableColumn>
       </VTable>
+      <TransitionRoot
+        as="template"
+        :show="dialogDelete">
+        <VDialogDelete
+          :dialog="deleted"
+          @close="dialogDelete=false" />
+      </TransitionRoot>
     </AdminLayouts>
   </div>
 </template>
@@ -85,6 +92,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useHead } from '@unhead/vue'
+import { TransitionRoot } from '@headlessui/vue'
 import type { IAlert } from '@/interfaces/alerts'
 import type { IColumnHeader } from '@/interfaces/tables'
 import type { IDialog } from '@/interfaces/dialogs'

@@ -73,12 +73,12 @@ import type { Component } from 'vue'
 import type { INavigation } from '@/interfaces/navs'
 import AdminLayouts from '@/views/AdminLayouts.vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
-import VGeneral from './VGeneral.vue'
-import VAddress from './VAddress.vue'
-import VMemberTeams from './VMemberTeams.vue'
-import VAccounting from './VAccounting.vue'
-import VOperationalHours from './VOperationalHours.vue'
-import VCertification from './VCertification.vue'
+import VGeneral from './component/VGeneral.vue'
+import VAddress from './component/VAddress.vue'
+import VMemberTeams from './component/VMemberTeams.vue'
+import VAccounting from './component/VAccounting.vue'
+import VOperationalHours from './component/VOperationalHours.vue'
+import VCertification from './component/VCertification.vue'
 
 enum ListTabs {
   GENERAL,

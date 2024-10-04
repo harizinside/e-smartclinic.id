@@ -78,6 +78,13 @@
           </td>
         </VTableColumn>
       </VTable>
+      <TransitionRoot
+        as="template"
+        :show="dialogDelete">
+        <VDialogDelete
+          :dialog="deleted"
+          @close="dialogDelete=false" />
+      </TransitionRoot>
     </AdminLayouts>
   </div>
 </template>
