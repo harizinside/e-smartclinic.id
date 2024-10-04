@@ -159,6 +159,15 @@
           </div>
         </div>
       </div>
+      <TransitionRoot
+        as="template"
+        :show="sessionDialog">
+        <VSessionDestroy
+          :session="sessionData"
+          :token="reqTokens"
+          @close="sessionDialog = false"
+          @process="processSession" />
+      </TransitionRoot>
     </div>
   </div>
 </template>
@@ -167,32 +176,26 @@
 import { ref } from 'vue'
 import { useHead } from '@unhead/vue'
 import { useRouter } from 'vue-router'
+import { TransitionRoot } from '@headlessui/vue'
 import { HTTP_URI, HTTP_HEADER } from '@/http.conf'
-import VIcons from '@/components/VIcons.vue'
-import VAlerts from '@/components/VAlerts.vue'
-import type { AuthProps, ResponseProps } from '@/interfaces/auth'
 import { useAuthStore } from '@/stores/auth'
 import type { IAlert } from '@/interfaces/alerts'
+import type { AuthProps, ResponseProps, SessionsProps } from '@/interfaces/auth'
+import VIcons from '@/components/VIcons.vue'
+import VAlerts from '@/components/VAlerts.vue'
+import VSessionDestroy from './component/SessionDestroy.vue'
 
 const username = ref<string>('')
 const password = ref<string>('')
 const remember = ref<boolean>(false)
 const isLoading = ref<boolean>(false)
 const resErrors = ref<IAlert>()
+const sessionDialog = ref<boolean>(false)
+const sessionData = ref<SessionsProps[]>([])
+const reqTokens = ref<string>('')
 
 const router = useRouter()
 const authState = useAuthStore()
-
-useHead({
-  title: 'Authorization | e-Smart Clinic',
-  bodyAttrs: {
-    class: 'h-full'
-  },
-  htmlAttrs: {
-    lang: 'id_ID',
-    class: 'h-full bg-gray-50'
-  }
-})
 
 const xsubmit = async () => {
   const url = HTTP_URI + '/legacy/auth/login'
@@ -222,7 +225,15 @@ const xsubmit = async () => {
     }
 
     authState.signin(json.result?.id, json.result?.token)
-    await router.push('/')
+    if (json.result!.sessions!.length) {
+      sessionDialog.value = true
+      sessionData.value = json.result!.sessions
+
+      reqTokens.value = json.result!.token
+    } 
+    else {
+      await router.push('/')
+    }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (err: any) {
@@ -238,6 +249,21 @@ const xsubmit = async () => {
     isLoading.value = false
   }
 }
+
+const processSession = async () => {
+  await router.push('/')
+}
+
+useHead({
+  title: 'Authorization | e-Smart Clinic',
+  bodyAttrs: {
+    class: 'h-full'
+  },
+  htmlAttrs: {
+    lang: 'id_ID',
+    class: 'h-full bg-gray-50'
+  }
+})
 </script>
 
 <style></style>

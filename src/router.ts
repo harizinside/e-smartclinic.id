@@ -174,7 +174,7 @@ const routes: Array<RouteRecordRaw> = [
     component: MedicalRecord,
     meta: { auth: true }
   },
-   {
+  {
     path: '/medical-record/create',
     component: MedicalRecordCreate,
     meta: { auth: true }
@@ -189,7 +189,7 @@ const routes: Array<RouteRecordRaw> = [
     component: PaymentsCreate,
     meta: { auth: true }
   },
-    {
+  {
     path: '/payments/online',
     component: Payments,
     meta: { auth: true }

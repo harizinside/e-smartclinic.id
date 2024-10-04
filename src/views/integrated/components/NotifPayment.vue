@@ -1,0 +1,8 @@
+<template>
+  <div>
+    <h1>Notif Payment</h1>
+  </div>
+</template>
+
+<script setup lang="ts">
+</script>

@@ -36,7 +36,7 @@
 
 <script setup lang="ts">
 import { computed, onMounted } from 'vue'
-import type { IPagination } from '@/interfaces/pagination'
+import type { IPagination } from '@/interfaces/paginations'
 
 const props = defineProps<{
   info: IPagination<null>
