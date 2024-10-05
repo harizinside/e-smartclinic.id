@@ -26,7 +26,7 @@
             <div>
               <label
                 for="email"
-                class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+                class="block text-sm font-medium leading-6 text-gray-900">Alamat email</label>
               <div class="mt-2">
                 <input
                   id="email"
@@ -41,7 +41,7 @@
             <div>
               <label
                 for="password"
-                class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                class="block text-sm font-medium leading-6 text-gray-900">Kata sandi</label>
               <div class="mt-2">
                 <input
                   id="password"
@@ -63,15 +63,14 @@
                   class="h-4 w-4 rounded border-gray-300 text-orange-600 focus:ring-orange-600">
                 <label
                   for="remember-me"
-                  class="ml-3 block text-sm leading-6 text-gray-900">Remember me</label>
+                  class="ml-3 block text-sm leading-6 text-gray-900">Ingat saya</label>
               </div>
 
               <div class="text-sm leading-6">
                 <router-link
                   to="/auth/forgot-password"
                   class="font-semibold text-orange-600 hover:text-orange-500">
-                  Forgot
-                  password?
+                  Lupa kata sandi?
                 </router-link>
               </div>
             </div>
@@ -96,7 +95,7 @@
                 <div class="w-full border-t border-gray-200" />
               </div>
               <div class="relative flex justify-center text-sm font-medium leading-6">
-                <span class="bg-gray-50 px-6 text-gray-900">Or continue with</span>
+                <span class="bg-gray-50 px-6 text-gray-900">Atau masuk dengan</span>
               </div>
             </div>
 

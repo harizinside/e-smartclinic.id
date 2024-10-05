@@ -14,32 +14,32 @@
   },
   "address": {
     "province": {
-      "id": "",
-      "code": "",
-      "name": ""
+      "id": "6671bf403f3b3bcd67652979",
+      "code": "31",
+      "name": "DKI JAKARTA"
     },
     "city": {
-      "id": "",
-      "code": "",
-      "name": ""
+      "id": "6671bf503f3b3bcd67652a30",
+      "code": "31.74",
+      "name": "KOTA ADM. JAKARTA SELATAN"
     },
     "subdistrict": {
-      "id": "",
-      "code": "",
-      "name": ""
+      "id": "6671bf5f3f3b3bcd6765335d",
+      "code": "31.74.07",
+      "name": "Kebayoran Baru"
     },
     "villages": {
-      "id": "",
-      "code": "",
-      "name": ""
+      "id": "6671bf6f3f3b3bcd6765abe9",
+      "code": "31.74.07.1008",
+      "name": "Petogogan"
     },
-    "pos_code": "",
-    "address": "",
-    "rt": "",
-    "rw": "",
+    "pos_code": "12170",
+    "address": "Jl. Petogogan II No.29",
+    "rt": "008",
+    "rw": "006",
     "geo": {
-      "longitude": "",
-      "latitude": ""
+      "longitude": "-6.2548093",
+      "latitude": "106.7955809"
     },
     "online": {
       "status": true,
@@ -158,20 +158,74 @@
   "operational": {
     "sun": {
       "holiday": {
-        "start": "",
-        "end": ""
+        "start": "10:00",
+        "end": "20:00"
       },
       "normal": {
-        "start": "",
-        "end": ""
+        "start": "10:00",
+        "end": "20:00"
       }
     },
-    "mon": {},
-    "tue": {},
-    "wed": {},
-    "thu": {},
-    "fri": {},
-    "sat": {}
+    "mon": {
+      "holiday": {
+        "start": "10:00",
+        "end": "20:00"
+      },
+      "normal": {
+        "start": "10:00",
+        "end": "20:00"
+      }
+    },
+    "tue": {
+      "holiday": {
+        "start": "10:00",
+        "end": "20:00"
+      },
+      "normal": {
+        "start": "10:00",
+        "end": "20:00"
+      }
+    },
+    "wed": {
+      "holiday": {
+        "start": "10:00",
+        "end": "20:00"
+      },
+      "normal": {
+        "start": "10:00",
+        "end": "20:00"
+      }
+    },
+    "thu": {
+      "holiday": {
+        "start": "10:00",
+        "end": "20:00"
+      },
+      "normal": {
+        "start": "10:00",
+        "end": "20:00"
+      }
+    },
+    "fri": {
+      "holiday": {
+        "start": "10:00",
+        "end": "20:00"
+      },
+      "normal": {
+        "start": "10:00",
+        "end": "20:00"
+      }
+    },
+    "sat": {
+      "holiday": {
+        "start": "10:00",
+        "end": "20:00"
+      },
+      "normal": {
+        "start": "10:00",
+        "end": "20:00"
+      }
+    }
   },
   "accounting": {
     "paymentChannel": [
