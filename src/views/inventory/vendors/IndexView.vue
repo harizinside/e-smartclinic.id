@@ -16,19 +16,16 @@
           {{ index + tableInfo.from }}
         </td>
         <td class="px-6 py-4">
-          <span class="font-semibold">{{ row.code }}</span>
+          <span class="font-semibold">{{ row.name }}</span>
         </td>
         <td class="px-6 py-4">
-          {{ $d(Date.parse(row.dateTime), 'long') }}
+          <a :href="`mailto:${row.email}`" class="text-blue-800 hover:underline">{{ row.email }}</a>
         </td>
         <td class="px-6 py-4">
-          {{ row.vendor.name }}
+          <a :href="`tel:+${row.phone}`" class="text-blue-800 hover:underline">+{{ row.phone }}</a>
         </td>
         <td class="px-6 py-4">
-          {{ row.summary.grandTotal }}
-        </td>
-        <td class="px-6 py-4">
-          <button class="text-blue-600 hover:underline">+{{ row.received.length }}&nbsp;Attachment</button>
+          {{ row.bank?.name }}
         </td>
         <td class="px-6 py-4">
           <div class="flex items-center">
@@ -57,51 +54,37 @@ import AdminLayouts from '@/views/AdminLayouts.vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
 import VTable from '@/components/VTable.vue'
 import VTableColumn from '@/components/VTableColumn.vue'
-import JsonData from '@/utils/po-good-received.json'
+import JsonData from '@/utils/vendors.json'
 
 interface IData {
   id: number
-  code: string
-  poCode: string
-  dateTime: string
-  vendor: {
-    id: number
+  img: string
+  name: string
+  phone: string
+  email: string
+  bank?: {
     name: string
-  },
-  summary: {
-    total: number
-    ppn: number
-    grandTotal: number
-  },
-  received: {
-    id: number
-    code: string
-    value: string
-    createId: number
-    createdAt: string
-  }[],
+    account: string
+  }
   createdAt: string
   updatedAt: string
 }
 
 const navs = ref<INavigation[]>([
   { name: 'Inventory', link: '/inventory', active: true },
-  { name: 'Good Received', link: '/inventory/good-received', active: true }
+  { name: 'Vendors', link: '/inventory/vendors', active: true }
 ])
-
 const columnHeader = ref<IColumnHeader[]>([
   { name: '#', type: 'label' },
-  { name: 'Code.', type: 'label', order: 'normal' },
-  { name: 'Date', type: 'label', order: 'normal' },
-  { name: 'Vendor', type: 'label' },
-  { name: 'Total', type: 'label' },
-  { name: 'Attachment', type: 'label' },
+  { name: 'Name.', type: 'label', order: 'normal' },
+  { name: 'Phone', type: 'label', order: 'normal' },
+  { name: 'Email', type: 'label' },
+  { name: 'Bank', type: 'label' },
   { name: 'Aksi', type: 'label' }
 ])
-
 const tableInfo = ref<IPagination<IData[]>>(JsonData)
 
 useHead({
-  title: 'Good Received | e-Smart Clinic'
+  title: 'Vendors | e-Smart Clinic'
 })
 </script>

@@ -345,6 +345,21 @@ export const LIST_MENU = <MenuProps[]>[
       export: true
     },
     children: [
+        {
+        name: 'Vendors',
+        href: '/inventory/vendors',
+        icon: 'chevron-right',
+        status: true,
+        order: 1,
+        privilage: {
+          create: true,
+          read: true,
+          update: true,
+          delete: true,
+          import: true,
+          export: true
+        }
+      },
       {
         name: 'Purchase Order',
         href: '/inventory/purchase-order',

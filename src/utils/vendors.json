@@ -1,1 +1,145 @@
-{}
+{
+  "from": 1,
+  "to": 10,
+  "total": 18,
+  "per_page": 10,
+  "current_page": 1,
+  "last_page": 2,
+  "first_page_url": "page=1&limit=10",
+  "last_page_url": "page=2&limit=10",
+  "next_page_url": "page=2&limit=10",
+  "prev_page_url": "page=1&limit=10",
+  "path": "http://192.168.3.221:8001/rheinmedika/medical-check/accounts",
+  "data": [
+    {
+      "id": 1,
+      "img": "/img/vendor/01j9jy19kvw7c6s85yq7ech8t8/mahakam-beta-farma.jpeg",
+      "name": "PT Mahakam Beta Farma",
+      "phone": "6246821660",
+      "email": "mupjkt@merapi.net",
+      "bank": {
+        "name": "Bank Mandiri",
+        "account": "1260014127789"
+      },
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 2,
+      "img": "/img/vendor/01j9jy3wdnz6tbx4brz8k50gv7/kalbe-farma.jpeg",
+      "name": "Kalbe Farma Tbk",
+      "phone": "622142873888",
+      "email": "corp.comm@kalbe.co.id",
+      "bank": {
+        "name": "Bank Mandiri",
+        "account": "1260007778910"
+      },
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 3,
+      "img": "/img/vendor/01j9jy48q2b0y3etqvfxh8e7fw/pt-kalbe-blackmores-nutrition.jpeg",
+      "name": "PT Kalbe Blackmores Nutrition",
+      "phone": "622165311234",
+      "email": "customer@kalbenutritionals.com",
+      "bank": {
+        "name": "Bank Mandiri",
+        "account": "1260007868329"
+      },
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 4,
+      "img": "/img/vendor/01j9jy4qh1hejktcyac89bsrfa/pt-darya-varia-laboratoria.jpeg",
+      "name": "PT Darya Varia Laboratoria TBK",
+      "phone": "622768000",
+      "email": "business.development@darya-varia.com",
+      "bank": {
+        "name": "Bank Mandiri",
+        "account": "1260006537161"
+      },
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 5,
+      "img": "/img/vendor/01j9jy5vc6wzh7vgc30a17thmg/pt-pyridam-farma.jpeg",
+      "name": "PT Pyridam Farma Tbk",
+      "phone": "622150991067",
+      "email": "corsec@pyfa.co.id",
+      "bank": {
+        "name": "Bank Mandiri",
+        "account": "1260007297784"
+      },
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 6,
+      "img": "/img/vendor/01j9jy5vc6a9n5kwfafbn6n87e/lapi-laboratories.jpeg",
+      "name": "PT Lapi Laboratories",
+      "phone": "622122668888",
+      "email": "lapi-laboratories@gmail.com",
+      "bank": {
+        "name": "Bank Mandiri",
+        "account": "1260000787788"
+      },
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 7,
+      "img": "/img/vendor/01j9jy5vc604az8p137ns2sq24/totalcare-nutraceutical.jpeg",
+      "name": "PT Totalcare Nutraceutical",
+      "phone": "62215866666",
+      "email": "ask@nutracare.co.id",
+      "bank": {
+        "name": "Bank Mandiri",
+        "account": "1260007530999"
+      },
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 8,
+      "img": "/img/vendor/01j9jy5vc6pg7ayb6teh3e8pr6/radiant-sentral-nutrindo.jpeg",
+      "name": "Radiant Sentral Nutrindo",
+      "phone": "6221563273",
+      "email": "info@nutrindo.com",
+      "bank": {
+        "name": "Bank Mandiri",
+        "account": "1410002320001"
+      },
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 9,
+      "img": "/img/vendor/01j9jy5vc6gy99gphzw1a0mzaq/pt-midix-graha-farma.jpeg",
+      "name": "PT Midix Graha Farma",
+      "phone": "62212941477071",
+      "email": "Info@midixfarma.com",
+      "bank": {
+        "name": "BCA",
+        "account": "5660551559"
+      },
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    },
+    {
+      "id": 10,
+      "img": "/img/vendor/01j9jy5vc6x5jkh0yywx85mzpp/pt-nutricia-indonesia-sejahtera.jpeg",
+      "name": "PT. Nutricia Indonesia Sejahtera",
+      "phone": "622129553456",
+      "email": "mailinfo@nutricia.co.id",
+      "bank": {
+        "name": "Bank Mandiri",
+        "account": "1260014126657"
+      },
+      "createdAt": "2023-08-23T12:34:56",
+      "updatedAt": "2023-08-23T12:34:56"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "from": 1,
+  "to": 10,
+  "total": 3,
+  "per_page": 10,
+  "current_page": 1,
+  "last_page": 1,
+  "first_page_url": "page=1&limit=10",
+  "last_page_url": "page=2&limit=10",
+  "next_page_url": "page=2&limit=10",
+  "prev_page_url": "page=1&limit=10",
+  "path": "http://192.168.3.221:8001/rheinmedika/medical-check/accounts",
+  "data": [
+    {
+      "id": 1,
+      "code": "RB-PO24090001",
+      "dateTime": "2023-08-23T12:34:56",
+      "due": 2,
+      "vendor": {
+        "id": 1,
+        "name": "PT Mahakam Beta Farma"
+      },
+      "items": [
+        {
+          "id": 1,
+          "name": "Provit-C 605 Mg 6 Kaplet",
+          "discounts": [
+            {
+              "id": 1,
+              "name": "Discount Pembelian",
+              "kind": "FIXED",
+              "value": 5000000
+            }
+          ],
+          "price": 171554,
+          "stock": 10
+        },
+        {
+          "id": 2,
+          "name": "Collastin Beauty",
+          "price": 171554,
+          "stock": 10
+        },
+        {
+          "id": 3,
+          "name": "Octenilin",
+          "price": 171554,
+          "stock": 10
+        }
+      ],
+      "note": "",
+      "summary": {
+        "total": 5000,
+        "ppn": 10,
+        "grandTotal": 50000
+      },
+      "approval": {
+        "value": true,
+        "date": "2023-08-23T12:34:56"
+      }
+    }
+  ]
+}

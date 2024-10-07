@@ -28,6 +28,7 @@ import PaymentsCreate from '@/views/payment/CreateView.vue'
 import MedicalRecord from '@/views/medical-records/IndexView.vue'
 import MedicalRecordCreate from '@/views/medical-records/ModifView.vue'
 import Inventorys from '@/views/inventory/IndexView.vue'
+import InvVendors from '@/views/inventory/vendors/IndexView.vue'
 import InvPurchaseOrder from '@/views/inventory/purchase-order/IndexView.vue'
 import InvApproval from '@/views/inventory/approval/IndexView.vue'
 import InvGoodReceived from '@/views/inventory/good-received/IndexView.vue'
@@ -197,6 +198,11 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/inventory',
     component: Inventorys,
+    meta: { auth: true }
+  },
+  {
+    path: '/inventory/vendors',
+    component: InvVendors,
     meta: { auth: true }
   },
   {
