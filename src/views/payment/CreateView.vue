@@ -364,39 +364,6 @@ const invoices = ref<IPaymentData>({
       discount: [],
       totalDiscount: 0,
       grandTotal: 3615
-    },
-    {
-      id: 10,
-      url: '/img/items/1719910843_inavitamax_c_vita_kaplet.jpeg',
-      name: 'Inavitamax C Vita 30 Kaplet',
-      price: 198275,
-      quantity: 1,
-      total: 198275,
-      discount: [],
-      totalDiscount: 0,
-      grandTotal: 198275
-    },
-    {
-      id: 11,
-      url: '/img/items/1660796486_62a1917af15ee840f56603ff.jpeg',
-      name: 'Max-C 500 mg 10 Tablet',
-      price: 46435,
-      quantity: 1,
-      total: 46435, 
-      discount: [],
-      totalDiscount: 0,
-      grandTotal: 46435
-    },
-    {
-      id: 11,
-      url: '/img/items/1659935216_61dff62de139ec05b9c8cadd.png',
-      name: 'Blackmores Bio C 1000 Mg 30 Tablet',
-      price: 46435,
-      quantity: 1,
-      total: 46435, 
-      discount: [],
-      totalDiscount: 0,
-      grandTotal: 46435
     }
   ],
   discount: [

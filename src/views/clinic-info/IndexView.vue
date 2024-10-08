@@ -31,7 +31,7 @@
 
         <section class="px-4 py-16 sm:px-6 lg:flex-auto lg:px-0 lg:py-4">
           <div class="mx-auto max-w-2xl space-y-16 sm:space-y-20 lg:mx-0 lg:max-w-none">
-            <VGeneral v-if="tabState === ListTabs.GENERAL" />
+            <VGeneral :general-info="generalInfo" v-if="tabState === ListTabs.GENERAL" />
             <VAddress v-if="tabState === ListTabs.ADDRESS" />
             <VMemberTeams v-if="tabState === ListTabs.MEMBERTEAM" />
             <VAccounting v-if="tabState === ListTabs.ACCOUNTING" />
@@ -79,6 +79,7 @@ import VMemberTeams from './component/VMemberTeams.vue'
 import VAccounting from './component/VAccounting.vue'
 import VOperationalHours from './component/VOperationalHours.vue'
 import VCertification from './component/VCertification.vue'
+import JsonData from '@/utils/clinic-info.json'
 
 enum ListTabs {
   GENERAL,
@@ -103,11 +104,23 @@ const secondaryNavigation = ref<ITabs[]>([
   { name: 'Jam Operasional', icon: CalendarDateRangeIcon, state: ListTabs.OPERATIONAL },
   { name: 'Pengesahan', icon: FingerPrintIcon, state: ListTabs.CERTIFICATION }
 ])
-
 const tabState = ref<ListTabs>(ListTabs.GENERAL)
 const navs = ref<INavigation[]>([
   { name: 'Clinic Info', link: '/clinic-info', active: true }
 ])
+const generalInfo = {
+  id: JsonData.id,
+  merchant: JsonData.merchant,
+  key: JsonData.key,
+  url: JsonData.general.url,
+  name: JsonData.general.name,
+  email: JsonData.general.email,
+  phone: JsonData.general.phone,
+  sites: JsonData.general.sites,
+  social: {
+    instagram: JsonData.general.social.instagram,
+  }
+}
 
 const switchTabs = (args: ListTabs) => {
   tabState.value = args

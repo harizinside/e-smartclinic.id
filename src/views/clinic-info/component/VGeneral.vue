@@ -31,13 +31,15 @@
             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ID Merchant</label>
             <input
               type="text"
+              :value="props.generalInfo.merchant"
               class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
               required>
           </div>
           <div class="mb-5 grow">
             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Secret Key</label>
             <input
-              type="text"
+              type="password"
+              :value="props.generalInfo.key"
               class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
               required>
           </div>
@@ -46,6 +48,7 @@
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Klinik</label>
           <input
             type="text"
+            :value="props.generalInfo.name"
             class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
             required>
         </div>
@@ -54,6 +57,7 @@
             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
             <input
               type="text"
+              :value="props.generalInfo.email"
               class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
               required>
           </div>
@@ -61,6 +65,7 @@
             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nomor Telepon</label>
             <input
               type="text"
+              :value="props.generalInfo.phone"
               class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
               required>
           </div>
@@ -75,6 +80,7 @@
               <input
                 id="company-website"
                 type="text"
+                :value="props.generalInfo.sites"
                 name="company-website"
                 class="block flex-1 border-0 bg-transparent py-2 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                 placeholder="www.example.com">
@@ -98,6 +104,7 @@
             <input
               id="email"
               type="email"
+              :value="props.generalInfo.social.instagram"
               name="email"
               class="block w-full rounded-md border-0 py-2 pl-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6">
           </div>
@@ -108,4 +115,20 @@
 </template>
 
 <script setup lang="ts">
+interface IData {
+  generalInfo: {
+    id: number
+    merchant: string
+    key: string
+    url: string
+    name: string
+    email: string
+    phone: string
+    sites: string
+    social: {
+      instagram: string
+    }
+  }
+}
+const props = defineProps<IData>()
 </script>

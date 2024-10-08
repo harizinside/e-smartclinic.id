@@ -1,13 +1,13 @@
 {
   "id": 1,
-  "merchant": "",
-  "key": "",
+  "merchant": "ESM-11657789",
+  "key": "7fff7e0a48fedd070744c9c9753d219a543cf7936523ac2e5b1c9be717e55628",
   "general": {
     "url": "/vendor/66ff98d7c8c2b4ad07ad9dab/galery/nmw_clinic.png",
     "name": "NMW Clinic",
     "email": "hello@nmwclinic.co.id",
     "phone": "62217221258",
-    "sites": "https://nmwclinic.co.id",
+    "sites": "nmwclinic.co.id",
     "social": {
       "instagram": "nmwskincare"
     }
