@@ -7,7 +7,7 @@
           src="/img/icons/e-smartclinic.svg"
           alt="e-Smart Clinicy">
         <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-          Sign in to your account
+          Masuk ke akun anda
         </h2>
       </div>
 

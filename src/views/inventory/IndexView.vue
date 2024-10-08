@@ -66,8 +66,8 @@ const columnHeader = ref<IColumnHeader[]>([
   { name: '#', type: 'label' },
   { name: 'Nama', type: 'label', order: 'normal'  },
   { name: 'SKU', type: 'label', order: 'normal' },
-  { name: 'Price', type: 'label', order: 'normal' },
-  { name: 'Stock', type: 'label', order: 'normal' },
+  { name: 'Harga', type: 'label', order: 'normal' },
+  { name: 'Persediaan', type: 'label', order: 'normal' },
   { name: 'Update Time', type: 'label' }
 ])
 const tableInfo = ref<IPagination<IData[]>>(JsonData)

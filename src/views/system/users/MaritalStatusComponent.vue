@@ -54,9 +54,9 @@ interface IData {
 const columnHeader = ref<IColumnHeader[]>([
   { name: '#', type: 'label' },
   { name: 'Nama', type: 'label', order: 'normal'  },
-  { name: 'status', type: 'label' },
-  { name: 'Create At', type: 'label' },
-  { name: 'Update At', type: 'label' }
+  { name: 'Status', type: 'label' },
+  { name: 'Tgl Dibuat', type: 'label' },
+  { name: 'Tgl Diubah', type: 'label' }
 ])
 
 const tableInfo = ref<IPagination<IData[]>>(JsonData)

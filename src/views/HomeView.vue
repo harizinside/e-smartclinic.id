@@ -41,7 +41,7 @@ import { reactive } from 'vue'
 import { useHead } from '@unhead/vue'
 import AdminLayouts from '@/views/AdminLayouts.vue'
 import VAccumulation from '@/components/VAccumulation.vue'
-import ChartPayment from '@/components/ChartPayment.vue'
+import VChartPayment from '@/components/VChartPayment.vue'
 
 const lineChartData = reactive({
   labels: [ 

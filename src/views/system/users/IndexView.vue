@@ -81,17 +81,17 @@ const tabState = ref<ListTabs>(ListTabs.BLOODTYPE)
 
 const navs = ref<INavigation[]>([
   { name: 'System', link: '/add-on', active: false },
-  { name: 'Users (Interface)', link: '/add-on/users', active: true }
+  { name: '(Interface) Pengguna', link: '/add-on/users', active: true }
 ])
 
 const tabs = ref<ITabs[]>([ 
-  { name: 'Blood Type', state: ListTabs.BLOODTYPE },
-  { name: 'Ethnic Group', state: ListTabs.ETHNICGROUP },
-  { name: 'Educations', state: ListTabs.EDUCATIONS },
-  { name: 'Marital Status', state: ListTabs.MARITALSTATUS },
-  { name: 'Religion', state: ListTabs.RELIGION },
-  { name: 'Title', state: ListTabs.TITLE },
-  { name: 'Working Status', state: ListTabs.WORKINGSTATUS }
+  { name: 'Golongan darah', state: ListTabs.BLOODTYPE },
+  { name: 'Suku', state: ListTabs.ETHNICGROUP },
+  { name: 'Pendidikan', state: ListTabs.EDUCATIONS },
+  { name: 'Status Pernikahan', state: ListTabs.MARITALSTATUS },
+  { name: 'Agama', state: ListTabs.RELIGION },
+  { name: 'Gelar', state: ListTabs.TITLE },
+  { name: 'Pekerjaan', state: ListTabs.WORKINGSTATUS }
 ])
 
 const switchTabs = (args: ListTabs) => {

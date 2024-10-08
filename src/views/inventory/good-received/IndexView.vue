@@ -91,11 +91,11 @@ const navs = ref<INavigation[]>([
 
 const columnHeader = ref<IColumnHeader[]>([
   { name: '#', type: 'label' },
-  { name: 'Code.', type: 'label', order: 'normal' },
-  { name: 'Date', type: 'label', order: 'normal' },
+  { name: 'Kode', type: 'label', order: 'normal' },
+  { name: 'Tanggal', type: 'label', order: 'normal' },
   { name: 'Vendor', type: 'label' },
   { name: 'Total', type: 'label' },
-  { name: 'Attachment', type: 'label' },
+  { name: 'Lampiran', type: 'label' },
   { name: 'Aksi', type: 'label' }
 ])
 

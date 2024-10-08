@@ -113,8 +113,8 @@ const navs = ref<INavigation[]>([
 const columnHeader = ref<IColumnHeader[]>([
   { type: 'checkbox' },
   { name: 'Nama', type: 'label', order: 'normal'  },
-  { name: 'Dibuat Pada', type: 'label' },
-  { name: 'Diubah Pada', type: 'label' },
+  { name: 'Tgl Dibuat', type: 'label' },
+  { name: 'Tgl Diubah', type: 'label' },
   { name: 'Aksi', type: 'label' }
 ])
 

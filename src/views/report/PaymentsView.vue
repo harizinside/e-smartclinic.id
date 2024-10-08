@@ -114,10 +114,10 @@ const navs = ref<INavigation[]>([
 ])
 const columnHeader = ref<IColumnHeader[]>([
   { name: '#', type: 'label' },
-  { name: 'Date', type: 'label', order: 'normal'  },
-  { name: 'Code', type: 'label', order: 'normal' },
+  { name: 'Tanggal', type: 'label', order: 'normal'  },
+  { name: 'Kode', type: 'label', order: 'normal' },
   { name: 'Nama', type: 'label', order: 'normal'  },
-  { name: 'Branch', type: 'label', order: 'normal'  },
+  { name: 'Cabang', type: 'label', order: 'normal'  },
   { name: 'Total', type: 'label' }
 ])
 const tableInfo = ref<IPagination<IData[]>>(JsonData)

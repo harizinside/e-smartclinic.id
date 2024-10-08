@@ -132,9 +132,9 @@ const alert = ref<IAlert>()
 const columnHeader = ref<IColumnHeader[]>([
   { name: '#' },
   { name: 'Nama', type: 'label', order: 'normal'  },
-  { name: 'Type', type: 'label' },
+  { name: 'Tipe', type: 'label' },
   { name: 'Status', type: 'label' },
-  { name: 'Create at', type: 'label' },
+  { name: 'Tgl Dibuat', type: 'label' },
   { name: 'Aksi', type: 'label' }
 ])
 

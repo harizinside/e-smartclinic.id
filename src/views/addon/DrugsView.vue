@@ -138,9 +138,9 @@ const alert = ref<IAlert>()
 const columnHeader = ref<IColumnHeader[]>([
   { name: '#' },
   { name: 'Nama', type: 'label', order: 'normal'  },
-  { name: 'Last Stock', type: 'label', order: 'normal' },
-  { name: 'Price', type: 'label' },
-  { name: 'Create at', type: 'label' },
+  { name: 'Stock Terakhir', type: 'label', order: 'normal' },
+  { name: 'Harga', type: 'label' },
+  { name: 'Tgl Dibuat', type: 'label' },
   { name: 'Aksi', type: 'label' }
 ])
 

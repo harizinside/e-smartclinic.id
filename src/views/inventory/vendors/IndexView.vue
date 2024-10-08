@@ -76,8 +76,8 @@ const navs = ref<INavigation[]>([
 ])
 const columnHeader = ref<IColumnHeader[]>([
   { name: '#', type: 'label' },
-  { name: 'Name.', type: 'label', order: 'normal' },
-  { name: 'Phone', type: 'label', order: 'normal' },
+  { name: 'Nama', type: 'label', order: 'normal' },
+  { name: 'Telepon', type: 'label', order: 'normal' },
   { name: 'Email', type: 'label' },
   { name: 'Bank', type: 'label' },
   { name: 'Aksi', type: 'label' }

@@ -66,14 +66,14 @@ const tabState = ref<ListTabs>(ListTabs.ICD10)
 
 const navs = ref<INavigation[]>([
   { name: 'System', link: '/add-on', active: false },
-  { name: 'Medicals (Interface)', link: '/add-on/medicals', active: true }
+  { name: '(Interface) Medis', link: '/add-on/medicals', active: true }
 ])
 
 const tabs = ref<ITabs[]>([ 
   { name: 'Icd-10', state: ListTabs.ICD10 },
-  { name: 'Disease', state: ListTabs.DISEASE },
-  { name: 'Diagnosis', state: ListTabs.DIAGNOSIS },
-  { name: 'Prognosis', state: ListTabs.PROGNOSIS }
+  { name: 'Penyakit', state: ListTabs.DISEASE },
+  { name: 'Diagnosa', state: ListTabs.DIAGNOSIS },
+  { name: 'Prognosa', state: ListTabs.PROGNOSIS }
 ])
 
 const switchTabs = (args: ListTabs) => {

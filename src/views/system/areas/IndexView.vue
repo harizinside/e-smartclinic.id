@@ -76,10 +76,10 @@ const navs = ref<INavigation[]>([
 ])
 
 const tabs = ref<ITabs[]>([ 
-  { name: 'Provinces', state: ListTabs.PROVINCES },
-  { name: 'Citys', state: ListTabs.CITYS },
-  { name: 'Subdistrics', state: ListTabs.SUBDISTRICS },
-  { name: 'Villages', state: ListTabs.VILLAGES }
+  { name: 'Provisi', state: ListTabs.PROVINCES },
+  { name: 'Kota / Kabupaten', state: ListTabs.CITYS },
+  { name: 'Kecamatan', state: ListTabs.SUBDISTRICS },
+  { name: 'Kelurahan', state: ListTabs.VILLAGES }
 ])
 
 const switchTabs = (args: ListTabs) => {
