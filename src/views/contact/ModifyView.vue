@@ -65,9 +65,7 @@
                     name="country"
                     autocomplete="country-name"
                     class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                    <option>United States</option>
-                    <option>Canada</option>
-                    <option>Mexico</option>
+                    <option v-for="(row, index) in TitleJson.data" :key="index" :value="row.id">{{ row.name }}</option>
                   </select>
                 </div>
                 <div class="mb-5 grow">
@@ -203,9 +201,7 @@
                             name="country"
                             autocomplete="country-name"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                            <option>United States</option>
-                            <option>Canada</option>
-                            <option>Mexico</option>
+                            <option v-for="(row, index) in MaritalStatusJson.data" :key="index" :value="row.id">{{ row.name }}</option>
                           </select>
                         </div>
                         <div class="mb-5 basis-1/4">
@@ -215,9 +211,7 @@
                             name="country"
                             autocomplete="country-name"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                            <option>United States</option>
-                            <option>Canada</option>
-                            <option>Mexico</option>
+                            <option v-for="(row, index) in WorkingStatusJson.data" :key="index" :value="row.id">{{ row.name }}</option>
                           </select>
                         </div>
                         <div class="mb-5 basis-1/4">
@@ -227,9 +221,7 @@
                             name="country"
                             autocomplete="country-name"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                            <option>United States</option>
-                            <option>Canada</option>
-                            <option>Mexico</option>
+                            <option v-for="(row, index) in EducationJson.data" :key="index" :value="row.id">{{ row.name }}</option>
                           </select>
                         </div>
                         <div class="mb-5 basis-1/4">
@@ -239,9 +231,7 @@
                             name="country"
                             autocomplete="country-name"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                            <option>United States</option>
-                            <option>Canada</option>
-                            <option>Mexico</option>
+                            <option v-for="(row, index) in BloodGroupJson.data" :key="index" :value="row.id">{{ row.name }}</option>
                           </select>
                         </div>
                       </div>
@@ -253,9 +243,7 @@
                             name="country"
                             autocomplete="country-name"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                            <option>United States</option>
-                            <option>Canada</option>
-                            <option>Mexico</option>
+                            <option v-for="(row, index) in ReligionJson.data" :key="index" :value="row.id">{{ row.name }}</option>
                           </select>
                         </div>
                         <div class="mb-5 basis-1/4">
@@ -265,9 +253,7 @@
                             name="country"
                             autocomplete="country-name"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                            <option>United States</option>
-                            <option>Canada</option>
-                            <option>Mexico</option>
+                            <option v-for="(row, index) in EthnicGroupJson.data" :key="index" :value="row.id">{{ row.name }}</option>
                           </select>
                         </div>
                         <div class="mb-5 basis-1/4">
@@ -277,9 +263,7 @@
                             name="country"
                             autocomplete="country-name"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                            <option>United States</option>
-                            <option>Canada</option>
-                            <option>Mexico</option>
+                            <option v-for="(row, index) in InsuranceGuaranteeJson.data" :key="index" :value="row.id">{{ row.name }}</option>
                           </select>
                         </div>
                         <div class="mb-5 basis-1/4">
@@ -289,9 +273,8 @@
                             name="country"
                             autocomplete="country-name"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                            <option>United States</option>
-                            <option>Canada</option>
-                            <option>Mexico</option>
+                            <option>WNI</option>
+                            <option>WNA</option>
                           </select>
                         </div>
                       </div>
@@ -376,10 +359,19 @@ import { TransitionRoot, Disclosure, DisclosureButton, DisclosurePanel } from '@
 import { ChevronUpIcon } from '@heroicons/vue/20/solid'
 import type { IAlert } from '@/interfaces/alerts'
 import type { INavigation } from '@/interfaces/navs'
+import type { IGeneral } from '@/interfaces/systems'
 import AdminLayouts from '@/views/AdminLayouts.vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
 import VAlerts from '@/components/VAlerts.vue'
 import VDialogCamera from '@/components/VDialogCamera.vue'
+import TitleJson from '@/utils/title.json'
+import MaritalStatusJson from '@/utils/marital-status.json'
+import WorkingStatusJson from '@/utils/working-status.json'
+import EducationJson from '@/utils/last-education.json'
+import BloodGroupJson from '@/utils/blood-type.json'
+import ReligionJson from '@/utils/religion.json'
+import EthnicGroupJson from '@/utils/ethnic-group.json'
+import InsuranceGuaranteeJson from '@/utils/insurance-guarantee.json'
 
 interface UploadedFile {
   file: File;

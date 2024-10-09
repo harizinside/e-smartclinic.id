@@ -58,7 +58,7 @@
                   <ClockIcon
                     class="h-3"
                     aria-hidden="true" />
-                  <span class="text-xs">{{ props.startTime }} - {{ props.endTime }}</span>
+                  <span class="text-xs">{{ $d(Date.parse(props.startTime), 'timeSmall') }} - {{ $d(Date.parse(props.endTime), 'timeSmall') }}</span>
                 </div>
                 <div class="flex flex-row items-center gap-2">
                   <svg
