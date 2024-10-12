@@ -28,7 +28,7 @@
         </div>
       </div>
       <VAccumulation />
-      <ChartPayment
+      <VChartPayment
         type="line"
         :data="lineChartData"
         :options="chartOptions" />
