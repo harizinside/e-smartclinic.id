@@ -8,7 +8,7 @@
         <VAlerts
           :message="alert!.message"
           :type="alert?.type"
-          @close="alert=undefined" />
+          @close="alert = undefined" />
       </div>
       <VTable
         :show-limit="true"
@@ -19,11 +19,9 @@
         :set-column-header="columnHeader"
         :set-table-info="tableInfo"
         @set-limit="setLimit"
-        @on-additional="$router.push('/contacts/create')"
-        @on-filter="onFilters"
-        @on-search="onSearch"
         @on-sort="sortTable"
-        @on-check="setCheckedAll">
+        @on-check="setCheckedAll"
+        @on-search="onSearch">
         <VTableColumn
           v-for="(row, index) in tableInfo.data"
           :key="index">
@@ -71,13 +69,12 @@
           </td>
           <td class="px-6 py-4">
             <div class="flex items-center">
-              <button
-                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+              <button class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                 Edit
               </button>
               <button
                 class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3"
-                @click="dialogDelete=true">
+                @click="dialogDelete = true">
                 Remove
               </button>
             </div>
@@ -89,8 +86,24 @@
         :show="dialogDelete">
         <VDialogDelete
           :dialog="deleted"
-          @close="dialogDelete=false"
+          @close="dialogDelete = false"
           @process="processDelete" />
+      </TransitionRoot>
+      <TransitionRoot
+        as="template"
+        :show="dialogFilter">
+        <VDialogFilter @close="dialogFilter = false">
+          <div class="mb-6">
+            <label
+              for="large-input"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Large
+              input</label>
+            <input
+              id="large-input"
+              type="text"
+              class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+          </div>
+        </VDialogFilter>
       </TransitionRoot>
     </AdminLayouts>
   </div>
@@ -112,6 +125,7 @@ import VTable from '@/components/VTable.vue'
 import VTableColumn from '@/components/VTableColumn.vue'
 import VHumanDate from '@/components/VHumanDate.vue'
 import VDialogDelete from '@/components/VDialogDelete.vue'
+import VDialogFilter from '@/components/VDialogFilter.vue'
 import JsonData from '@/utils/contacts.json'
 
 interface IData {
@@ -131,6 +145,7 @@ const navs = ref<INavigation[]>([
 
 const alert = ref<IAlert>()
 const dialogDelete = ref<boolean>(false)
+const dialogFilter = ref<boolean>(false)
 const deleted = ref<IDialog>({
   img: 'https://avatar.iran.liara.run/public/girl?usearname=dr.Niken+Anggraeni',
   description: 'nikeng***@***.com',
@@ -151,10 +166,6 @@ const tableInfo = ref<IPagination<IData[]>>(JsonData)
 
 const setLimit = (args: number) => {
   console.error(args)
-}
-
-const onFilters = () => {
-  console.error('Filter')
 }
 
 const onSearch = (args: string) => {

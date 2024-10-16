@@ -1,7 +1,7 @@
 import vueParser from 'vue-eslint-parser';
 import typescriptPlugin from '@typescript-eslint/eslint-plugin';
 import vuePlugin from 'eslint-plugin-vue';
-import globals from "globals";
+import globals from 'globals';
 
 export default [
   {
@@ -22,7 +22,7 @@ export default [
       vue: vuePlugin,
     },
     rules: {
-      ...vuePlugin.configs['vue3-recommended'].rules,
+      ...vuePlugin.configs['vue3-strongly-recommended'].rules,
       ...typescriptPlugin.configs.recommended.rules,
       'vue/html-closing-bracket-newline': 'off',
       'semi': ['error', 'never'],

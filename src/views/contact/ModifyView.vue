@@ -65,7 +65,12 @@
                     name="country"
                     autocomplete="country-name"
                     class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                    <option v-for="(row, index) in TitleJson.data" :key="index" :value="row.id">{{ row.name }}</option>
+                    <option
+                      v-for="(row, index) in TitleJson.data"
+                      :key="index"
+                      :value="row.id">
+                      {{ row.name }}
+                    </option>
                   </select>
                 </div>
                 <div class="mb-5 grow">
@@ -201,7 +206,12 @@
                             name="country"
                             autocomplete="country-name"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                            <option v-for="(row, index) in MaritalStatusJson.data" :key="index" :value="row.id">{{ row.name }}</option>
+                            <option
+                              v-for="(row, index) in MaritalStatusJson.data"
+                              :key="index"
+                              :value="row.id">
+                              {{ row.name }}
+                            </option>
                           </select>
                         </div>
                         <div class="mb-5 basis-1/4">
@@ -211,7 +221,12 @@
                             name="country"
                             autocomplete="country-name"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                            <option v-for="(row, index) in WorkingStatusJson.data" :key="index" :value="row.id">{{ row.name }}</option>
+                            <option
+                              v-for="(row, index) in WorkingStatusJson.data"
+                              :key="index"
+                              :value="row.id">
+                              {{ row.name }}
+                            </option>
                           </select>
                         </div>
                         <div class="mb-5 basis-1/4">
@@ -221,7 +236,12 @@
                             name="country"
                             autocomplete="country-name"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                            <option v-for="(row, index) in EducationJson.data" :key="index" :value="row.id">{{ row.name }}</option>
+                            <option
+                              v-for="(row, index) in EducationJson.data"
+                              :key="index"
+                              :value="row.id">
+                              {{ row.name }}
+                            </option>
                           </select>
                         </div>
                         <div class="mb-5 basis-1/4">
@@ -231,7 +251,12 @@
                             name="country"
                             autocomplete="country-name"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                            <option v-for="(row, index) in BloodGroupJson.data" :key="index" :value="row.id">{{ row.name }}</option>
+                            <option
+                              v-for="(row, index) in BloodGroupJson.data"
+                              :key="index"
+                              :value="row.id">
+                              {{ row.name }}
+                            </option>
                           </select>
                         </div>
                       </div>
@@ -243,7 +268,12 @@
                             name="country"
                             autocomplete="country-name"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                            <option v-for="(row, index) in ReligionJson.data" :key="index" :value="row.id">{{ row.name }}</option>
+                            <option
+                              v-for="(row, index) in ReligionJson.data"
+                              :key="index"
+                              :value="row.id">
+                              {{ row.name }}
+                            </option>
                           </select>
                         </div>
                         <div class="mb-5 basis-1/4">
@@ -253,7 +283,12 @@
                             name="country"
                             autocomplete="country-name"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                            <option v-for="(row, index) in EthnicGroupJson.data" :key="index" :value="row.id">{{ row.name }}</option>
+                            <option
+                              v-for="(row, index) in EthnicGroupJson.data"
+                              :key="index"
+                              :value="row.id">
+                              {{ row.name }}
+                            </option>
                           </select>
                         </div>
                         <div class="mb-5 basis-1/4">
@@ -263,7 +298,12 @@
                             name="country"
                             autocomplete="country-name"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                            <option v-for="(row, index) in InsuranceGuaranteeJson.data" :key="index" :value="row.id">{{ row.name }}</option>
+                            <option
+                              v-for="(row, index) in InsuranceGuaranteeJson.data"
+                              :key="index"
+                              :value="row.id">
+                              {{ row.name }}
+                            </option>
                           </select>
                         </div>
                         <div class="mb-5 basis-1/4">
@@ -293,24 +333,26 @@
                       />
                     </DisclosureButton>
                     <DisclosurePanel class="px-4 pb-2 pt-4 text-sm text-gray-500">
+                      <div class="flex flex-row gap-2">
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama keluarga </label>
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Hubungan </label>
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kontak yang bisa dihubungi</label>
+                      </div>
                       <div
                         v-for="index in 3"
                         :key="index">
-                        <div class="flex flex-row gap-3">
+                        <div class="flex flex-row gap-2">
                           <div class="mb-5 grow">
-                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama keluarga </label>
                             <input
                               type="text"
                               class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
                           </div>
                           <div class="mb-5 grow">
-                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Hubungan </label>
                             <input
                               type="text"
                               class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
                           </div>
                           <div class="mb-5 grow">
-                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kontak yang bisa dihubungi</label>
                             <input
                               type="text"
                               class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
@@ -359,7 +401,6 @@ import { TransitionRoot, Disclosure, DisclosureButton, DisclosurePanel } from '@
 import { ChevronUpIcon } from '@heroicons/vue/20/solid'
 import type { IAlert } from '@/interfaces/alerts'
 import type { INavigation } from '@/interfaces/navs'
-import type { IGeneral } from '@/interfaces/systems'
 import AdminLayouts from '@/views/AdminLayouts.vue'
 import VBreadcrumbNavigation from '@/components/VBreadcrumbNavigation.vue'
 import VAlerts from '@/components/VAlerts.vue'
