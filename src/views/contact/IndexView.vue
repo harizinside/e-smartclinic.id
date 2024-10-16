@@ -19,9 +19,11 @@
         :set-column-header="columnHeader"
         :set-table-info="tableInfo"
         @set-limit="setLimit"
+        @on-additional="$router.push('/contacts/create')"
+        @on-filter="dialogFilter = true"
+        @on-search="onSearch"
         @on-sort="sortTable"
-        @on-check="setCheckedAll"
-        @on-search="onSearch">
+        @on-check="setCheckedAll">
         <VTableColumn
           v-for="(row, index) in tableInfo.data"
           :key="index">
@@ -96,8 +98,9 @@
           <div class="mb-6">
             <label
               for="large-input"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Large
-              input</label>
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              Large input
+            </label>
             <input
               id="large-input"
               type="text"

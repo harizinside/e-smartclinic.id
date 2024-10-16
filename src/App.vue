@@ -6,8 +6,7 @@
     <transition name="fade">
       <component
         :is="Component"
-        :key="route.path" 
-        sa/>
+        :key="route.path" />
     </transition>
   </router-view>
 </template>
