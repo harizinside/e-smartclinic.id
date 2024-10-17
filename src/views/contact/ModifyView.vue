@@ -332,32 +332,71 @@
                         class="h-5 w-5 text-orange-500"
                       />
                     </DisclosureButton>
-                    <DisclosurePanel class="px-4 pb-2 pt-4 text-sm text-gray-500">
-                      <div class="flex flex-row gap-2">
-                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama keluarga </label>
-                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Hubungan </label>
-                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kontak yang bisa dihubungi</label>
-                      </div>
-                      <div
-                        v-for="index in 3"
-                        :key="index">
-                        <div class="flex flex-row gap-2">
-                          <div class="mb-5 grow">
-                            <input
-                              type="text"
-                              class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
-                          </div>
-                          <div class="mb-5 grow">
-                            <input
-                              type="text"
-                              class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
-                          </div>
-                          <div class="mb-5 grow">
-                            <input
-                              type="text"
-                              class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
-                          </div>
-                        </div>
+                    <DisclosurePanel class="pb-2 pt-4 text-sm text-gray-700">
+                      <div class="relative overflow-x-auto">
+                        <table class="w-full">
+                          <thead class="text-xs uppercase">
+                            <tr class="text-left">
+                              <th
+                                scope="col"
+                                class="px-3 py-4">
+                                Nama keluarga
+                              </th>
+                              <th
+                                scope="col"
+                                class="px-3 py-4">
+                                Hubungan
+                              </th>
+                              <th
+                                scope="col"
+                                class="px-3 py-4">
+                                Kontak yang bisa dihubungi
+                              </th>
+                              <th />
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr
+                              v-for="(row, index) in familyPatients"
+                              :key="index">
+                              <td class="px-2 pb-1">
+                                <input
+                                  id="base-input"
+                                  type="text"
+                                  class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
+                              </td>
+                              <td class="px-2 pb-1">
+                                <input
+                                  id="base-input"
+                                  type="text"
+                                  class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
+                              </td>
+                              <td class="px-2 pb-1">
+                                <input
+                                  id="base-input"
+                                  type="text"
+                                  class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500">
+                              </td>
+                              <td class="px-2 pb-1">
+                                <div class="flex gap-2">
+                                  <button
+                                    @click="familyPatients = familyPatients + 1"
+                                    type="button"
+                                    class="rounded-md bg-orange-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">
+                                    +
+                                  </button>
+                                  <button
+                                    v-if="index >= 1"
+                                    @click="familyPatients = familyPatients - 1"
+                                    type="button"
+                                    class="rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                                    -
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </DisclosurePanel>
                   </Disclosure>
@@ -428,6 +467,7 @@ const alert = ref<IAlert>()
 const isSaved = ref<boolean>(false)
 const dialogCamera = ref<boolean>(false)
 const listOfImages = ref<UploadedFile[]>([])
+const familyPatients = ref<number>(2)
 
 const submit = () => {
   console.info('submit')

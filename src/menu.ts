@@ -190,8 +190,38 @@ export const LIST_MENU = <MenuProps[]>[
         name: 'Poliklinik',
         href: '/add-on/polyclinic',
         icon: 'chevron-right',
-        status: true,
+        status: true, 
         order: 4,
+        privilage: {
+          create: true,
+          read: true,
+          update: true,
+          delete: true,
+          import: true,
+          export: true
+        }
+      },
+      {
+        name: 'Diskon',
+        href: '/add-on/discounts',
+        icon: 'chevron-right',
+        status: true,
+        order: 5,
+        privilage: {
+          create: true,
+          read: true,
+          update: true,
+          delete: true,
+          import: true,
+          export: true
+        }
+      },
+      {
+        name: 'Voucher',
+        href: '/add-on/vouchers',
+        icon: 'chevron-right',
+        status: true,
+        order: 6,
         privilage: {
           create: true,
           read: true,

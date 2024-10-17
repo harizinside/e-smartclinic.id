@@ -17,6 +17,8 @@ import AddOnDrugs from '@/views/addon/DrugsView.vue'
 import AddOnInsuranceGuarantee from '@/views/addon/InsuranceGuaranteeView.vue'
 import AddOnServices from '@/views/addon/ServicesView.vue'
 import AddOnPolyclinic from '@/views/addon/PolyclinicView.vue'
+import AddOnDiscount from '@/views/addon/DiscountsView.vue'
+import AddOnVoucher from '@/views/addon/VouchersView.vue'
 import ClinicInfo from '@/views/clinic-info/IndexView.vue'
 import Patients from '@/views/contact/IndexView.vue'
 import PatientsModif from '@/views/contact/ModifyView.vue'
@@ -123,6 +125,16 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/add-on/drugs',
     component: AddOnDrugs,
+    meta: { auth: true }
+  },
+  {
+    path: '/add-on/discounts',
+    component: AddOnDiscount,
+    meta: { auth: true }
+  },
+  {
+    path: '/add-on/vouchers',
+    component: AddOnVoucher,
     meta: { auth: true }
   },
   {
